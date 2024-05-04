@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdminSysWF
 {
-    public partial class Form1 : Form
+    public partial class Definicoes : Form
     {
-        public Form1()
+        public Definicoes()
         {
             InitializeComponent();
         }
