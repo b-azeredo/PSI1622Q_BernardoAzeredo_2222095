@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AdminSysWF
 {
-    public partial class AddLucro : Form
+    public partial class AddGanho : Form
     {
         public int userID;
-        public AddLucro(int userID)
+        public AddGanho(int userID)
         {
             InitializeComponent();
             this.userID = userID;

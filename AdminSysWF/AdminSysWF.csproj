@@ -59,11 +59,11 @@
     <Compile Include="AddDespesa.Designer.cs">
       <DependentUpon>AddDespesa.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddLucro.cs">
+    <Compile Include="AddGanho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddLucro.Designer.cs">
-      <DependentUpon>AddLucro.cs</DependentUpon>
+    <Compile Include="AddGanho.Designer.cs">
+      <DependentUpon>AddGanho.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Definicoes.cs">
@@ -95,8 +95,8 @@
     <EmbeddedResource Include="AddDespesa.resx">
       <DependentUpon>AddDespesa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddLucro.resx">
-      <DependentUpon>AddLucro.cs</DependentUpon>
+    <EmbeddedResource Include="AddGanho.resx">
+      <DependentUpon>AddGanho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Definicoes.resx">
       <DependentUpon>Definicoes.cs</DependentUpon>

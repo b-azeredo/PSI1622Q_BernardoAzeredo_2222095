@@ -181,7 +181,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO LUCROS VALUES (@userid, @desc, @valor, @data)", connection))
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO GANHOS VALUES (@userid, @desc, @valor, @data)", connection))
                     {
                         cmd.Parameters.AddWithValue("@userid", userid);
                         cmd.Parameters.AddWithValue("@desc", desc);
@@ -226,7 +226,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT SUM(VALOR) FROM LUCROS WHERE CONVERT(date, DATA) = @data AND USER_ID = @userId", connection))
+                    using (SqlCommand cmd = new SqlCommand("SELECT SUM(VALOR) FROM GANHOS WHERE CONVERT(date, DATA) = @data AND USER_ID = @userId", connection))
                     {
                         cmd.Parameters.AddWithValue("@data", dia.Date);
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -275,32 +275,32 @@ namespace AdminSysWF
             return despesaDia;
         }
 
-        public static DataTable GetLucros(int userId)
+        public static DataTable GetGanhos(int userId)
         {
-            DataTable lucrosTable = new DataTable();
+            DataTable GANHOSTable = new DataTable();
 
             try
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = "SELECT DESCRICAO, VALOR, DATA FROM LUCROS WHERE USER_ID = @userId ORDER BY DATA DESC";
+                    string query = "SELECT DESCRICAO, VALOR, DATA FROM GANHOS WHERE USER_ID = @userId ORDER BY DATA DESC";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
 
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
-                            adapter.Fill(lucrosTable);
+                            adapter.Fill(GANHOSTable);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao obter os lucros: " + ex.Message);
+                MessageBox.Show("Erro ao obter os GANHOS: " + ex.Message);
             }
 
-            return lucrosTable;
+            return GANHOSTable;
         }
 
         public static DataTable GetDespesas(int userId)

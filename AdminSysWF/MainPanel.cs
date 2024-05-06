@@ -27,7 +27,7 @@ namespace AdminSysWF
 
         private void refreshLucrosDataGridView()
         {
-            DataTable dt = Database.GetLucros(UserID);
+            DataTable dt = Database.GetGanhos(UserID);
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].HeaderText = "Descrição";
             dataGridView1.Columns[1].HeaderText = "Valor";
@@ -80,7 +80,7 @@ namespace AdminSysWF
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
-            AddLucro addLucro = new AddLucro(UserID);
+            AddGanho addLucro = new AddGanho(UserID);
             addLucro.ShowDialog();
             RefreshChart();
             refreshLucrosDataGridView();

@@ -1,6 +1,6 @@
 ﻿namespace AdminSysWF
 {
-    partial class AddLucro
+    partial class AddGanho
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,7 @@
             this.txb_ValorDespesa.Location = new System.Drawing.Point(80, 90);
             this.txb_ValorDespesa.Name = "txb_ValorDespesa";
             this.txb_ValorDespesa.PasswordChar = '\0';
-            this.txb_ValorDespesa.PlaceholderText = "Valor do Lucro";
+            this.txb_ValorDespesa.PlaceholderText = "Valor Ganho";
             this.txb_ValorDespesa.SelectedText = "";
             this.txb_ValorDespesa.Size = new System.Drawing.Size(193, 36);
             this.txb_ValorDespesa.TabIndex = 18;
@@ -90,12 +90,12 @@
             this.txb_DescDespesa.Location = new System.Drawing.Point(80, 48);
             this.txb_DescDespesa.Name = "txb_DescDespesa";
             this.txb_DescDespesa.PasswordChar = '\0';
-            this.txb_DescDespesa.PlaceholderText = "Descrição do Lucro";
+            this.txb_DescDespesa.PlaceholderText = "Descrição do Ganho";
             this.txb_DescDespesa.SelectedText = "";
             this.txb_DescDespesa.Size = new System.Drawing.Size(193, 36);
             this.txb_DescDespesa.TabIndex = 17;
             // 
-            // AddLucro
+            // AddGanho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,9 +103,9 @@
             this.Controls.Add(this.ComfirmAddLucro);
             this.Controls.Add(this.txb_ValorDespesa);
             this.Controls.Add(this.txb_DescDespesa);
-            this.Name = "AddLucro";
+            this.Name = "AddGanho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Lucro";
+            this.Text = "Adicionar Ganho";
             this.Load += new System.EventHandler(this.AddLucro_Load);
             this.ResumeLayout(false);
 
