@@ -19,13 +19,18 @@ namespace AdminSysWF
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             this.Hide();
             var Login = new Login();
             Login.Closed += (s, args) => this.Close();
             Login.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Registar_Click(object sender, EventArgs e)
         {
             if (Database.Register(txb_Username.Text, txb_Password.Text))
             {

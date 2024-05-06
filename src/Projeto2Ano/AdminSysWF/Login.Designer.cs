@@ -116,7 +116,7 @@
             this.txb_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Password.Location = new System.Drawing.Point(512, 228);
             this.txb_Password.Name = "txb_Password";
-            this.txb_Password.PasswordChar = '\0';
+            this.txb_Password.PasswordChar = '*';
             this.txb_Password.PlaceholderText = "Palavra-passe";
             this.txb_Password.SelectedText = "";
             this.txb_Password.Size = new System.Drawing.Size(193, 36);
@@ -124,7 +124,7 @@
             // 
             // guna2Button1
             // 
-            this.guna2Button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.guna2Button1.BackColor = System.Drawing.SystemColors.Control;
             this.guna2Button1.BorderRadius = 15;
             this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -164,7 +164,7 @@
             this.AcceptButton = this.guna2Button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.guna2Button1);
