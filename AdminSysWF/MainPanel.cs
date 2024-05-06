@@ -83,6 +83,7 @@ namespace AdminSysWF
             AddLucro addLucro = new AddLucro(UserID);
             addLucro.ShowDialog();
             RefreshChart();
+            refreshLucrosDataGridView();
         }
 
         private void btn_AddDespesa_Click_1(object sender, EventArgs e)
@@ -90,6 +91,7 @@ namespace AdminSysWF
             AddDespesa addDespesa = new AddDespesa(UserID);
             addDespesa.ShowDialog();
             RefreshChart();
+            refreshDespesasDataGridView();
         }
 
         private void button6_Click_1(object sender, EventArgs e)

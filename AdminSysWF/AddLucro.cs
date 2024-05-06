@@ -19,7 +19,12 @@ namespace AdminSysWF
             this.userID = userID;
         }
 
-        private void ComfirmAddDespesa_Click(object sender, EventArgs e)
+        private void AddLucro_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ComfirmAddLucro_Click(object sender, EventArgs e)
         {
             string desc = txb_DescDespesa.Text;
             string valor = txb_ValorDespesa.Text;
@@ -36,11 +41,6 @@ namespace AdminSysWF
             {
                 MessageBox.Show("Preencha corretamente os valores.");
             }
-        }
-
-        private void AddLucro_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
