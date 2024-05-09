@@ -72,9 +72,8 @@ namespace AdminSysWF
             series.BorderWidth = 2; // Largura da linha
             series.IsXValueIndexed = true;
 
-            // Ajustando os intervalos dos eixos
             chart1.ChartAreas[0].AxisX.Interval = 1; // Intervalo de 1 dia no eixo X
-            chart1.ChartAreas[0].AxisY.Interval = 1000; // Intervalo de 100 unidades no eixo Y
+            chart1.ChartAreas[0].AxisY.Interval = 500; 
             chart1.Update();
         }
 
