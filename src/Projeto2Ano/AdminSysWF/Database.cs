@@ -103,7 +103,6 @@ namespace AdminSysWF
 
         public static bool Register(string username, string password)
         {
-            /* Check if user already exists */
             string query = "SELECT PASSWORD FROM UTILIZADORES WHERE USERNAME = @username";
 
             using (SqlConnection connection = Connect())
@@ -134,8 +133,6 @@ namespace AdminSysWF
                 }
             }
 
-            /* Register */
-
             query = "INSERT INTO UTILIZADORES VALUES (@username, @password)";
             using (SqlConnection connection = Connect())
             {
@@ -148,8 +145,6 @@ namespace AdminSysWF
                 }
             }
         }
-
-        /* Insert data methods */
 
         public static bool addDespesa(int userid ,string desc, float valor)
         {
@@ -199,13 +194,13 @@ namespace AdminSysWF
             }
         }
 
-        public static float GetLucroDespesaDia(DateTime dia, int userId)
+        public static float GetLucroDia(DateTime dia, int userId)
         {
             float lucroDia = 0;
 
             try
             {
-                float lucroDiaTotal = GetLucroDia(dia, userId);
+                float lucroDiaTotal = GetGanhosDia(dia, userId);
                 float despesaDiaTotal = GetDespesaDia(dia, userId);
 
                 lucroDia = lucroDiaTotal - despesaDiaTotal;
@@ -218,7 +213,7 @@ namespace AdminSysWF
             return lucroDia;
         }
 
-        public static float GetLucroDia(DateTime dia, int userId)
+        public static float GetGanhosDia(DateTime dia, int userId)
         {
             float lucroDia = 0;
 

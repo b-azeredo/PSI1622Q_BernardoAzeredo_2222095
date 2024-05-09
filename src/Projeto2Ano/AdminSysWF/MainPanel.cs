@@ -24,7 +24,6 @@ namespace AdminSysWF
             refreshDespesasDataGridView();
         }
 
-
         private void refreshLucrosDataGridView()
         {
             DataTable dt = Database.GetGanhos(UserID);
@@ -45,7 +44,6 @@ namespace AdminSysWF
             dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-
         private void RefreshChart()
         {
             DateTime dataInicial = DateTime.Now.AddDays(-7);
@@ -58,24 +56,51 @@ namespace AdminSysWF
             Series series = new Series("Lucro");
             series.ChartType = SeriesChartType.Column;
 
+            float lucroMaximo = float.MinValue;
+
             foreach (DateTime dia in ultimos7dias)
             {
                 float lucroDespesaDia = Database.GetLucroDia(dia, UserID);
                 series.Points.AddXY(dia.ToString("dd/MM"), lucroDespesaDia);
+
+                if (lucroDespesaDia > lucroMaximo)
+                {
+                    lucroMaximo = lucroDespesaDia;
+                }
             }
 
             chart1.Series.Clear();
             chart1.Series.Add(series);
 
-            series.Color = Color.Blue; // Cor da linha
-            series.BorderColor = Color.Blue; // Cor da linha
-            series.BorderWidth = 2; // Largura da linha
+            series.Color = Color.DarkGray;
+            series.BorderColor = Color.Black;
+            series.BorderWidth = 1;
             series.IsXValueIndexed = true;
 
-            chart1.ChartAreas[0].AxisX.Interval = 1; // Intervalo de 1 dia no eixo X
-            chart1.ChartAreas[0].AxisY.Interval = 500; 
+            int intervaloY = CalculateIntervalY(lucroMaximo);
+
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            chart1.ChartAreas[0].AxisY.Interval = intervaloY;
             chart1.Update();
         }
+
+        private int CalculateIntervalY(float valorMaximo)
+        {
+            int[] multiplos = {50, 100, 500, 1000, 5000 };
+
+            int intervaloY = multiplos[0];
+            for (int i = 1; i < 5; i++)
+            {
+                if (valorMaximo > multiplos[i])
+                {
+                    intervaloY = multiplos[i - 1];
+                }
+            }
+
+            return intervaloY;
+        }
+
+
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
@@ -97,6 +122,11 @@ namespace AdminSysWF
         {
             Definicoes definicoes = new Definicoes();
             definicoes.ShowDialog();
+        }
+
+        private void guna2TabControl1_Click(object sender, EventArgs e)
+        {
+            RefreshChart();
         }
     }
 }

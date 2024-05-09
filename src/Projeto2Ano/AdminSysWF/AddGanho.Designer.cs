@@ -35,8 +35,10 @@
             // 
             // ComfirmAddLucro
             // 
+            this.ComfirmAddLucro.Animated = true;
+            this.ComfirmAddLucro.AutoRoundedCorners = true;
             this.ComfirmAddLucro.BackColor = System.Drawing.SystemColors.Control;
-            this.ComfirmAddLucro.BorderRadius = 15;
+            this.ComfirmAddLucro.BorderRadius = 19;
             this.ComfirmAddLucro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddLucro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddLucro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -44,9 +46,10 @@
             this.ComfirmAddLucro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ComfirmAddLucro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddLucro.ForeColor = System.Drawing.Color.White;
+            this.ComfirmAddLucro.IndicateFocus = true;
             this.ComfirmAddLucro.Location = new System.Drawing.Point(80, 132);
             this.ComfirmAddLucro.Name = "ComfirmAddLucro";
-            this.ComfirmAddLucro.Size = new System.Drawing.Size(193, 39);
+            this.ComfirmAddLucro.Size = new System.Drawing.Size(193, 40);
             this.ComfirmAddLucro.TabIndex = 19;
             this.ComfirmAddLucro.Text = "Adicionar";
             this.ComfirmAddLucro.Click += new System.EventHandler(this.ComfirmAddLucro_Click);
