@@ -374,5 +374,26 @@ namespace AdminSysWF
             }
         }
 
+        public static void AddTarefa(int userID, string descricao)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "INSERT INTO TAREFAS (USER_ID, DESCRICAO, CONCLUIDO) VALUES (@userID, @descricao, 0)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", userID);
+                        cmd.Parameters.AddWithValue("@descricao", descricao);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar a tarefa: " + ex.Message);
+            }
+        }
+
     }
 }

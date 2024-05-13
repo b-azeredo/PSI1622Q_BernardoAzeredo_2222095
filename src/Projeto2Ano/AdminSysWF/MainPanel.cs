@@ -140,12 +140,38 @@ namespace AdminSysWF
 
         private void tarefasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == tarefasDataGridView.Columns[0].Index && e.RowIndex >= 0)
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            AddTarefa addTarefa = new AddTarefa(UserID);
+            addTarefa.ShowDialog();
+            refreshTarefasDataGridView();
+        }
+
+        private void tarefasDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
-                int taskId = Convert.ToInt32(tarefasDataGridView.Rows[e.RowIndex].Cells[1].Value);
-                Database.ConcluirTarefa(taskId);
-                refreshTarefasDataGridView();
+                if (e.ColumnIndex == Concluir.Index)
+                {
+                    e.CellStyle.BackColor = Color.Green;
+
+                    e.PaintContent(e.CellBounds);
+
+                    using (Pen p = new Pen(Color.Red))
+                    {
+                        Rectangle rect = e.CellBounds;
+                        rect.Width -= 1;
+                        rect.Height -= 1;
+                        e.Graphics.DrawRectangle(p, rect);
+                    }
+
+                    e.Handled = true;
+                }
             }
         }
+
     }
 }
