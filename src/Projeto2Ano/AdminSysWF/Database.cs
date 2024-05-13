@@ -325,5 +325,54 @@ namespace AdminSysWF
 
             return despesasTable;
         }
+
+        public static DataTable GetTarefas(int userId)
+        {
+            DataTable tarefasTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT ID, DESCRICAO FROM TAREFAS WHERE USER_ID = @userId AND CONCLUIDO = 0";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(tarefasTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter as tarefas: " + ex.Message);
+            }
+
+            return tarefasTable;
+        }
+
+        public static void ConcluirTarefa(int idTarefa)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "UPDATE TAREFAS SET CONCLUIDO = 1 WHERE ID = @idTarefa";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@idTarefa", idTarefa);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao concluir a tarefa: " + ex.Message);
+            }
+        }
+
     }
 }

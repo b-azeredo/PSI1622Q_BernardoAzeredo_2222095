@@ -22,6 +22,15 @@ namespace AdminSysWF
             RefreshChart();
             refreshLucrosDataGridView();
             refreshDespesasDataGridView();
+            refreshTarefasDataGridView();
+        }
+
+        private void refreshTarefasDataGridView()
+        {
+            DataTable dt = Database.GetTarefas(UserID);
+            tarefasDataGridView.DataSource = dt;
+            tarefasDataGridView.Columns["Concluir"].DisplayIndex = 2;
+            tarefasDataGridView.Columns[1].Visible = false;
         }
 
         private void refreshLucrosDataGridView()
@@ -127,6 +136,16 @@ namespace AdminSysWF
         private void guna2TabControl1_Click(object sender, EventArgs e)
         {
             RefreshChart();
+        }
+
+        private void tarefasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == tarefasDataGridView.Columns[0].Index && e.RowIndex >= 0)
+            {
+                int taskId = Convert.ToInt32(tarefasDataGridView.Rows[e.RowIndex].Cells[1].Value);
+                Database.ConcluirTarefa(taskId);
+                refreshTarefasDataGridView();
+            }
         }
     }
 }
