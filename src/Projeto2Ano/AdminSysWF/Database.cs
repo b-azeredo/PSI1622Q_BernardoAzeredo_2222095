@@ -170,6 +170,30 @@ namespace AdminSysWF
             }
         }
 
+        public static bool addFuncionario(int userid, string nome, float salario, string cargo)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO FUNCIONARIOS VALUES (@userid, @nome, @salario, @cargo)", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userid", userid);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@salario", salario);
+                        cmd.Parameters.AddWithValue("@cargo", cargo);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao conectar à base de dados.");
+                return false;
+            }
+        }
+
         public static bool addLucro(int userid, string desc, float valor)
         {
             try
@@ -353,6 +377,35 @@ namespace AdminSysWF
 
             return tarefasTable;
         }
+
+        public static DataTable GetFuncionarios(int userId)
+        {
+            DataTable funcionariosTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT NOME, SALARIO, CARGO FROM FUNCIONARIOS WHERE USER_ID = @userId ORDER BY NOME";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(funcionariosTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os funcionários: " + ex.Message);
+            }
+
+            return funcionariosTable;
+        }
+
 
         public static void ConcluirTarefa(int idTarefa)
         {

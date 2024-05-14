@@ -59,6 +59,12 @@
     <Compile Include="AddDespesa.Designer.cs">
       <DependentUpon>AddDespesa.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFuncionario.Designer.cs">
+      <DependentUpon>AddFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddGanho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="AddDespesa.resx">
       <DependentUpon>AddDespesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddFuncionario.resx">
+      <DependentUpon>AddFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddGanho.resx">
       <DependentUpon>AddGanho.cs</DependentUpon>
@@ -157,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\calendar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

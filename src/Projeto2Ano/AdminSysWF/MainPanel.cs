@@ -23,6 +23,22 @@ namespace AdminSysWF
             refreshLucrosDataGridView();
             refreshDespesasDataGridView();
             refreshTarefasDataGridView();
+            refreshFuncionariosDataGridView();
+            refreshLucroAtual();
+        }
+
+        private void refreshLucroAtual()
+        {
+            float lucroHoje = Database.GetLucroDia(DateTime.Now, UserID);
+            lbl_LucroHoje.Text = lucroHoje.ToString() + "€";
+            if (lucroHoje < 0)
+            {
+                lbl_LucroHoje.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbl_LucroHoje.ForeColor = Color.LightGreen;
+            }
         }
 
         private void refreshTarefasDataGridView()
@@ -51,6 +67,16 @@ namespace AdminSysWF
             dataGridView2.Columns[1].HeaderText = "Valor";
             dataGridView2.Columns[2].HeaderText = "Data";
             dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void refreshFuncionariosDataGridView()
+        {
+            DataTable dt = Database.GetFuncionarios(UserID);
+            dataGridView3.DataSource = dt;
+            dataGridView3.Columns[0].HeaderText = "Nome";
+            dataGridView3.Columns[1].HeaderText = "Salário";
+            dataGridView3.Columns[2].HeaderText = "Cargo";
+            dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void RefreshChart()
@@ -117,6 +143,7 @@ namespace AdminSysWF
             addLucro.ShowDialog();
             RefreshChart();
             refreshLucrosDataGridView();
+            refreshLucroAtual();
         }
 
         private void btn_AddDespesa_Click_1(object sender, EventArgs e)
@@ -125,6 +152,15 @@ namespace AdminSysWF
             addDespesa.ShowDialog();
             RefreshChart();
             refreshDespesasDataGridView();
+            refreshLucroAtual();
+        }
+
+
+        private void btnAddFuncionario_Click(object sender, EventArgs e)
+        {
+            AddFuncionario addFuncionario = new AddFuncionario(UserID);
+            addFuncionario.ShowDialog();
+            refreshFuncionariosDataGridView();
         }
 
         private void button6_Click_1(object sender, EventArgs e)
