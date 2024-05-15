@@ -176,7 +176,12 @@ namespace AdminSysWF
 
         private void tarefasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.ColumnIndex == tarefasDataGridView.Columns[0].Index && e.RowIndex >= 0)
+            {
+                int tarefaId = Convert.ToInt32(tarefasDataGridView.Rows[e.RowIndex].Cells["ID"].Value);
+                Database.ConcluirTarefa(tarefaId);
+                refreshTarefasDataGridView();
+            }
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)

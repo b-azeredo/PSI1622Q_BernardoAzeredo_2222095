@@ -66,6 +66,9 @@
             this.Concluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_LucroHoje = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -80,21 +83,18 @@
             this.AdicionarDespesa = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddFuncionario = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -108,10 +108,10 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
+            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -291,6 +291,7 @@
             this.tarefasDataGridView.ThemeStyle.RowsStyle.Height = 40;
             this.tarefasDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.tarefasDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.tarefasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tarefasDataGridView_CellContentClick);
             this.tarefasDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.tarefasDataGridView_CellPainting);
             // 
             // Concluir
@@ -327,6 +328,39 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(388, 175);
             this.guna2Panel2.TabIndex = 16;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 129);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(189, 27);
+            this.guna2HtmlLabel3.TabIndex = 22;
+            this.guna2HtmlLabel3.Text = "Tarefas Concluídas";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(13, 96);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(229, 27);
+            this.guna2HtmlLabel2.TabIndex = 21;
+            this.guna2HtmlLabel2.Text = "Notificações Recebidas";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 63);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 27);
+            this.guna2HtmlLabel1.TabIndex = 20;
+            this.guna2HtmlLabel1.Text = "Lucro";
             // 
             // lbl_LucroHoje
             // 
@@ -650,65 +684,6 @@
             this.tabPage4.Text = "Funcionários";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.guna2Button6);
-            this.tabPage5.Controls.Add(this.guna2Button7);
-            this.tabPage5.Controls.Add(this.guna2DataGridView2);
-            this.tabPage5.Location = new System.Drawing.Point(184, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(899, 565);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Fornecedores";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.guna2Button8);
-            this.tabPage6.Controls.Add(this.guna2Button9);
-            this.tabPage6.Controls.Add(this.guna2DataGridView3);
-            this.tabPage6.Location = new System.Drawing.Point(184, 4);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(899, 565);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Estoque";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 63);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 27);
-            this.guna2HtmlLabel1.TabIndex = 20;
-            this.guna2HtmlLabel1.Text = "Lucro";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(13, 96);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(229, 27);
-            this.guna2HtmlLabel2.TabIndex = 21;
-            this.guna2HtmlLabel2.Text = "Notificações Recebidas";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 129);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(189, 27);
-            this.guna2HtmlLabel3.TabIndex = 22;
-            this.guna2HtmlLabel3.Text = "Tarefas Concluídas";
-            // 
             // guna2Button4
             // 
             this.guna2Button4.Animated = true;
@@ -819,6 +794,19 @@
             this.dataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.dataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.guna2Button6);
+            this.tabPage5.Controls.Add(this.guna2Button7);
+            this.tabPage5.Controls.Add(this.guna2DataGridView2);
+            this.tabPage5.Location = new System.Drawing.Point(184, 4);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(899, 565);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Fornecedores";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // guna2Button6
             // 
             this.guna2Button6.Animated = true;
@@ -927,6 +915,19 @@
             this.guna2DataGridView2.ThemeStyle.RowsStyle.Height = 40;
             this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.guna2Button8);
+            this.tabPage6.Controls.Add(this.guna2Button9);
+            this.tabPage6.Controls.Add(this.guna2DataGridView3);
+            this.tabPage6.Location = new System.Drawing.Point(184, 4);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(899, 565);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Estoque";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // guna2Button8
             // 
@@ -1063,10 +1064,10 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView3)).EndInit();
             this.ResumeLayout(false);
 
