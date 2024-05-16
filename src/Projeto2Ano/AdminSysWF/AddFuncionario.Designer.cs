@@ -131,6 +131,7 @@
             this.Controls.Add(this.txb_SalarioFuncionario);
             this.Controls.Add(this.txb_NomeFuncionario);
             this.Name = "AddFuncionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Funcionário";
             this.ResumeLayout(false);
 
