@@ -28,13 +28,14 @@ namespace AdminSysWF
             {
                 if (Database.addDespesa(userID, desc, valorInt))
                 {
-                    MessageBox.Show("Despesa adicionada com sucesso.");
+                    MessageBox.Show("Despesa adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Preencha corretamente os valores.");
+                MessageBox.Show("Erro ao adicionar a despesa.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
     }

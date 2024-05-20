@@ -84,6 +84,12 @@
     <Compile Include="Definicoes.Designer.cs">
       <DependentUpon>Definicoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCategoria.Designer.cs">
+      <DependentUpon>AddCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Definicoes.resx">
       <DependentUpon>Definicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCategoria.resx">
+      <DependentUpon>AddCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

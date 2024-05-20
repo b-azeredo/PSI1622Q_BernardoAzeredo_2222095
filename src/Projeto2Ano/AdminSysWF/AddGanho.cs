@@ -33,13 +33,14 @@ namespace AdminSysWF
             {
                 if (Database.addLucro(userID, desc, valorInt))
                 {
-                    MessageBox.Show("Lucro adicionado com sucesso.");
+                    MessageBox.Show("Ganho adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Preencha corretamente os valores.");
+                MessageBox.Show("Erro ao adicionar ganho", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

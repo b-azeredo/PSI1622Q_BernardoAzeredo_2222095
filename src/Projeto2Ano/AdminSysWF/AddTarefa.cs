@@ -21,7 +21,15 @@ namespace AdminSysWF
 
         private void ComfirmAddDespesa_Click(object sender, EventArgs e)
         {
-            Database.AddTarefa(userID, txb_DescTarefa.Text);
+            if (Database.AddTarefa(userID, txb_DescTarefa.Text))
+            {
+                MessageBox.Show("Tarefa adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao adicionar tarefa", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
             this.Close();
         }
     }

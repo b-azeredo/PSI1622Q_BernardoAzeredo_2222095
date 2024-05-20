@@ -43,10 +43,9 @@
             this.ComfirmAddDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
             this.ComfirmAddDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddDespesa.ForeColor = System.Drawing.Color.White;
-            this.ComfirmAddDespesa.Location = new System.Drawing.Point(115, 149);
-            this.ComfirmAddDespesa.Margin = new System.Windows.Forms.Padding(4);
+            this.ComfirmAddDespesa.Location = new System.Drawing.Point(69, 102);
             this.ComfirmAddDespesa.Name = "ComfirmAddDespesa";
-            this.ComfirmAddDespesa.Size = new System.Drawing.Size(257, 48);
+            this.ComfirmAddDespesa.Size = new System.Drawing.Size(193, 39);
             this.ComfirmAddDespesa.TabIndex = 19;
             this.ComfirmAddDespesa.Text = "Adicionar";
             this.ComfirmAddDespesa.Click += new System.EventHandler(this.ComfirmAddDespesa_Click);
@@ -55,7 +54,7 @@
             // 
             this.txb_DescTarefa.Animated = true;
             this.txb_DescTarefa.AutoRoundedCorners = true;
-            this.txb_DescTarefa.BorderRadius = 21;
+            this.txb_DescTarefa.BorderRadius = 17;
             this.txb_DescTarefa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txb_DescTarefa.DefaultText = "";
             this.txb_DescTarefa.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -65,22 +64,22 @@
             this.txb_DescTarefa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescTarefa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_DescTarefa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_DescTarefa.Location = new System.Drawing.Point(115, 97);
-            this.txb_DescTarefa.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_DescTarefa.Location = new System.Drawing.Point(69, 60);
             this.txb_DescTarefa.Name = "txb_DescTarefa";
             this.txb_DescTarefa.PasswordChar = '\0';
             this.txb_DescTarefa.PlaceholderText = "Descrição da Tarefa";
             this.txb_DescTarefa.SelectedText = "";
-            this.txb_DescTarefa.Size = new System.Drawing.Size(257, 44);
+            this.txb_DescTarefa.Size = new System.Drawing.Size(193, 36);
             this.txb_DescTarefa.TabIndex = 17;
             // 
             // AddTarefa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 293);
+            this.ClientSize = new System.Drawing.Size(333, 201);
             this.Controls.Add(this.ComfirmAddDespesa);
             this.Controls.Add(this.txb_DescTarefa);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Tarefa";

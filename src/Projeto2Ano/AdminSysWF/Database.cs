@@ -427,7 +427,7 @@ namespace AdminSysWF
             }
         }
 
-        public static void AddTarefa(int userID, string descricao)
+        public static bool AddTarefa(int userID, string descricao)
         {
             try
             {
@@ -439,12 +439,75 @@ namespace AdminSysWF
                         cmd.Parameters.AddWithValue("@userID", userID);
                         cmd.Parameters.AddWithValue("@descricao", descricao);
                         cmd.ExecuteNonQuery();
+                        return true;
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao adicionar a tarefa: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool AddFornecedor(int userID, string nome, string email, string telefone, string categoria)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "INSERT INTO FORNECEDORES (USER_ID, NOME, EMAIL, TELEFONE, CATEGORIA) VALUES (@userID, @nome, @email, @telefone, @categoria)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", userID);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@telefone", telefone);
+                        cmd.Parameters.AddWithValue("@categoria", categoria);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar o fornecedor: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool AddCategoria(int userID, string nome)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "INSERT INTO CATEGORIAS (USER_ID, NOME) VALUES (@userID, @nome)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", userID);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar a categoria: " + ex.Message);
+                return false;
             }
         }
 

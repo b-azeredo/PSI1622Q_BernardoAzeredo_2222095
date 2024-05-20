@@ -214,5 +214,10 @@ namespace AdminSysWF
             }
         }
 
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            AddCategoria addCategoria = new AddCategoria(UserID);
+            addCategoria.ShowDialog();
+        }
     }
 }

@@ -103,6 +103,7 @@
             this.Controls.Add(this.ComfirmAddDespesa);
             this.Controls.Add(this.txb_ValorDespesa);
             this.Controls.Add(this.txb_DescDespesa);
+            this.MaximizeBox = false;
             this.Name = "AddDespesa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Despesa";
