@@ -25,6 +25,8 @@ namespace AdminSysWF
             refreshTarefasDataGridView();
             refreshFuncionariosDataGridView();
             refreshLucroAtual();
+            refreshEstoqueDataGridView();
+            refreshCategoriasDataGridView();
         }
 
         private void refreshLucroAtual()
@@ -39,6 +41,19 @@ namespace AdminSysWF
             {
                 lbl_LucroHoje.ForeColor = Color.LightGreen;
             }
+        }
+
+        private void refreshEstoqueDataGridView()
+        {
+            DataTable dt = Database.GetEstoque(UserID);
+            EstoqueDataGridView.DataSource = dt;
+        }
+
+        private void refreshCategoriasDataGridView()
+        {
+            DataTable dt = Database.GetCategorias(UserID);
+            CategoriasDataGridView.DataSource = dt;
+            CategoriasDataGridView.Columns[0].Visible = false;
         }
 
         private void refreshTarefasDataGridView()
@@ -218,6 +233,14 @@ namespace AdminSysWF
         {
             AddCategoria addCategoria = new AddCategoria(UserID);
             addCategoria.ShowDialog();
+            refreshCategoriasDataGridView();
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            AddProduto addProduto = new AddProduto(UserID);
+            addProduto.ShowDialog();
+            refreshEstoqueDataGridView();
         }
     }
 }

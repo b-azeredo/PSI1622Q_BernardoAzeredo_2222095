@@ -511,5 +511,100 @@ namespace AdminSysWF
             }
         }
 
+        public static DataTable GetCategorias(int userId)
+        {
+            DataTable categoriasTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT ID, NOME FROM CATEGORIAS WHERE USER_ID = @userId ORDER BY NOME";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(categoriasTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter as categorias: " + ex.Message);
+            }
+
+            return categoriasTable;
+        }
+
+
+        public static DataTable GetEstoque(int userId)
+        {
+            DataTable estoqueTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"SELECT e.PRODUTO, e.QUANTIDADE, c.NOME AS CATEGORIA 
+                             FROM ESTOQUE e
+                             JOIN CATEGORIAS c ON e.ID_CATEGORIA = c.ID
+                             WHERE e.USER_ID = @userId 
+                             ORDER BY e.PRODUTO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(estoqueTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o estoque: " + ex.Message);
+            }
+
+            return estoqueTable;
+        }
+
+
+
+        public static bool AddProduto(int userId, string produto, int quantidade, int idCategoria)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "INSERT INTO ESTOQUE (USER_ID, PRODUTO, QUANTIDADE, ID_CATEGORIA) VALUES (@userId, @produto, @quantidade, @idCategoria)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@produto", produto);
+                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
+                        cmd.Parameters.AddWithValue("@idCategoria", idCategoria);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar o produto ao estoque: " + ex.Message);
+                return false;
+            }
+        }
+
     }
 }

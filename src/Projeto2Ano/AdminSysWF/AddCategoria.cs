@@ -24,6 +24,7 @@ namespace AdminSysWF
             if (Database.AddCategoria(userID, txb_nomeCategoria.Text))
             {
                 MessageBox.Show("Categoria adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
