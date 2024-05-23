@@ -27,6 +27,7 @@ namespace AdminSysWF
             refreshLucroAtual();
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
+            refreshFornecedoresDataGridView();
         }
 
         private void refreshLucroAtual()
@@ -41,6 +42,12 @@ namespace AdminSysWF
             {
                 lbl_LucroHoje.ForeColor = Color.LightGreen;
             }
+        }
+
+        private void refreshFornecedoresDataGridView()
+        {
+            DataTable dt = Database.GetFornecedores(UserID);
+            FornecedoresDataGridView.DataSource = dt;
         }
 
         private void refreshEstoqueDataGridView()
@@ -241,6 +248,13 @@ namespace AdminSysWF
             AddProduto addProduto = new AddProduto(UserID);
             addProduto.ShowDialog();
             refreshEstoqueDataGridView();
+        }
+
+        private void btn_AddFornecedores_Click(object sender, EventArgs e)
+        {
+            AddFornecedor addFornecedor = new AddFornecedor(UserID);
+            addFornecedor.ShowDialog();
+            refreshFornecedoresDataGridView();
         }
     }
 }

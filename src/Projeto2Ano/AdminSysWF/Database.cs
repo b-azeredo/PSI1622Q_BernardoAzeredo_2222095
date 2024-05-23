@@ -606,5 +606,39 @@ namespace AdminSysWF
             }
         }
 
+        public static DataTable GetFornecedores(int userId)
+        {
+            DataTable fornecedoresTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"
+                        SELECT f.NOME, f.EMAIL, f.TELEFONE, c.NOME AS CATEGORIA 
+                        FROM FORNECEDORES f
+                        INNER JOIN CATEGORIAS c ON f.ID_CATEGORIA = c.ID
+                        WHERE f.USER_ID = @userId
+                        ORDER BY f.NOME";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(fornecedoresTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os fornecedores: " + ex.Message);
+            }
+
+            return fornecedoresTable;
+        }
+
+
     }
 }
