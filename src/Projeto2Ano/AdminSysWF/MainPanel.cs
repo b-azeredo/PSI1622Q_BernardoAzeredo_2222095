@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.Charts.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,15 +111,21 @@ namespace AdminSysWF
                 ultimos7dias.Add(dataInicial.AddDays(i));
             }
 
-            Series series = new Series("Lucro");
-            series.ChartType = SeriesChartType.Column;
+            gunaChart1.Legend.Display = false;
+
+            var series = new Guna.Charts.WinForms.GunaLineDataset
+            {
+                Label = "Lucro",
+                BorderWidth = 1,
+                BorderColor = Color.DarkGray,
+            };
 
             float lucroMaximo = float.MinValue;
 
             foreach (DateTime dia in ultimos7dias)
             {
                 float lucroDespesaDia = Database.GetLucroDia(dia, UserID);
-                series.Points.AddXY(dia.ToString("dd/MM"), lucroDespesaDia);
+                series.DataPoints.Add(dia.ToString("dd/MM"), lucroDespesaDia);
 
                 if (lucroDespesaDia > lucroMaximo)
                 {
@@ -126,37 +133,11 @@ namespace AdminSysWF
                 }
             }
 
-            chart1.Series.Clear();
-            chart1.Series.Add(series);
+            gunaChart1.Datasets.Clear();
+            gunaChart1.Datasets.Add(series);
 
-            series.Color = Color.DarkGray;
-            series.BorderColor = Color.Black;
-            series.BorderWidth = 1;
-            series.IsXValueIndexed = true;
-
-            int intervaloY = CalculateIntervalY(lucroMaximo);
-
-            chart1.ChartAreas[0].AxisX.Interval = 1;
-            chart1.ChartAreas[0].AxisY.Interval = intervaloY;
-            chart1.Update();
+            gunaChart1.Update();
         }
-
-        private int CalculateIntervalY(float valorMaximo)
-        {
-            int[] multiplos = {50, 100, 500, 1000, 5000 };
-
-            int intervaloY = multiplos[0];
-            for (int i = 1; i < 5; i++)
-            {
-                if (valorMaximo > multiplos[i])
-                {
-                    intervaloY = multiplos[i - 1];
-                }
-            }
-
-            return intervaloY;
-        }
-
 
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
@@ -176,7 +157,6 @@ namespace AdminSysWF
             refreshDespesasDataGridView();
             refreshLucroAtual();
         }
-
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
         {

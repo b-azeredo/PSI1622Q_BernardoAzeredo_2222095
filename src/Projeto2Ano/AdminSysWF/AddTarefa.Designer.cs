@@ -34,13 +34,13 @@
             // 
             // ComfirmAddDespesa
             // 
-            this.ComfirmAddDespesa.BackColor = System.Drawing.SystemColors.Control;
+            this.ComfirmAddDespesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ComfirmAddDespesa.BorderRadius = 15;
             this.ComfirmAddDespesa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddDespesa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddDespesa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.ComfirmAddDespesa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ComfirmAddDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.ComfirmAddDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.ComfirmAddDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddDespesa.ForeColor = System.Drawing.Color.White;
             this.ComfirmAddDespesa.Location = new System.Drawing.Point(69, 102);
@@ -61,6 +61,7 @@
             this.txb_DescTarefa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_DescTarefa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_DescTarefa.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_DescTarefa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_DescTarefa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescTarefa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_DescTarefa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -76,10 +77,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(333, 201);
             this.Controls.Add(this.ComfirmAddDespesa);
             this.Controls.Add(this.txb_DescTarefa);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddTarefa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Tarefa";

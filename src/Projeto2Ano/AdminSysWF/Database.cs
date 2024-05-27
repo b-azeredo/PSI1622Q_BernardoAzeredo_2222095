@@ -450,7 +450,7 @@ namespace AdminSysWF
             }
         }
 
-        public static bool AddFornecedor(int userID, string nome, string email, string telefone, string categoria)
+        public static bool AddFornecedor(int userID, string nome, string email, string telefone, int categoria)
         {
             try
             {
@@ -461,7 +461,7 @@ namespace AdminSysWF
                         return false;
                     }
 
-                    string query = "INSERT INTO FORNECEDORES (USER_ID, NOME, EMAIL, TELEFONE, CATEGORIA) VALUES (@userID, @nome, @email, @telefone, @categoria)";
+                    string query = "INSERT INTO FORNECEDORES (USER_ID, NOME, EMAIL, TELEFONE, ID_CATEGORIA) VALUES (@userID, @nome, @email, @telefone, @categoria)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userID", userID);

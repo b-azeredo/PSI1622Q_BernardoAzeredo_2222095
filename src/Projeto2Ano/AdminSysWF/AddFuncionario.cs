@@ -25,14 +25,12 @@ namespace AdminSysWF
             if (float.TryParse(txb_SalarioFuncionario.Text, out salario))
             {
                 Database.addFuncionario(userID, txb_NomeFuncionario.Text, salario, txb_CargoFuncionario.Text);
-                MessageBox.Show("Funcionário adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show("Funcionário adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Erro ao adicionar a funcionário.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
     }

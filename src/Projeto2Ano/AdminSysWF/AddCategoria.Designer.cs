@@ -34,13 +34,13 @@
             // 
             // ComfirmAddCategoria
             // 
-            this.ComfirmAddCategoria.BackColor = System.Drawing.SystemColors.Control;
+            this.ComfirmAddCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ComfirmAddCategoria.BorderRadius = 15;
             this.ComfirmAddCategoria.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddCategoria.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddCategoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.ComfirmAddCategoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ComfirmAddCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.ComfirmAddCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.ComfirmAddCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddCategoria.ForeColor = System.Drawing.Color.White;
             this.ComfirmAddCategoria.Location = new System.Drawing.Point(79, 110);
@@ -61,6 +61,7 @@
             this.txb_nomeCategoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_nomeCategoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_nomeCategoria.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_nomeCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_nomeCategoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_nomeCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_nomeCategoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -76,6 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(351, 209);
             this.Controls.Add(this.ComfirmAddCategoria);
             this.Controls.Add(this.txb_nomeCategoria);

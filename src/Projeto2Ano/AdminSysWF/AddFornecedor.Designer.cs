@@ -46,13 +46,14 @@
             this.txb_NumeroFornecedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_NumeroFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_NumeroFornecedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_NumeroFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NumeroFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NumeroFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_NumeroFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NumeroFornecedor.Location = new System.Drawing.Point(83, 116);
             this.txb_NumeroFornecedor.Name = "txb_NumeroFornecedor";
             this.txb_NumeroFornecedor.PasswordChar = '\0';
-            this.txb_NumeroFornecedor.PlaceholderText = "Número do Fornecedor";
+            this.txb_NumeroFornecedor.PlaceholderText = "Telefone do Fornecedor";
             this.txb_NumeroFornecedor.SelectedText = "";
             this.txb_NumeroFornecedor.Size = new System.Drawing.Size(193, 36);
             this.txb_NumeroFornecedor.TabIndex = 27;
@@ -61,13 +62,13 @@
             // 
             this.ComfirmAddLucro.Animated = true;
             this.ComfirmAddLucro.AutoRoundedCorners = true;
-            this.ComfirmAddLucro.BackColor = System.Drawing.SystemColors.Control;
+            this.ComfirmAddLucro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ComfirmAddLucro.BorderRadius = 19;
             this.ComfirmAddLucro.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddLucro.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddLucro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.ComfirmAddLucro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ComfirmAddLucro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.ComfirmAddLucro.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.ComfirmAddLucro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddLucro.ForeColor = System.Drawing.Color.White;
             this.ComfirmAddLucro.IndicateFocus = true;
@@ -76,6 +77,7 @@
             this.ComfirmAddLucro.Size = new System.Drawing.Size(193, 40);
             this.ComfirmAddLucro.TabIndex = 26;
             this.ComfirmAddLucro.Text = "Adicionar";
+            this.ComfirmAddLucro.Click += new System.EventHandler(this.ComfirmAddLucro_Click);
             // 
             // txb_EmailFornecedor
             // 
@@ -88,6 +90,7 @@
             this.txb_EmailFornecedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_EmailFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_EmailFornecedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_EmailFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_EmailFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_EmailFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_EmailFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -110,6 +113,7 @@
             this.txb_NomeFornecedor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_NomeFornecedor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_NomeFornecedor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_NomeFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NomeFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_NomeFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -127,10 +131,11 @@
             this.categoriasComboBox.BorderRadius = 17;
             this.categoriasComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.categoriasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoriasComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.categoriasComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.categoriasComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.categoriasComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.categoriasComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.categoriasComboBox.ForeColor = System.Drawing.Color.White;
             this.categoriasComboBox.ItemHeight = 30;
             this.categoriasComboBox.Location = new System.Drawing.Point(83, 158);
             this.categoriasComboBox.Name = "categoriasComboBox";
@@ -141,6 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(358, 262);
             this.Controls.Add(this.categoriasComboBox);
             this.Controls.Add(this.txb_NumeroFornecedor);
@@ -148,6 +154,7 @@
             this.Controls.Add(this.txb_EmailFornecedor);
             this.Controls.Add(this.txb_NomeFornecedor);
             this.Name = "AddFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Fornecedor";
             this.ResumeLayout(false);
 

@@ -38,13 +38,13 @@
             // 
             this.ComfirmAddProduto.Animated = true;
             this.ComfirmAddProduto.AutoRoundedCorners = true;
-            this.ComfirmAddProduto.BackColor = System.Drawing.SystemColors.Control;
+            this.ComfirmAddProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ComfirmAddProduto.BorderRadius = 19;
             this.ComfirmAddProduto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddProduto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.ComfirmAddProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.ComfirmAddProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.ComfirmAddProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(23)))), ((int)(((byte)(40)))));
+            this.ComfirmAddProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.ComfirmAddProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddProduto.ForeColor = System.Drawing.Color.White;
             this.ComfirmAddProduto.IndicateFocus = true;
@@ -66,6 +66,7 @@
             this.txb_QuantidadeProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_QuantidadeProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_QuantidadeProduto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_QuantidadeProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_QuantidadeProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_QuantidadeProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_QuantidadeProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -88,6 +89,7 @@
             this.txb_NomeProduto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txb_NomeProduto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txb_NomeProduto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_NomeProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NomeProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txb_NomeProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -105,10 +107,11 @@
             this.categoriasComboBox.BorderRadius = 17;
             this.categoriasComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.categoriasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoriasComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.categoriasComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.categoriasComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.categoriasComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.categoriasComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.categoriasComboBox.ForeColor = System.Drawing.Color.White;
             this.categoriasComboBox.ItemHeight = 30;
             this.categoriasComboBox.Location = new System.Drawing.Point(98, 130);
             this.categoriasComboBox.Name = "categoriasComboBox";
@@ -119,6 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(392, 269);
             this.Controls.Add(this.categoriasComboBox);
             this.Controls.Add(this.ComfirmAddProduto);
