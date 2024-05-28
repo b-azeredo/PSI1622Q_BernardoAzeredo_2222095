@@ -68,6 +68,7 @@
             this.txb_ValorDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_ValorDespesa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_ValorDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_ValorDespesa.ForeColor = System.Drawing.Color.White;
             this.txb_ValorDespesa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_ValorDespesa.Location = new System.Drawing.Point(80, 90);
             this.txb_ValorDespesa.Name = "txb_ValorDespesa";
@@ -91,6 +92,7 @@
             this.txb_DescDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_DescDespesa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_DescDespesa.ForeColor = System.Drawing.Color.White;
             this.txb_DescDespesa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescDespesa.Location = new System.Drawing.Point(80, 48);
             this.txb_DescDespesa.Name = "txb_DescDespesa";

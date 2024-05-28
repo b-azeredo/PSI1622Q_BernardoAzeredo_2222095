@@ -64,6 +64,7 @@
             this.txb_DescTarefa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_DescTarefa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescTarefa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_DescTarefa.ForeColor = System.Drawing.Color.White;
             this.txb_DescTarefa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_DescTarefa.Location = new System.Drawing.Point(69, 60);
             this.txb_DescTarefa.Name = "txb_DescTarefa";

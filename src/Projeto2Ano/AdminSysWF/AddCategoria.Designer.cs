@@ -64,6 +64,7 @@
             this.txb_nomeCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_nomeCategoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_nomeCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_nomeCategoria.ForeColor = System.Drawing.Color.White;
             this.txb_nomeCategoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_nomeCategoria.Location = new System.Drawing.Point(79, 68);
             this.txb_nomeCategoria.Name = "txb_nomeCategoria";

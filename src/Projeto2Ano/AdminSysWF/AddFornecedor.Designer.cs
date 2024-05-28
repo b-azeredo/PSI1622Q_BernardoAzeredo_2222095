@@ -49,6 +49,7 @@
             this.txb_NumeroFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NumeroFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NumeroFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_NumeroFornecedor.ForeColor = System.Drawing.Color.White;
             this.txb_NumeroFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NumeroFornecedor.Location = new System.Drawing.Point(83, 116);
             this.txb_NumeroFornecedor.Name = "txb_NumeroFornecedor";
@@ -93,6 +94,7 @@
             this.txb_EmailFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_EmailFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_EmailFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_EmailFornecedor.ForeColor = System.Drawing.Color.White;
             this.txb_EmailFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_EmailFornecedor.Location = new System.Drawing.Point(83, 74);
             this.txb_EmailFornecedor.Name = "txb_EmailFornecedor";
@@ -116,6 +118,7 @@
             this.txb_NomeFornecedor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NomeFornecedor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeFornecedor.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_NomeFornecedor.ForeColor = System.Drawing.Color.White;
             this.txb_NomeFornecedor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeFornecedor.Location = new System.Drawing.Point(83, 32);
             this.txb_NomeFornecedor.Name = "txb_NomeFornecedor";

@@ -70,6 +70,7 @@
             this.txb_SalarioFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_SalarioFuncionario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_SalarioFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_SalarioFuncionario.ForeColor = System.Drawing.Color.White;
             this.txb_SalarioFuncionario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_SalarioFuncionario.Location = new System.Drawing.Point(78, 89);
             this.txb_SalarioFuncionario.Name = "txb_SalarioFuncionario";
@@ -93,6 +94,7 @@
             this.txb_NomeFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NomeFuncionario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_NomeFuncionario.ForeColor = System.Drawing.Color.White;
             this.txb_NomeFuncionario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeFuncionario.Location = new System.Drawing.Point(78, 47);
             this.txb_NomeFuncionario.Name = "txb_NomeFuncionario";

@@ -69,6 +69,7 @@
             this.txb_QuantidadeProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_QuantidadeProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_QuantidadeProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_QuantidadeProduto.ForeColor = System.Drawing.Color.White;
             this.txb_QuantidadeProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_QuantidadeProduto.Location = new System.Drawing.Point(98, 88);
             this.txb_QuantidadeProduto.Name = "txb_QuantidadeProduto";
@@ -92,6 +93,7 @@
             this.txb_NomeProduto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_NomeProduto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeProduto.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_NomeProduto.ForeColor = System.Drawing.Color.White;
             this.txb_NomeProduto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_NomeProduto.Location = new System.Drawing.Point(98, 46);
             this.txb_NomeProduto.Name = "txb_NomeProduto";

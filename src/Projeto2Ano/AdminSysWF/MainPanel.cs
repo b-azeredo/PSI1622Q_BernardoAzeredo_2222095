@@ -139,7 +139,6 @@ namespace AdminSysWF
             gunaChart1.Update();
         }
 
-
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
             AddGanho addLucro = new AddGanho(UserID);
@@ -232,9 +231,17 @@ namespace AdminSysWF
 
         private void btn_AddFornecedores_Click(object sender, EventArgs e)
         {
-            AddFornecedor addFornecedor = new AddFornecedor(UserID);
-            addFornecedor.ShowDialog();
-            refreshFornecedoresDataGridView();
+            if (Database.GetNumeroDeCategorias(UserID) > 0)
+            {
+                AddFornecedor addFornecedor = new AddFornecedor(UserID);
+                addFornecedor.ShowDialog();
+                refreshFornecedoresDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Adicione ao menos uma categoria antes de adicionar um fornecedor.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

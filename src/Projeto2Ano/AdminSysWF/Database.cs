@@ -639,6 +639,45 @@ namespace AdminSysWF
             return fornecedoresTable;
         }
 
+        public static int GetNumeroDeCategorias(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return -1;
+                    }
+
+                    string query = "SELECT COUNT(*) FROM CATEGORIAS WHERE USER_ID = @userId";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        int count = (int)cmd.ExecuteScalar();
+                        return count;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o número de categorias: " + ex.Message);
+                return -1;
+            }
+        }
+
+        public static bool RemoverGanho(int id)
+        {
+            return true;
+        }
+
+        public static bool RemoverDespesa(int id)
+        {
+            return true;
+
+        }
+
 
     }
 }
