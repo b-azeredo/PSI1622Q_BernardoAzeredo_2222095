@@ -669,15 +669,138 @@ namespace AdminSysWF
 
         public static bool RemoverGanho(int id)
         {
-            return true;
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM GANHOS WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o ganho: " + ex.Message);
+                return false;
+            }
         }
 
         public static bool RemoverDespesa(int id)
         {
-            return true;
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
 
+                    string query = "DELETE FROM DESPESAS WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover a despesa: " + ex.Message);
+                return false;
+            }
         }
 
+        public static bool RemoverFuncionario(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM FUNCIONARIOS WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o funcionário: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool RemoverFornecedor(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM FORNECEDORES WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o fornecedor: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool RemoverProduto(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM ESTOQUE WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o produto: " + ex.Message);
+                return false;
+            }
+        }
 
     }
 }
