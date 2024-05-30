@@ -302,7 +302,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = "SELECT DESCRICAO, VALOR, DATA FROM GANHOS WHERE USER_ID = @userId ORDER BY DATA DESC";
+                    string query = "SELECT ID, DESCRICAO, VALOR, DATA FROM GANHOS WHERE USER_ID = @userId ORDER BY DATA DESC";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -330,7 +330,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = "SELECT DESCRICAO, VALOR, DATA FROM DESPESAS WHERE USER_ID = @userId ORDER BY DATA DESC";
+                    string query = "SELECT ID, DESCRICAO, VALOR, DATA FROM DESPESAS WHERE USER_ID = @userId ORDER BY DATA DESC";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -386,7 +386,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = "SELECT NOME, SALARIO, CARGO FROM FUNCIONARIOS WHERE USER_ID = @userId ORDER BY NOME";
+                    string query = "SELECT ID, NOME, SALARIO, CARGO FROM FUNCIONARIOS WHERE USER_ID = @userId ORDER BY NOME";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -548,7 +548,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = @"SELECT e.PRODUTO, e.QUANTIDADE, c.NOME AS CATEGORIA 
+                    string query = @"SELECT e.ID, e.PRODUTO, e.QUANTIDADE, c.NOME AS CATEGORIA 
                              FROM ESTOQUE e
                              JOIN CATEGORIAS c ON e.ID_CATEGORIA = c.ID
                              WHERE e.USER_ID = @userId 
@@ -615,7 +615,7 @@ namespace AdminSysWF
                 using (SqlConnection connection = Connect())
                 {
                     string query = @"
-                        SELECT f.NOME, f.EMAIL, f.TELEFONE, c.NOME AS CATEGORIA 
+                        SELECT f.ID, f.NOME, f.EMAIL, f.TELEFONE, c.NOME AS CATEGORIA 
                         FROM FORNECEDORES f
                         INNER JOIN CATEGORIAS c ON f.ID_CATEGORIA = c.ID
                         WHERE f.USER_ID = @userId

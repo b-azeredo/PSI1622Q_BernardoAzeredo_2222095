@@ -49,12 +49,21 @@ namespace AdminSysWF
         {
             DataTable dt = Database.GetFornecedores(UserID);
             FornecedoresDataGridView.DataSource = dt;
+            FornecedoresDataGridView.Columns[0].Visible = false;
+            FornecedoresDataGridView.Columns[1].HeaderText = "Nome";
+            FornecedoresDataGridView.Columns[2].HeaderText = "Email";
+            FornecedoresDataGridView.Columns[3].HeaderText = "Telefone";
+            FornecedoresDataGridView.Columns[4].HeaderText = "Categoria";
         }
 
         private void refreshEstoqueDataGridView()
         {
             DataTable dt = Database.GetEstoque(UserID);
             EstoqueDataGridView.DataSource = dt;
+            EstoqueDataGridView.Columns[0].Visible = false;
+            EstoqueDataGridView.Columns[1].HeaderText = "Produto";
+            EstoqueDataGridView.Columns[2].HeaderText = "Quantidade";
+            EstoqueDataGridView.Columns[3].HeaderText = "Categoria";
         }
 
         private void refreshCategoriasDataGridView()
@@ -76,30 +85,33 @@ namespace AdminSysWF
         {
             DataTable dt = Database.GetGanhos(UserID);
             dataGridView1.DataSource = dt;
-            dataGridView1.Columns[0].HeaderText = "Descrição";
-            dataGridView1.Columns[1].HeaderText = "Valor";
-            dataGridView1.Columns[2].HeaderText = "Data";
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].HeaderText = "Descrição";
+            dataGridView1.Columns[2].HeaderText = "Valor";
+            dataGridView1.Columns[3].HeaderText = "Data";
+            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void refreshDespesasDataGridView()
         {
             DataTable dt = Database.GetDespesas(UserID);
             dataGridView2.DataSource = dt;
-            dataGridView2.Columns[0].HeaderText = "Descrição";
-            dataGridView2.Columns[1].HeaderText = "Valor";
-            dataGridView2.Columns[2].HeaderText = "Data";
-            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[1].HeaderText = "Descrição";
+            dataGridView2.Columns[2].HeaderText = "Valor";
+            dataGridView2.Columns[3].HeaderText = "Data";
+            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void refreshFuncionariosDataGridView()
         {
             DataTable dt = Database.GetFuncionarios(UserID);
             dataGridView3.DataSource = dt;
-            dataGridView3.Columns[0].HeaderText = "Nome";
-            dataGridView3.Columns[1].HeaderText = "Salário";
-            dataGridView3.Columns[2].HeaderText = "Cargo";
-            dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView3.Columns[0].Visible = false;
+            dataGridView3.Columns[1].HeaderText = "Nome";
+            dataGridView3.Columns[2].HeaderText = "Salário";
+            dataGridView3.Columns[3].HeaderText = "Cargo";
+            dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void RefreshChart()
@@ -243,5 +255,33 @@ namespace AdminSysWF
 
             }
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string columnName = "CheckboxColumn";
+
+            if (dataGridView1.Columns.Contains(columnName))
+            {
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    DataGridViewCheckBoxCell checkBoxCell = dataGridView1.Rows[i].Cells[columnName] as DataGridViewCheckBoxCell;
+                    if (checkBoxCell != null && (bool)checkBoxCell.Value)
+                    {
+                        int id = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
+                        Database.RemoverGanho(id);
+                    }
+                }
+                refreshLucrosDataGridView();
+            }
+            else
+            {
+                DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
+                checkboxColumn.Name = columnName;
+                checkboxColumn.HeaderText = "Remover";
+                checkboxColumn.Width = 30;
+                dataGridView1.Columns.Add(checkboxColumn);
+            }
+        }
+
     }
 }
