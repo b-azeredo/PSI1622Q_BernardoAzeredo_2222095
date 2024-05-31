@@ -15,6 +15,18 @@ namespace AdminSysWF
     public partial class MainPanel : Form
     {
         int UserID;
+
+        private void SetDataGridViewReadOnly(DataGridView dataGridView)
+        {
+            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            {
+                if (i != 0) // Índice 0 é a primeira coluna
+                {
+                    dataGridView.Columns[i].ReadOnly = true;
+                }
+            }
+        }
+
         public MainPanel(int userID, string username)
         {
             InitializeComponent();
@@ -29,6 +41,7 @@ namespace AdminSysWF
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
             refreshFornecedoresDataGridView();
+
         }
 
         private void refreshLucroAtual()
@@ -55,6 +68,7 @@ namespace AdminSysWF
             FornecedoresDataGridView.Columns[3].HeaderText = "Email";
             FornecedoresDataGridView.Columns[4].HeaderText = "Telefone";
             FornecedoresDataGridView.Columns[5].HeaderText = "Categoria";
+            SetDataGridViewReadOnly(FornecedoresDataGridView);
         }
 
         private void refreshEstoqueDataGridView()
@@ -66,6 +80,7 @@ namespace AdminSysWF
             EstoqueDataGridView.Columns[2].HeaderText = "Produto";
             EstoqueDataGridView.Columns[3].HeaderText = "Quantidade";
             EstoqueDataGridView.Columns[4].HeaderText = "Categoria";
+            SetDataGridViewReadOnly(EstoqueDataGridView);
         }
 
         private void refreshCategoriasDataGridView()
@@ -74,6 +89,7 @@ namespace AdminSysWF
             CategoriasDataGridView.DataSource = dt;
             CategoriasDataGridView.Columns[0].Visible = false;
             CategoriasDataGridView.Columns[1].Visible = false;
+            SetDataGridViewReadOnly(CategoriasDataGridView);
         }
 
         private void refreshTarefasDataGridView()
@@ -94,6 +110,8 @@ namespace AdminSysWF
             dataGridView1.Columns[3].HeaderText = "Valor";
             dataGridView1.Columns[4].HeaderText = "Data";
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            refreshLucroAtual();
+            SetDataGridViewReadOnly(dataGridView1);
         }
 
         private void refreshDespesasDataGridView()
@@ -106,6 +124,8 @@ namespace AdminSysWF
             dataGridView2.Columns[3].HeaderText = "Valor";
             dataGridView2.Columns[4].HeaderText = "Data";
             dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            refreshLucroAtual();
+            SetDataGridViewReadOnly(dataGridView2);
         }
 
         private void refreshFuncionariosDataGridView()
@@ -118,6 +138,7 @@ namespace AdminSysWF
             dataGridView3.Columns[3].HeaderText = "Salário";
             dataGridView3.Columns[4].HeaderText = "Cargo";
             dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            SetDataGridViewReadOnly(dataGridView3);
         }
 
         private void RefreshChart()
@@ -326,7 +347,7 @@ namespace AdminSysWF
 
                 if (!anySelected)
                 {
-                    MessageBox.Show("Nenhum registro selecionado para exclusão.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Nenhum registo selecionado para exclusão.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (!allDeleted)
                 {
@@ -346,7 +367,55 @@ namespace AdminSysWF
                 dataGridView.Columns[checkBoxColumnName].Visible = true;
             }
         }
+        private void HandleCellClick3Fields(DataGridView dataGridView, string checkBoxColumnName, Edit3Campos.Tabelas tabela, string field1, string field2, string field3)
+        {
+            if (dataGridView.Columns[checkBoxColumnName].Visible)
+            {
+                return;
+            }
 
+            var e = (DataGridViewCellEventArgs)dataGridView.Tag;
 
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                string texto1 = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                string texto2 = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string texto3 = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                int id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
+
+                Edit3Campos editDialog = new Edit3Campos(id, tabela, field1, field2, field3, texto1, texto2, texto3);
+                editDialog.ShowDialog();
+                if (tabela == Edit3Campos.Tabelas.Ganho)
+                {
+                    refreshLucrosDataGridView();
+                }
+                else if (tabela == Edit3Campos.Tabelas.Despesa)
+                {
+                    refreshDespesasDataGridView();
+                }
+                else if (tabela == Edit3Campos.Tabelas.Funcionario)
+                {
+                    refreshFuncionariosDataGridView();
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.Tag = e;
+            HandleCellClick3Fields(dataGridView1, "CheckBoxColumn", Edit3Campos.Tabelas.Ganho, "Descrição", "Valor", "Data");
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView2.Tag = e;
+            HandleCellClick3Fields(dataGridView2, "CheckBoxColumn2", Edit3Campos.Tabelas.Despesa, "Descrição", "Valor", "Data");
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView3.Tag = e;
+            HandleCellClick3Fields(dataGridView3, "CheckBoxColumn3", Edit3Campos.Tabelas.Funcionario, "Nome", "Salário", "Cargo");
+        }
     }
 }

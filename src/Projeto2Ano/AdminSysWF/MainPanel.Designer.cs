@@ -90,21 +90,33 @@
             this.gunaChart1 = new Guna.Charts.WinForms.GunaChart();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.AddLucro = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CheckboxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.AdicionarDespesa = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CheckboxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddFuncionario = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CheckboxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btn_AddFornecedores = new Guna.UI2.WinForms.Guna2Button();
             this.FornecedoresDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CheckboxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -113,24 +125,12 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.CategoriasDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.CheckboxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.EstoqueDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.CheckboxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CheckboxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CheckboxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CheckboxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.CheckboxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CheckboxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -139,22 +139,22 @@
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.guna2Panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresDataGridView)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).BeginInit();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
-            this.guna2Panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -499,6 +499,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ganhos";
             // 
+            // guna2Panel10
+            // 
+            this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel10.Controls.Add(this.label10);
+            this.guna2Panel10.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel10.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 32);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Ganhos";
+            // 
             // guna2Button2
             // 
             this.guna2Button2.Animated = true;
@@ -611,6 +631,13 @@
             this.dataGridView1.ThemeStyle.RowsStyle.Height = 40;
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // CheckboxColumn
+            // 
+            this.CheckboxColumn.HeaderText = "Remover";
+            this.CheckboxColumn.Name = "CheckboxColumn";
+            this.CheckboxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage3
             // 
@@ -625,6 +652,26 @@
             this.tabPage3.Size = new System.Drawing.Size(899, 565);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Despesas";
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel9.Controls.Add(this.label9);
+            this.guna2Panel9.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel9.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 32);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Despesas";
             // 
             // guna2Button1
             // 
@@ -737,6 +784,14 @@
             this.dataGridView2.ThemeStyle.RowsStyle.Height = 40;
             this.dataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // CheckboxColumn2
+            // 
+            this.CheckboxColumn2.HeaderText = "Remover";
+            this.CheckboxColumn2.Name = "CheckboxColumn2";
+            this.CheckboxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CheckboxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage4
             // 
@@ -751,6 +806,26 @@
             this.tabPage4.Size = new System.Drawing.Size(899, 565);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Funcionários";
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel8.Controls.Add(this.label8);
+            this.guna2Panel8.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel8.TabIndex = 32;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(177, 32);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Funcionários";
             // 
             // guna2Button4
             // 
@@ -863,6 +938,12 @@
             this.dataGridView3.ThemeStyle.RowsStyle.Height = 40;
             this.dataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
+            // 
+            // CheckboxColumn3
+            // 
+            this.CheckboxColumn3.HeaderText = "Remover";
+            this.CheckboxColumn3.Name = "CheckboxColumn3";
             // 
             // tabPage5
             // 
@@ -877,6 +958,26 @@
             this.tabPage5.Size = new System.Drawing.Size(899, 565);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Fornecedores";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel7.Controls.Add(this.label6);
+            this.guna2Panel7.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel7.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(193, 32);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Fornecedores";
             // 
             // guna2Button6
             // 
@@ -989,6 +1090,11 @@
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.Height = 40;
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // CheckboxColumn4
+            // 
+            this.CheckboxColumn4.HeaderText = "Remover";
+            this.CheckboxColumn4.Name = "CheckboxColumn4";
             // 
             // tabPage6
             // 
@@ -1161,6 +1267,11 @@
             this.CategoriasDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.CategoriasDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // CheckboxColumn6
+            // 
+            this.CheckboxColumn6.HeaderText = "Remover";
+            this.CheckboxColumn6.Name = "CheckboxColumn6";
+            // 
             // guna2Button8
             // 
             this.guna2Button8.Animated = true;
@@ -1273,6 +1384,11 @@
             this.EstoqueDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.EstoqueDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // CheckboxColumn5
+            // 
+            this.CheckboxColumn5.HeaderText = "Remover";
+            this.CheckboxColumn5.Name = "CheckboxColumn5";
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
@@ -1282,119 +1398,6 @@
             this.tabPage7.Size = new System.Drawing.Size(899, 565);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Investimentos";
-            // 
-            // CheckboxColumn
-            // 
-            this.CheckboxColumn.HeaderText = "Remover";
-            this.CheckboxColumn.Name = "CheckboxColumn";
-            this.CheckboxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // CheckboxColumn2
-            // 
-            this.CheckboxColumn2.HeaderText = "Remover";
-            this.CheckboxColumn2.Name = "CheckboxColumn2";
-            this.CheckboxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CheckboxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // CheckboxColumn3
-            // 
-            this.CheckboxColumn3.HeaderText = "Remover";
-            this.CheckboxColumn3.Name = "CheckboxColumn3";
-            // 
-            // CheckboxColumn4
-            // 
-            this.CheckboxColumn4.HeaderText = "Remover";
-            this.CheckboxColumn4.Name = "CheckboxColumn4";
-            // 
-            // CheckboxColumn5
-            // 
-            this.CheckboxColumn5.HeaderText = "Remover";
-            this.CheckboxColumn5.Name = "CheckboxColumn5";
-            // 
-            // CheckboxColumn6
-            // 
-            this.CheckboxColumn6.HeaderText = "Remover";
-            this.CheckboxColumn6.Name = "CheckboxColumn6";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 32);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Fornecedores";
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel7.Controls.Add(this.label6);
-            this.guna2Panel7.Location = new System.Drawing.Point(6, 3);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(430, 53);
-            this.guna2Panel7.TabIndex = 31;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 32);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Funcionários";
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel8.Controls.Add(this.label8);
-            this.guna2Panel8.Location = new System.Drawing.Point(6, 3);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(430, 53);
-            this.guna2Panel8.TabIndex = 32;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 32);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "Despesas";
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel9.Controls.Add(this.label9);
-            this.guna2Panel9.Location = new System.Drawing.Point(6, 3);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(430, 53);
-            this.guna2Panel9.TabIndex = 33;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 10);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 32);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Ganhos";
-            // 
-            // guna2Panel10
-            // 
-            this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel10.Controls.Add(this.label10);
-            this.guna2Panel10.Location = new System.Drawing.Point(6, 3);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(430, 53);
-            this.guna2Panel10.TabIndex = 33;
             // 
             // MainPanel
             // 
@@ -1417,12 +1420,20 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.guna2Panel10.ResumeLayout(false);
+            this.guna2Panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FornecedoresDataGridView)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
@@ -1431,14 +1442,6 @@
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).EndInit();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            this.guna2Panel9.ResumeLayout(false);
-            this.guna2Panel9.PerformLayout();
-            this.guna2Panel10.ResumeLayout(false);
-            this.guna2Panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }

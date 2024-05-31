@@ -118,6 +118,7 @@
             this.txb_CargoFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_CargoFuncionario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_CargoFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_CargoFuncionario.ForeColor = System.Drawing.Color.White;
             this.txb_CargoFuncionario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_CargoFuncionario.Location = new System.Drawing.Point(78, 131);
             this.txb_CargoFuncionario.Name = "txb_CargoFuncionario";

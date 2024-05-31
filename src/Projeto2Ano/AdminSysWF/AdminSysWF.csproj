@@ -105,6 +105,12 @@
     <Compile Include="AddCategoria.Designer.cs">
       <DependentUpon>AddCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edit3Campos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit3Campos.Designer.cs">
+      <DependentUpon>Edit3Campos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCategoria.resx">
       <DependentUpon>AddCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit3Campos.resx">
+      <DependentUpon>Edit3Campos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

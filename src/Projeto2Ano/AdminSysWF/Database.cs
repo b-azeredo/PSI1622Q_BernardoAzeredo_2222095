@@ -829,5 +829,163 @@ namespace AdminSysWF
             }
         }
 
+        public static bool EditGanho(int id, string desc, float valor)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE GANHOS SET DESCRICAO = @desc, VALOR = @valor WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@desc", desc);
+                        cmd.Parameters.AddWithValue("@valor", valor);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o ganho: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool EditFuncionario(int id, string nome, float salario, string cargo)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE FUNCIONARIOS SET NOME = @nome, SALARIO = @salario, CARGO = @cargo WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@salario", salario);
+                        cmd.Parameters.AddWithValue("@cargo", cargo);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o funcionário: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool EditFornecedor(int id, string nome, string email, string telefone, int categoria)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE FORNECEDORES SET NOME = @nome, EMAIL = @email, TELEFONE = @telefone, ID_CATEGORIA = @categoria WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@email", email);
+                        cmd.Parameters.AddWithValue("@telefone", telefone);
+                        cmd.Parameters.AddWithValue("@categoria", categoria);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o fornecedor: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool EditProduto(int id, string produto, int quantidade, int idCategoria)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE ESTOQUE SET PRODUTO = @produto, QUANTIDADE = @quantidade, ID_CATEGORIA = @idCategoria WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@produto", produto);
+                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
+                        cmd.Parameters.AddWithValue("@idCategoria", idCategoria);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o produto: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool EditDespesa(int id, string desc, float valor)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE DESPESAS SET DESCRICAO = @desc, VALOR = @valor WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@desc", desc);
+                        cmd.Parameters.AddWithValue("@valor", valor);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar a despesa: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool EditCategoria(int id, string nome)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE CATEGORIAS SET NOME = @nome WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar a categoria: " + ex.Message);
+                return false;
+            }
+        }
     }
 }
