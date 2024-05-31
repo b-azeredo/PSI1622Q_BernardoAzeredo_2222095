@@ -117,6 +117,20 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.EstoqueDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.CheckboxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CheckboxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CheckboxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CheckboxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CheckboxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CheckboxColumn6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -137,6 +151,10 @@
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).BeginInit();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
+            this.guna2Panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -470,6 +488,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage2.Controls.Add(this.guna2Panel10);
             this.tabPage2.Controls.Add(this.guna2Button2);
             this.tabPage2.Controls.Add(this.AddLucro);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -492,9 +511,9 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(0, 272);
+            this.guna2Button2.Location = new System.Drawing.Point(6, 515);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(193, 39);
+            this.guna2Button2.Size = new System.Drawing.Size(212, 39);
             this.guna2Button2.TabIndex = 21;
             this.guna2Button2.Text = "Remover";
             this.guna2Button2.UseTransparentBackground = true;
@@ -513,9 +532,9 @@
             this.AddLucro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddLucro.ForeColor = System.Drawing.Color.White;
             this.AddLucro.IndicateFocus = true;
-            this.AddLucro.Location = new System.Drawing.Point(199, 272);
+            this.AddLucro.Location = new System.Drawing.Point(224, 515);
             this.AddLucro.Name = "AddLucro";
-            this.AddLucro.Size = new System.Drawing.Size(193, 39);
+            this.AddLucro.Size = new System.Drawing.Size(212, 39);
             this.AddLucro.TabIndex = 20;
             this.AddLucro.Text = "Adicionar";
             this.AddLucro.UseTransparentBackground = true;
@@ -544,6 +563,8 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -553,9 +574,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 57);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -567,7 +587,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(392, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(430, 452);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -583,7 +603,7 @@
             this.dataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridView1.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataGridView1.ThemeStyle.ReadOnly = true;
+            this.dataGridView1.ThemeStyle.ReadOnly = false;
             this.dataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -595,6 +615,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage3.Controls.Add(this.guna2Panel9);
             this.tabPage3.Controls.Add(this.guna2Button1);
             this.tabPage3.Controls.Add(this.AdicionarDespesa);
             this.tabPage3.Controls.Add(this.dataGridView2);
@@ -617,12 +638,13 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 272);
+            this.guna2Button1.Location = new System.Drawing.Point(6, 515);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(193, 39);
+            this.guna2Button1.Size = new System.Drawing.Size(212, 39);
             this.guna2Button1.TabIndex = 21;
             this.guna2Button1.Text = "Remover";
             this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // AdicionarDespesa
             // 
@@ -636,9 +658,9 @@
             this.AdicionarDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.AdicionarDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AdicionarDespesa.ForeColor = System.Drawing.Color.White;
-            this.AdicionarDespesa.Location = new System.Drawing.Point(199, 272);
+            this.AdicionarDespesa.Location = new System.Drawing.Point(224, 515);
             this.AdicionarDespesa.Name = "AdicionarDespesa";
-            this.AdicionarDespesa.Size = new System.Drawing.Size(193, 39);
+            this.AdicionarDespesa.Size = new System.Drawing.Size(212, 39);
             this.AdicionarDespesa.TabIndex = 20;
             this.AdicionarDespesa.Text = "Adicionar";
             this.AdicionarDespesa.UseTransparentBackground = true;
@@ -667,6 +689,8 @@
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView2.ColumnHeadersHeight = 30;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn2});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -676,9 +700,8 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 57);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -690,7 +713,7 @@
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 40;
-            this.dataGridView2.Size = new System.Drawing.Size(392, 266);
+            this.dataGridView2.Size = new System.Drawing.Size(430, 452);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -706,7 +729,7 @@
             this.dataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridView2.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataGridView2.ThemeStyle.ReadOnly = true;
+            this.dataGridView2.ThemeStyle.ReadOnly = false;
             this.dataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -718,6 +741,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage4.Controls.Add(this.guna2Panel8);
             this.tabPage4.Controls.Add(this.guna2Button4);
             this.tabPage4.Controls.Add(this.btnAddFuncionario);
             this.tabPage4.Controls.Add(this.dataGridView3);
@@ -740,12 +764,13 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(0, 272);
+            this.guna2Button4.Location = new System.Drawing.Point(6, 515);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(193, 39);
+            this.guna2Button4.Size = new System.Drawing.Size(212, 39);
             this.guna2Button4.TabIndex = 24;
             this.guna2Button4.Text = "Remover";
             this.guna2Button4.UseTransparentBackground = true;
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // btnAddFuncionario
             // 
@@ -759,9 +784,9 @@
             this.btnAddFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.btnAddFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddFuncionario.ForeColor = System.Drawing.Color.White;
-            this.btnAddFuncionario.Location = new System.Drawing.Point(199, 272);
+            this.btnAddFuncionario.Location = new System.Drawing.Point(224, 515);
             this.btnAddFuncionario.Name = "btnAddFuncionario";
-            this.btnAddFuncionario.Size = new System.Drawing.Size(193, 39);
+            this.btnAddFuncionario.Size = new System.Drawing.Size(212, 39);
             this.btnAddFuncionario.TabIndex = 23;
             this.btnAddFuncionario.Text = "Adicionar";
             this.btnAddFuncionario.UseTransparentBackground = true;
@@ -790,6 +815,8 @@
             this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridView3.ColumnHeadersHeight = 30;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn3});
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -799,9 +826,8 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Location = new System.Drawing.Point(6, 57);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -813,7 +839,7 @@
             this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowTemplate.Height = 40;
-            this.dataGridView3.Size = new System.Drawing.Size(392, 266);
+            this.dataGridView3.Size = new System.Drawing.Size(430, 452);
             this.dataGridView3.TabIndex = 22;
             this.dataGridView3.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -829,7 +855,7 @@
             this.dataGridView3.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dataGridView3.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridView3.ThemeStyle.HeaderStyle.Height = 30;
-            this.dataGridView3.ThemeStyle.ReadOnly = true;
+            this.dataGridView3.ThemeStyle.ReadOnly = false;
             this.dataGridView3.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.dataGridView3.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView3.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -841,6 +867,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage5.Controls.Add(this.guna2Panel7);
             this.tabPage5.Controls.Add(this.guna2Button6);
             this.tabPage5.Controls.Add(this.btn_AddFornecedores);
             this.tabPage5.Controls.Add(this.FornecedoresDataGridView);
@@ -863,12 +890,13 @@
             this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(3, 280);
+            this.guna2Button6.Location = new System.Drawing.Point(6, 515);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(193, 39);
+            this.guna2Button6.Size = new System.Drawing.Size(212, 39);
             this.guna2Button6.TabIndex = 24;
             this.guna2Button6.Text = "Remover";
             this.guna2Button6.UseTransparentBackground = true;
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // btn_AddFornecedores
             // 
@@ -882,9 +910,9 @@
             this.btn_AddFornecedores.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.btn_AddFornecedores.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_AddFornecedores.ForeColor = System.Drawing.Color.White;
-            this.btn_AddFornecedores.Location = new System.Drawing.Point(205, 280);
+            this.btn_AddFornecedores.Location = new System.Drawing.Point(224, 515);
             this.btn_AddFornecedores.Name = "btn_AddFornecedores";
-            this.btn_AddFornecedores.Size = new System.Drawing.Size(193, 39);
+            this.btn_AddFornecedores.Size = new System.Drawing.Size(212, 39);
             this.btn_AddFornecedores.TabIndex = 23;
             this.btn_AddFornecedores.Text = "Adicionar";
             this.btn_AddFornecedores.UseTransparentBackground = true;
@@ -913,6 +941,8 @@
             this.FornecedoresDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.FornecedoresDataGridView.ColumnHeadersHeight = 30;
             this.FornecedoresDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.FornecedoresDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn4});
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -922,9 +952,8 @@
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.FornecedoresDataGridView.DefaultCellStyle = dataGridViewCellStyle19;
             this.FornecedoresDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.FornecedoresDataGridView.Location = new System.Drawing.Point(6, 8);
+            this.FornecedoresDataGridView.Location = new System.Drawing.Point(6, 57);
             this.FornecedoresDataGridView.Name = "FornecedoresDataGridView";
-            this.FornecedoresDataGridView.ReadOnly = true;
             this.FornecedoresDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -936,7 +965,7 @@
             this.FornecedoresDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.FornecedoresDataGridView.RowHeadersVisible = false;
             this.FornecedoresDataGridView.RowTemplate.Height = 40;
-            this.FornecedoresDataGridView.Size = new System.Drawing.Size(392, 266);
+            this.FornecedoresDataGridView.Size = new System.Drawing.Size(430, 452);
             this.FornecedoresDataGridView.TabIndex = 22;
             this.FornecedoresDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.FornecedoresDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -952,7 +981,7 @@
             this.FornecedoresDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.FornecedoresDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.FornecedoresDataGridView.ThemeStyle.HeaderStyle.Height = 30;
-            this.FornecedoresDataGridView.ThemeStyle.ReadOnly = true;
+            this.FornecedoresDataGridView.ThemeStyle.ReadOnly = false;
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.FornecedoresDataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -983,7 +1012,7 @@
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel6.Controls.Add(this.label5);
-            this.guna2Panel6.Location = new System.Drawing.Point(476, 6);
+            this.guna2Panel6.Location = new System.Drawing.Point(442, 6);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(415, 53);
             this.guna2Panel6.TabIndex = 32;
@@ -1005,7 +1034,7 @@
             this.guna2Panel5.Controls.Add(this.label7);
             this.guna2Panel5.Location = new System.Drawing.Point(6, 6);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(464, 53);
+            this.guna2Panel5.Size = new System.Drawing.Size(430, 53);
             this.guna2Panel5.TabIndex = 30;
             // 
             // label7
@@ -1031,12 +1060,13 @@
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(476, 234);
+            this.guna2Button5.Location = new System.Drawing.Point(442, 234);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(202, 39);
             this.guna2Button5.TabIndex = 28;
             this.guna2Button5.Text = "Remover";
             this.guna2Button5.UseTransparentBackground = true;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // guna2Button10
             // 
@@ -1050,7 +1080,7 @@
             this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.Location = new System.Drawing.Point(684, 234);
+            this.guna2Button10.Location = new System.Drawing.Point(650, 234);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.Size = new System.Drawing.Size(207, 39);
             this.guna2Button10.TabIndex = 27;
@@ -1082,6 +1112,8 @@
             this.CategoriasDataGridView.ColumnHeadersHeight = 30;
             this.CategoriasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.CategoriasDataGridView.ColumnHeadersVisible = false;
+            this.CategoriasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn6});
             dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1091,9 +1123,8 @@
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CategoriasDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
             this.CategoriasDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.CategoriasDataGridView.Location = new System.Drawing.Point(476, 57);
+            this.CategoriasDataGridView.Location = new System.Drawing.Point(442, 57);
             this.CategoriasDataGridView.Name = "CategoriasDataGridView";
-            this.CategoriasDataGridView.ReadOnly = true;
             this.CategoriasDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1121,7 +1152,7 @@
             this.CategoriasDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.CategoriasDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.CategoriasDataGridView.ThemeStyle.HeaderStyle.Height = 30;
-            this.CategoriasDataGridView.ThemeStyle.ReadOnly = true;
+            this.CategoriasDataGridView.ThemeStyle.ReadOnly = false;
             this.CategoriasDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.CategoriasDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.CategoriasDataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1142,12 +1173,13 @@
             this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.Location = new System.Drawing.Point(6, 512);
+            this.guna2Button8.Location = new System.Drawing.Point(6, 515);
             this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(227, 39);
+            this.guna2Button8.Size = new System.Drawing.Size(212, 39);
             this.guna2Button8.TabIndex = 24;
             this.guna2Button8.Text = "Remover";
             this.guna2Button8.UseTransparentBackground = true;
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
             // 
             // guna2Button9
             // 
@@ -1161,9 +1193,9 @@
             this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Location = new System.Drawing.Point(239, 512);
+            this.guna2Button9.Location = new System.Drawing.Point(224, 515);
             this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(231, 39);
+            this.guna2Button9.Size = new System.Drawing.Size(212, 39);
             this.guna2Button9.TabIndex = 23;
             this.guna2Button9.Text = "Adicionar";
             this.guna2Button9.UseTransparentBackground = true;
@@ -1192,6 +1224,8 @@
             this.EstoqueDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.EstoqueDataGridView.ColumnHeadersHeight = 30;
             this.EstoqueDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.EstoqueDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CheckboxColumn5});
             dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1203,7 +1237,6 @@
             this.EstoqueDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
             this.EstoqueDataGridView.Location = new System.Drawing.Point(6, 57);
             this.EstoqueDataGridView.Name = "EstoqueDataGridView";
-            this.EstoqueDataGridView.ReadOnly = true;
             this.EstoqueDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1215,7 +1248,7 @@
             this.EstoqueDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.EstoqueDataGridView.RowHeadersVisible = false;
             this.EstoqueDataGridView.RowTemplate.Height = 40;
-            this.EstoqueDataGridView.Size = new System.Drawing.Size(464, 449);
+            this.EstoqueDataGridView.Size = new System.Drawing.Size(430, 452);
             this.EstoqueDataGridView.TabIndex = 22;
             this.EstoqueDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.EstoqueDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1231,7 +1264,7 @@
             this.EstoqueDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.EstoqueDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.EstoqueDataGridView.ThemeStyle.HeaderStyle.Height = 30;
-            this.EstoqueDataGridView.ThemeStyle.ReadOnly = true;
+            this.EstoqueDataGridView.ThemeStyle.ReadOnly = false;
             this.EstoqueDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.EstoqueDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.EstoqueDataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1249,6 +1282,119 @@
             this.tabPage7.Size = new System.Drawing.Size(899, 565);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Investimentos";
+            // 
+            // CheckboxColumn
+            // 
+            this.CheckboxColumn.HeaderText = "Remover";
+            this.CheckboxColumn.Name = "CheckboxColumn";
+            this.CheckboxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // CheckboxColumn2
+            // 
+            this.CheckboxColumn2.HeaderText = "Remover";
+            this.CheckboxColumn2.Name = "CheckboxColumn2";
+            this.CheckboxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CheckboxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // CheckboxColumn3
+            // 
+            this.CheckboxColumn3.HeaderText = "Remover";
+            this.CheckboxColumn3.Name = "CheckboxColumn3";
+            // 
+            // CheckboxColumn4
+            // 
+            this.CheckboxColumn4.HeaderText = "Remover";
+            this.CheckboxColumn4.Name = "CheckboxColumn4";
+            // 
+            // CheckboxColumn5
+            // 
+            this.CheckboxColumn5.HeaderText = "Remover";
+            this.CheckboxColumn5.Name = "CheckboxColumn5";
+            // 
+            // CheckboxColumn6
+            // 
+            this.CheckboxColumn6.HeaderText = "Remover";
+            this.CheckboxColumn6.Name = "CheckboxColumn6";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(193, 32);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Fornecedores";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel7.Controls.Add(this.label6);
+            this.guna2Panel7.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel7.TabIndex = 31;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(177, 32);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Funcionários";
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel8.Controls.Add(this.label8);
+            this.guna2Panel8.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel8.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(3, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 32);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Despesas";
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel9.Controls.Add(this.label9);
+            this.guna2Panel9.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel9.TabIndex = 33;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(3, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 32);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Ganhos";
+            // 
+            // guna2Panel10
+            // 
+            this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel10.Controls.Add(this.label10);
+            this.guna2Panel10.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel10.TabIndex = 33;
             // 
             // MainPanel
             // 
@@ -1285,6 +1431,14 @@
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).EndInit();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
+            this.guna2Panel10.ResumeLayout(false);
+            this.guna2Panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1338,5 +1492,19 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label5;
         private Guna.Charts.WinForms.GunaChart gunaChart1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckboxColumn5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.Label label6;
     }
 }

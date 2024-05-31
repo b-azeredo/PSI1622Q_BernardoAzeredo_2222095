@@ -50,10 +50,11 @@ namespace AdminSysWF
             DataTable dt = Database.GetFornecedores(UserID);
             FornecedoresDataGridView.DataSource = dt;
             FornecedoresDataGridView.Columns[0].Visible = false;
-            FornecedoresDataGridView.Columns[1].HeaderText = "Nome";
-            FornecedoresDataGridView.Columns[2].HeaderText = "Email";
-            FornecedoresDataGridView.Columns[3].HeaderText = "Telefone";
-            FornecedoresDataGridView.Columns[4].HeaderText = "Categoria";
+            FornecedoresDataGridView.Columns[1].Visible = false;
+            FornecedoresDataGridView.Columns[2].HeaderText = "Nome";
+            FornecedoresDataGridView.Columns[3].HeaderText = "Email";
+            FornecedoresDataGridView.Columns[4].HeaderText = "Telefone";
+            FornecedoresDataGridView.Columns[5].HeaderText = "Categoria";
         }
 
         private void refreshEstoqueDataGridView()
@@ -61,9 +62,10 @@ namespace AdminSysWF
             DataTable dt = Database.GetEstoque(UserID);
             EstoqueDataGridView.DataSource = dt;
             EstoqueDataGridView.Columns[0].Visible = false;
-            EstoqueDataGridView.Columns[1].HeaderText = "Produto";
-            EstoqueDataGridView.Columns[2].HeaderText = "Quantidade";
-            EstoqueDataGridView.Columns[3].HeaderText = "Categoria";
+            EstoqueDataGridView.Columns[1].Visible = false;
+            EstoqueDataGridView.Columns[2].HeaderText = "Produto";
+            EstoqueDataGridView.Columns[3].HeaderText = "Quantidade";
+            EstoqueDataGridView.Columns[4].HeaderText = "Categoria";
         }
 
         private void refreshCategoriasDataGridView()
@@ -71,6 +73,7 @@ namespace AdminSysWF
             DataTable dt = Database.GetCategorias(UserID);
             CategoriasDataGridView.DataSource = dt;
             CategoriasDataGridView.Columns[0].Visible = false;
+            CategoriasDataGridView.Columns[1].Visible = false;
         }
 
         private void refreshTarefasDataGridView()
@@ -86,10 +89,11 @@ namespace AdminSysWF
             DataTable dt = Database.GetGanhos(UserID);
             dataGridView1.DataSource = dt;
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[1].HeaderText = "Descrição";
-            dataGridView1.Columns[2].HeaderText = "Valor";
-            dataGridView1.Columns[3].HeaderText = "Data";
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].HeaderText = "Descrição";
+            dataGridView1.Columns[3].HeaderText = "Valor";
+            dataGridView1.Columns[4].HeaderText = "Data";
+            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void refreshDespesasDataGridView()
@@ -97,10 +101,11 @@ namespace AdminSysWF
             DataTable dt = Database.GetDespesas(UserID);
             dataGridView2.DataSource = dt;
             dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[1].HeaderText = "Descrição";
-            dataGridView2.Columns[2].HeaderText = "Valor";
-            dataGridView2.Columns[3].HeaderText = "Data";
-            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView2.Columns[1].Visible = false;
+            dataGridView2.Columns[2].HeaderText = "Descrição";
+            dataGridView2.Columns[3].HeaderText = "Valor";
+            dataGridView2.Columns[4].HeaderText = "Data";
+            dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void refreshFuncionariosDataGridView()
@@ -108,10 +113,11 @@ namespace AdminSysWF
             DataTable dt = Database.GetFuncionarios(UserID);
             dataGridView3.DataSource = dt;
             dataGridView3.Columns[0].Visible = false;
-            dataGridView3.Columns[1].HeaderText = "Nome";
-            dataGridView3.Columns[2].HeaderText = "Salário";
-            dataGridView3.Columns[3].HeaderText = "Cargo";
-            dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView3.Columns[1].Visible = false;
+            dataGridView3.Columns[2].HeaderText = "Nome";
+            dataGridView3.Columns[3].HeaderText = "Salário";
+            dataGridView3.Columns[4].HeaderText = "Cargo";
+            dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void RefreshChart()
@@ -236,9 +242,16 @@ namespace AdminSysWF
 
         private void guna2Button9_Click(object sender, EventArgs e)
         {
-            AddProduto addProduto = new AddProduto(UserID);
-            addProduto.ShowDialog();
-            refreshEstoqueDataGridView();
+            if (Database.GetNumeroDeCategorias(UserID) > 0)
+            {
+                AddProduto addProduto = new AddProduto(UserID);
+                addProduto.ShowDialog();
+                refreshEstoqueDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Adicione ao menos uma categoria antes de adicionar um produto.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_AddFornecedores_Click(object sender, EventArgs e)
@@ -258,30 +271,82 @@ namespace AdminSysWF
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            string columnName = "CheckboxColumn";
+            HandleDeletion(dataGridView1, "CheckboxColumn", Database.RemoverGanho);
+        }
 
-            if (dataGridView1.Columns.Contains(columnName))
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(dataGridView2, "CheckboxColumn2", Database.RemoverDespesa);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(dataGridView3, "CheckboxColumn3", Database.RemoverFuncionario);
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(FornecedoresDataGridView, "CheckboxColumn4", Database.RemoverFornecedor);
+        }
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(EstoqueDataGridView, "CheckboxColumn5", Database.RemoverProduto);
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(CategoriasDataGridView, "CheckboxColumn6", Database.RemoverCategoria);
+        }
+
+        private void HandleDeletion(DataGridView dataGridView, string checkBoxColumnName, Func<int, bool> removeMethod)
+        {
+            dataGridView.Columns[checkBoxColumnName].DisplayIndex = dataGridView.Columns.Count - 1;
+
+            if (dataGridView.Columns[checkBoxColumnName].Visible == true)
             {
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                bool anySelected = false;
+                bool allDeleted = true;
+
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
-                    DataGridViewCheckBoxCell checkBoxCell = dataGridView1.Rows[i].Cells[columnName] as DataGridViewCheckBoxCell;
-                    if (checkBoxCell != null && (bool)checkBoxCell.Value)
+                    DataGridViewCheckBoxCell checkBoxCell = dataGridView.Rows[i].Cells[checkBoxColumnName] as DataGridViewCheckBoxCell;
+
+                    if (checkBoxCell != null && checkBoxCell.Value != null && (bool)checkBoxCell.Value)
                     {
-                        int id = Convert.ToInt32(dataGridView1.Rows[i].Cells[0].Value);
-                        Database.RemoverGanho(id);
+                        anySelected = true;
+                        int id = Convert.ToInt32(dataGridView.Rows[i].Cells[1].Value);
+                        bool removed = removeMethod(id);
+                        if (!removed)
+                        {
+                            allDeleted = false;
+                        }
                     }
                 }
+
+                if (!anySelected)
+                {
+                    MessageBox.Show("Nenhum registro selecionado para exclusão.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!allDeleted)
+                {
+                    MessageBox.Show("Alguns registos não puderam ser removidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                dataGridView.Columns[checkBoxColumnName].Visible = false;
                 refreshLucrosDataGridView();
+                refreshDespesasDataGridView();
+                refreshFuncionariosDataGridView();
+                refreshFornecedoresDataGridView();
+                refreshCategoriasDataGridView();
+                refreshEstoqueDataGridView();
             }
             else
             {
-                DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
-                checkboxColumn.Name = columnName;
-                checkboxColumn.HeaderText = "Remover";
-                checkboxColumn.Width = 30;
-                dataGridView1.Columns.Add(checkboxColumn);
+                dataGridView.Columns[checkBoxColumnName].Visible = true;
             }
         }
+
 
     }
 }

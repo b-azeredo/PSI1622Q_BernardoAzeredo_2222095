@@ -802,5 +802,32 @@ namespace AdminSysWF
             }
         }
 
+        public static bool RemoverCategoria(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM CATEGORIAS WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover a categoria: " + ex.Message);
+                return false;
+            }
+        }
+
     }
 }
