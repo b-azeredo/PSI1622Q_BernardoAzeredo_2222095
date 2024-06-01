@@ -44,6 +44,7 @@ namespace AdminSysWF
                 cb.FillColor = Color.FromArgb(34, 34, 46);
                 cb.DropDownStyle = ComboBoxStyle.DropDownList; 
                 DataTable categorias = Database.GetCategorias(userid);
+                this.Controls.Add(cb);
 
                 if (categorias != null)
                 {
@@ -55,7 +56,15 @@ namespace AdminSysWF
                 {
                     MessageBox.Show("Erro ao carregar as categorias.");
                 }
-                this.Controls.Add(cb);
+
+                foreach (DataRow row in categorias.Rows)
+                {
+                    if (row["NOME"].ToString() == placeholder3)
+                    {
+                        cb.SelectedValue = int.Parse(row["ID"].ToString());
+                        break;
+                    }
+                }
             }
             lbl_edit1.Text = label1;
             lbl_edit2.Text = label2;

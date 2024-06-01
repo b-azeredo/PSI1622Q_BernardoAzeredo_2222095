@@ -540,6 +540,7 @@ namespace AdminSysWF
         }
 
 
+
         public static DataTable GetEstoque(int userId)
         {
             DataTable estoqueTable = new DataTable();
@@ -804,30 +805,40 @@ namespace AdminSysWF
 
         public static bool RemoverCategoria(int id)
         {
-            try
-            {
-                using (SqlConnection connection = Connect())
-                {
-                    if (connection == null)
-                    {
-                        return false;
-                    }
+            DialogResult result = MessageBox.Show("Remover esta categoria também removerá todos os produtos e fornecedores que pertencem à esta categoria. Deseja continuar?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    string query = "DELETE FROM CATEGORIAS WHERE ID = @id";
-                    using (SqlCommand cmd = new SqlCommand(query, connection))
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection connection = Connect())
                     {
-                        cmd.Parameters.AddWithValue("@id", id);
-                        cmd.ExecuteNonQuery();
-                        return true;
+                        if (connection == null)
+                        {
+                            return false;
+                        }
+
+                        string query = "DELETE FROM CATEGORIAS WHERE ID = @id";
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.ExecuteNonQuery();
+                            return true;
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao remover a categoria: " + ex.Message);
+                    return false;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro ao remover a categoria: " + ex.Message);
-                return false;
+                return true;
             }
         }
+
 
         public static bool EditGanho(int id, string desc, float valor)
         {
