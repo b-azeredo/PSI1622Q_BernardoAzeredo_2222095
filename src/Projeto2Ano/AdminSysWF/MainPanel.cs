@@ -383,7 +383,7 @@ namespace AdminSysWF
                 string texto3 = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
                 int id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
 
-                Edit3Campos editDialog = new Edit3Campos(id, tabela, field1, field2, field3, texto1, texto2, texto3);
+                Edit3Campos editDialog = new Edit3Campos(UserID ,id, tabela, field1, field2, field3, texto1, texto2, texto3);
                 editDialog.ShowDialog();
                 if (tabela == Edit3Campos.Tabelas.Ganho)
                 {
@@ -396,6 +396,10 @@ namespace AdminSysWF
                 else if (tabela == Edit3Campos.Tabelas.Funcionario)
                 {
                     refreshFuncionariosDataGridView();
+                }
+                else
+                {
+                    refreshEstoqueDataGridView();
                 }
             }
         }
@@ -416,6 +420,12 @@ namespace AdminSysWF
         {
             dataGridView3.Tag = e;
             HandleCellClick3Fields(dataGridView3, "CheckBoxColumn3", Edit3Campos.Tabelas.Funcionario, "Nome", "Salário", "Cargo");
+        }
+
+        private void EstoqueDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EstoqueDataGridView.Tag = e;
+            HandleCellClick3Fields(EstoqueDataGridView, "CheckBoxColumn5", Edit3Campos.Tabelas.Produto, "Nome", "Quantidade", "Categoria");
         }
     }
 }
