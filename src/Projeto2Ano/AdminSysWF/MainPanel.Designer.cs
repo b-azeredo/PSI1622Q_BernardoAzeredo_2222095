@@ -71,6 +71,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont9 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont10 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont11 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont12 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid4 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick4 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont13 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid5 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick5 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont14 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid6 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel2 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont15 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick6 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont16 = new Guna.Charts.WinForms.ChartFont();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -133,6 +148,9 @@
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
+            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
+            this.label12 = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -158,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).BeginInit();
             this.tabPage8.SuspendLayout();
+            this.guna2Panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -502,6 +521,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage2.Controls.Add(this.guna2Panel11);
             this.tabPage2.Controls.Add(this.guna2Panel10);
             this.tabPage2.Controls.Add(this.guna2Button2);
             this.tabPage2.Controls.Add(this.AddLucro);
@@ -1435,6 +1455,72 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Escolher quando será descontado o valor do salário dos funcionários";
             // 
+            // guna2Panel11
+            // 
+            this.guna2Panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel11.Controls.Add(this.gunaChart2);
+            this.guna2Panel11.Controls.Add(this.label12);
+            this.guna2Panel11.Location = new System.Drawing.Point(445, 3);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.Size = new System.Drawing.Size(451, 307);
+            this.guna2Panel11.TabIndex = 34;
+            // 
+            // gunaChart2
+            // 
+            this.gunaChart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            chartFont9.FontName = "Arial";
+            this.gunaChart2.Legend.LabelFont = chartFont9;
+            this.gunaChart2.Legend.LabelForeColor = System.Drawing.Color.White;
+            this.gunaChart2.Location = new System.Drawing.Point(3, 38);
+            this.gunaChart2.Name = "gunaChart2";
+            this.gunaChart2.Size = new System.Drawing.Size(445, 272);
+            this.gunaChart2.TabIndex = 16;
+            chartFont10.FontName = "Arial";
+            chartFont10.Size = 12;
+            chartFont10.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Title.Font = chartFont10;
+            chartFont11.FontName = "Arial";
+            chartFont11.Size = 10;
+            chartFont11.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Tooltips.BodyFont = chartFont11;
+            chartFont12.FontName = "Arial";
+            chartFont12.Size = 9;
+            chartFont12.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart2.Tooltips.TitleFont = chartFont12;
+            grid4.Color = System.Drawing.Color.DarkGray;
+            this.gunaChart2.XAxes.GridLines = grid4;
+            chartFont13.FontName = "Arial";
+            chartFont13.Size = 10;
+            tick4.Font = chartFont13;
+            tick4.ForeColor = System.Drawing.Color.White;
+            this.gunaChart2.XAxes.Ticks = tick4;
+            grid5.Color = System.Drawing.Color.DarkGray;
+            this.gunaChart2.YAxes.GridLines = grid5;
+            chartFont14.FontName = "Arial";
+            chartFont14.Size = 10;
+            tick5.Font = chartFont14;
+            tick5.ForeColor = System.Drawing.Color.White;
+            this.gunaChart2.YAxes.Ticks = tick5;
+            this.gunaChart2.ZAxes.GridLines = grid6;
+            chartFont15.FontName = "Arial";
+            pointLabel2.Font = chartFont15;
+            this.gunaChart2.ZAxes.PointLabels = pointLabel2;
+            chartFont16.FontName = "Arial";
+            tick6.Font = chartFont16;
+            this.gunaChart2.ZAxes.Ticks = tick6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(7, 8);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(229, 32);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Ganhos Mensais";
+            // 
             // MainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1484,6 +1570,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.guna2Panel11.ResumeLayout(false);
+            this.guna2Panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1553,5 +1641,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage8;
         private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private Guna.Charts.WinForms.GunaChart gunaChart2;
+        private System.Windows.Forms.Label label12;
     }
 }

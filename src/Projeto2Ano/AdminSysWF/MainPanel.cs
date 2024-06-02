@@ -20,7 +20,7 @@ namespace AdminSysWF
         {
             for (int i = 0; i < dataGridView.Columns.Count; i++)
             {
-                if (i != 0) // Índice 0 é a primeira coluna
+                if (i != 0)
                 {
                     dataGridView.Columns[i].ReadOnly = true;
                 }
@@ -32,7 +32,8 @@ namespace AdminSysWF
             InitializeComponent();
             UserID = userID;
 
-            RefreshChart();
+            RefreshChart(gunaChart1, 7, Database.GetLucroDia);
+            RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
             refreshLucrosDataGridView();
             refreshDespesasDataGridView();
             refreshTarefasDataGridView();
@@ -141,49 +142,88 @@ namespace AdminSysWF
             SetDataGridViewReadOnly(dataGridView3);
         }
 
-        private void RefreshChart()
+        private void RefreshChart(GunaChart chart, int days, Func<DateTime, int, float> metodo)
         {
-            DateTime dataInicial = DateTime.Now.AddDays(-7);
-            List<DateTime> ultimos7dias = new List<DateTime>();
-            for (int i = 0; i <= 7; i++)
+            DateTime dataInicial;
+
+            if (days == 7)
             {
-                ultimos7dias.Add(dataInicial.AddDays(i));
+                dataInicial = DateTime.Now;
+                while (dataInicial.DayOfWeek != DayOfWeek.Sunday)
+                {
+                    dataInicial = dataInicial.AddDays(-1);
+                }
+            }
+            else if (days == 30)
+            {
+                dataInicial = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            }
+            else
+            {
+                dataInicial = DateTime.Now.AddDays(-days);
             }
 
-            gunaChart1.Legend.Display = false;
+            List<DateTime> dias = new List<DateTime>();
+            for (int i = 0; i <= days; i++)
+            {
+                dias.Add(dataInicial.AddDays(i));
+            }
 
-            var series = new Guna.Charts.WinForms.GunaLineDataset
+            chart.Legend.Display = false;
+
+            var series = new GunaLineDataset
             {
                 Label = "Lucro",
                 BorderWidth = 1,
                 BorderColor = Color.White,
-                FillColor = Color.White,
             };
 
-            float lucroMaximo = float.MinValue;
-
-            foreach (DateTime dia in ultimos7dias)
+            if (days > 7)
             {
-                float lucroDespesaDia = Database.GetLucroDia(dia, UserID);
-                series.DataPoints.Add(dia.ToString("dd/MM"), lucroDespesaDia);
-
-                if (lucroDespesaDia > lucroMaximo)
+                var weeklyData = new Dictionary<string, float>();
+                for (int i = 0; i < dias.Count; i += 7)
                 {
-                    lucroMaximo = lucroDespesaDia;
+                    DateTime startOfWeek = dias[i];
+                    DateTime endOfWeek = dias[Math.Min(i + 6, dias.Count - 1)];
+
+                    float sum = 0;
+                    for (DateTime day = startOfWeek; day <= endOfWeek; day = day.AddDays(1))
+                    {
+                        sum += metodo(day, UserID);
+                    }
+
+                    string weekLabel = $"{startOfWeek.ToString("dd")} - {endOfWeek.ToString("dd")}";
+                    weeklyData[weekLabel] = sum;
+                }
+
+                foreach (var data in weeklyData)
+                {
+                    series.DataPoints.Add(data.Key, data.Value);
+                }
+            }
+            else
+            {
+                foreach (DateTime dia in dias)
+                {
+                    float eixoY = metodo(dia, UserID);
+                    series.DataPoints.Add(dia.ToString("dd/MM"), eixoY);
                 }
             }
 
-            gunaChart1.Datasets.Clear();
-            gunaChart1.Datasets.Add(series);
+            chart.Datasets.Clear();
+            chart.Datasets.Add(series);
 
-            gunaChart1.Update();
+            chart.Update();
         }
+
+
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
             AddGanho addLucro = new AddGanho(UserID);
             addLucro.ShowDialog();
-            RefreshChart();
+            RefreshChart(gunaChart1, 7, Database.GetLucroDia);
+            RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
             refreshLucrosDataGridView();
             refreshLucroAtual();
         }
@@ -192,7 +232,7 @@ namespace AdminSysWF
         {
             AddDespesa addDespesa = new AddDespesa(UserID);
             addDespesa.ShowDialog();
-            RefreshChart();
+            RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             refreshDespesasDataGridView();
             refreshLucroAtual();
         }
@@ -212,7 +252,7 @@ namespace AdminSysWF
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
         {
-            RefreshChart();
+            RefreshChart(gunaChart1, 7, Database.GetLucroDia);
         }
 
         private void tarefasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -362,6 +402,8 @@ namespace AdminSysWF
                 refreshFornecedoresDataGridView();
                 refreshCategoriasDataGridView();
                 refreshEstoqueDataGridView();
+                RefreshChart(gunaChart1, 7, Database.GetLucroDia);
+                RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
             }
             else
             {
@@ -410,6 +452,8 @@ namespace AdminSysWF
                 {
                     case Edit3Campos.Tabelas.Ganho:
                         refreshLucrosDataGridView();
+                        RefreshChart(gunaChart1, 7, Database.GetLucroDia);
+                        RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
                         break;
                     case Edit3Campos.Tabelas.Despesa:
                         refreshDespesasDataGridView();
