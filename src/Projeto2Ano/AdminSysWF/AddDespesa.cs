@@ -24,7 +24,7 @@ namespace AdminSysWF
             string desc = txb_DescDespesa.Text;
             string valor = txb_ValorDespesa.Text;
             float valorInt;
-            if (float.TryParse(valor, out valorInt) && desc.Length > 0)
+            if (float.TryParse(valor, out valorInt) && desc.Length > 0 && valorInt > 0)
             {
                 if (Database.addDespesa(userID, desc, valorInt))
                 {

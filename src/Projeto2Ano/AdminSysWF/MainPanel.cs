@@ -156,7 +156,8 @@ namespace AdminSysWF
             {
                 Label = "Lucro",
                 BorderWidth = 1,
-                BorderColor = Color.DarkGray,
+                BorderColor = Color.White,
+                FillColor = Color.White,
             };
 
             float lucroMaximo = float.MinValue;
