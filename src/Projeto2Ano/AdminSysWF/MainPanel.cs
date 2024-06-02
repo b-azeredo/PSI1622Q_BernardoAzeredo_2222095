@@ -368,7 +368,7 @@ namespace AdminSysWF
                 dataGridView.Columns[checkBoxColumnName].Visible = true;
             }
         }
-        private void HandleCellClick3Fields(DataGridView dataGridView, string checkBoxColumnName, Edit3Campos.Tabelas tabela, string field1, string field2, string field3)
+        private void HandleCellClick(DataGridView dataGridView, string checkBoxColumnName, Enum tabela, List<string> fields)
         {
             if (dataGridView.Columns[checkBoxColumnName].Visible)
             {
@@ -379,28 +379,55 @@ namespace AdminSysWF
 
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                string texto1 = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string texto2 = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string texto3 = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+                List<string> cellValues = new List<string>();
+                for (int i = 0; i < fields.Count; i++)
+                {
+                    cellValues.Add(dataGridView.Rows[e.RowIndex].Cells[2 + i].Value.ToString());
+                }
                 int id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
 
-                Edit3Campos editDialog = new Edit3Campos(UserID ,id, tabela, field1, field2, field3, texto1, texto2, texto3);
-                editDialog.ShowDialog();
-                if (tabela == Edit3Campos.Tabelas.Ganho)
+                if (fields.Count == 3)
                 {
-                    refreshLucrosDataGridView();
+                    Edit3Campos editDialog = new Edit3Campos(UserID, id, (Edit3Campos.Tabelas)tabela, fields[0], fields[1], fields[2], cellValues[0], cellValues[1], cellValues[2]);
+                    editDialog.ShowDialog();
+                    RefreshDataGridView(tabela);
                 }
-                else if (tabela == Edit3Campos.Tabelas.Despesa)
+                else if (fields.Count == 4)
                 {
-                    refreshDespesasDataGridView();
+                    Edit4Campos editDialog = new Edit4Campos(UserID, id, (Edit4Campos.Tabelas)tabela, fields[0], fields[1], fields[2], fields[3], cellValues[0], cellValues[1], cellValues[2], cellValues[3]);
+                    editDialog.ShowDialog();
+                    RefreshDataGridView(tabela);
                 }
-                else if (tabela == Edit3Campos.Tabelas.Funcionario)
+            }
+        }
+
+        private void RefreshDataGridView(Enum tabela)
+        {
+            if (tabela is Edit3Campos.Tabelas)
+            {
+                var tabela3Campos = (Edit3Campos.Tabelas)tabela;
+                switch (tabela3Campos)
                 {
-                    refreshFuncionariosDataGridView();
+                    case Edit3Campos.Tabelas.Ganho:
+                        refreshLucrosDataGridView();
+                        break;
+                    case Edit3Campos.Tabelas.Despesa:
+                        refreshDespesasDataGridView();
+                        break;
+                    case Edit3Campos.Tabelas.Funcionario:
+                        refreshFuncionariosDataGridView();
+                        break;
+                    case Edit3Campos.Tabelas.Produto:
+                        refreshEstoqueDataGridView();
+                        break;
                 }
-                else
+            }
+            else if (tabela is Edit4Campos.Tabelas)
+            {
+                var tabela4Campos = (Edit4Campos.Tabelas)tabela;
+                if (tabela4Campos == Edit4Campos.Tabelas.Fornecedor)
                 {
-                    refreshEstoqueDataGridView();
+                    refreshFornecedoresDataGridView();
                 }
             }
         }
@@ -408,25 +435,32 @@ namespace AdminSysWF
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.Tag = e;
-            HandleCellClick3Fields(dataGridView1, "CheckBoxColumn", Edit3Campos.Tabelas.Ganho, "Descrição", "Valor", "Data");
+            HandleCellClick(dataGridView1, "CheckBoxColumn", Edit3Campos.Tabelas.Ganho, new List<string> { "Descrição", "Valor", "Data" });
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView2.Tag = e;
-            HandleCellClick3Fields(dataGridView2, "CheckBoxColumn2", Edit3Campos.Tabelas.Despesa, "Descrição", "Valor", "Data");
+            HandleCellClick(dataGridView2, "CheckBoxColumn2", Edit3Campos.Tabelas.Despesa, new List<string> { "Descrição", "Valor", "Data" });
         }
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView3.Tag = e;
-            HandleCellClick3Fields(dataGridView3, "CheckBoxColumn3", Edit3Campos.Tabelas.Funcionario, "Nome", "Salário", "Cargo");
+            HandleCellClick(dataGridView3, "CheckBoxColumn3", Edit3Campos.Tabelas.Funcionario, new List<string> { "Nome", "Salário", "Cargo" });
         }
 
         private void EstoqueDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             EstoqueDataGridView.Tag = e;
-            HandleCellClick3Fields(EstoqueDataGridView, "CheckBoxColumn5", Edit3Campos.Tabelas.Produto, "Nome", "Quantidade", "Categoria");
+            HandleCellClick(EstoqueDataGridView, "CheckBoxColumn5", Edit3Campos.Tabelas.Produto, new List<string> { "Nome", "Quantidade", "Categoria" });
         }
+
+        private void FornecedoresDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FornecedoresDataGridView.Tag = e;
+            HandleCellClick(FornecedoresDataGridView, "CheckBoxColumn4", Edit4Campos.Tabelas.Fornecedor, new List<string> { "Nome", "Email", "Telefone", "Categoria" });
+        }
+
     }
 }

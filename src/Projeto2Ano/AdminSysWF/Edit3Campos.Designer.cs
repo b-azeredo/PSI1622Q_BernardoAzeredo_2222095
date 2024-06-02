@@ -166,7 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(341, 302);
+            this.ClientSize = new System.Drawing.Size(341, 306);
             this.Controls.Add(this.lbl_edit3);
             this.Controls.Add(this.lbl_edit2);
             this.Controls.Add(this.lbl_edit1);
