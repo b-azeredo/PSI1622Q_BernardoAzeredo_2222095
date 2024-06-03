@@ -378,6 +378,47 @@ namespace AdminSysWF
             return tarefasTable;
         }
 
+        public static int GetNumeroTarefasConcluidasUltimaSemana(int userId)
+        {
+            int numeroTarefasConcluidas = 0;
+
+            try
+            {
+                using (SqlConnection conexao = Connect())
+                {
+                    DateTime hoje = DateTime.Today;
+                    int diasDesdeUltimoDomingo = (int)hoje.DayOfWeek;
+                    DateTime ultimoDomingo = hoje.AddDays(-diasDesdeUltimoDomingo);
+
+                    DateTime domingoAnterior = ultimoDomingo.AddDays(-7);
+
+                    string consulta = @"
+            SELECT COUNT(*)
+            FROM TAREFAS
+            WHERE USER_ID = @userId 
+              AND CONCLUIDO = 1
+              AND DATA_CONCLUSAO >= @domingoAnterior
+              AND DATA_CONCLUSAO < @ultimoDomingo";
+
+                    using (SqlCommand cmd = new SqlCommand(consulta, conexao))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@domingoAnterior", domingoAnterior);
+                        cmd.Parameters.AddWithValue("@ultimoDomingo", ultimoDomingo);
+                        numeroTarefasConcluidas = (int)cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o número de tarefas concluídas: " + ex.Message);
+            }
+
+            return numeroTarefasConcluidas;
+        }
+
+
+
         public static DataTable GetFuncionarios(int userId)
         {
             DataTable funcionariosTable = new DataTable();
@@ -416,6 +457,13 @@ namespace AdminSysWF
                     string query = "UPDATE TAREFAS SET CONCLUIDO = 1 WHERE ID = @idTarefa";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
+                        cmd.Parameters.AddWithValue("@idTarefa", idTarefa);
+                        cmd.ExecuteNonQuery();
+                    }
+                    string query2 = "UPDATE TAREFAS SET DATA_CONCLUSAO = @dataAtual WHERE ID = @idTarefa";
+                    using (SqlCommand cmd = new SqlCommand(query2, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@dataAtual", DateTime.Now);
                         cmd.Parameters.AddWithValue("@idTarefa", idTarefa);
                         cmd.ExecuteNonQuery();
                     }

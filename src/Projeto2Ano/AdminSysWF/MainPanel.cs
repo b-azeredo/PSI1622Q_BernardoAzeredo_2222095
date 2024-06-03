@@ -38,7 +38,7 @@ namespace AdminSysWF
             refreshDespesasDataGridView();
             refreshTarefasDataGridView();
             refreshFuncionariosDataGridView();
-            refreshLucroAtual();
+            refreshLabels();
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
             refreshFornecedoresDataGridView();
@@ -60,9 +60,11 @@ namespace AdminSysWF
 
         }
 
-        private void refreshLucroAtual()
+        private void refreshLabels()
         {
             float lucroHoje = Database.GetLucroDia(DateTime.Now, UserID);
+            int tarefasConcluidasHoje = Database.GetNumeroTarefasConcluidasUltimaSemana(UserID);
+            lbl_TarefasConcluidas.Text = tarefasConcluidasHoje.ToString();
             lbl_LucroHoje.Text = lucroHoje.ToString() + "€";
             if (lucroHoje < 0)
             {
@@ -127,7 +129,7 @@ namespace AdminSysWF
             dataGridView1.Columns[3].HeaderText = "Valor";
             dataGridView1.Columns[4].HeaderText = "Data";
             dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            refreshLucroAtual();
+            refreshLabels();
             SetDataGridViewReadOnly(dataGridView1);
         }
 
@@ -141,7 +143,7 @@ namespace AdminSysWF
             dataGridView2.Columns[3].HeaderText = "Valor";
             dataGridView2.Columns[4].HeaderText = "Data";
             dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            refreshLucroAtual();
+            refreshLabels();
             SetDataGridViewReadOnly(dataGridView2);
         }
 
@@ -241,7 +243,7 @@ namespace AdminSysWF
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
             refreshLucrosDataGridView();
-            refreshLucroAtual();
+            refreshLabels();
         }
 
         private void btn_AddDespesa_Click_1(object sender, EventArgs e)
@@ -250,7 +252,7 @@ namespace AdminSysWF
             addDespesa.ShowDialog();
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             refreshDespesasDataGridView();
-            refreshLucroAtual();
+            refreshLabels();
         }
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
@@ -286,6 +288,7 @@ namespace AdminSysWF
             AddTarefa addTarefa = new AddTarefa(UserID);
             addTarefa.ShowDialog();
             refreshTarefasDataGridView();
+            refreshLabels();
         }
 
         private void tarefasDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

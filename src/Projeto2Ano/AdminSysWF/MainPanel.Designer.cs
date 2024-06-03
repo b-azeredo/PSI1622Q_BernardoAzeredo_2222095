@@ -158,6 +158,8 @@
             this.NotificacoesDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lbl_NotificacoesRecebidas = new System.Windows.Forms.Label();
+            this.lbl_TarefasConcluidas = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -394,6 +396,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel2.Controls.Add(this.lbl_TarefasConcluidas);
+            this.guna2Panel2.Controls.Add(this.lbl_NotificacoesRecebidas);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel3);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
@@ -442,7 +446,7 @@
             this.lbl_LucroHoje.AutoSize = true;
             this.lbl_LucroHoje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.lbl_LucroHoje.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_LucroHoje.ForeColor = System.Drawing.Color.YellowGreen;
+            this.lbl_LucroHoje.ForeColor = System.Drawing.Color.LightGreen;
             this.lbl_LucroHoje.Location = new System.Drawing.Point(74, 62);
             this.lbl_LucroHoje.Name = "lbl_LucroHoje";
             this.lbl_LucroHoje.Size = new System.Drawing.Size(25, 28);
@@ -1625,6 +1629,30 @@
             this.Imagem.ReadOnly = true;
             this.Imagem.Width = 5;
             // 
+            // lbl_NotificacoesRecebidas
+            // 
+            this.lbl_NotificacoesRecebidas.AutoSize = true;
+            this.lbl_NotificacoesRecebidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_NotificacoesRecebidas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NotificacoesRecebidas.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_NotificacoesRecebidas.Location = new System.Drawing.Point(248, 95);
+            this.lbl_NotificacoesRecebidas.Name = "lbl_NotificacoesRecebidas";
+            this.lbl_NotificacoesRecebidas.Size = new System.Drawing.Size(25, 28);
+            this.lbl_NotificacoesRecebidas.TabIndex = 23;
+            this.lbl_NotificacoesRecebidas.Text = "€";
+            // 
+            // lbl_TarefasConcluidas
+            // 
+            this.lbl_TarefasConcluidas.AutoSize = true;
+            this.lbl_TarefasConcluidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_TarefasConcluidas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TarefasConcluidas.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_TarefasConcluidas.Location = new System.Drawing.Point(199, 129);
+            this.lbl_TarefasConcluidas.Name = "lbl_TarefasConcluidas";
+            this.lbl_TarefasConcluidas.Size = new System.Drawing.Size(25, 28);
+            this.lbl_TarefasConcluidas.TabIndex = 24;
+            this.lbl_TarefasConcluidas.Text = "€";
+            // 
             // MainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1752,5 +1780,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView NotificacoesDataGridView;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn Imagem;
+        private System.Windows.Forms.Label lbl_TarefasConcluidas;
+        private System.Windows.Forms.Label lbl_NotificacoesRecebidas;
     }
 }
