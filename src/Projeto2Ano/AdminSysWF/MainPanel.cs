@@ -525,5 +525,10 @@ namespace AdminSysWF
             HandleCellClick(FornecedoresDataGridView, "CheckBoxColumn4", Edit4Campos.Tabelas.Fornecedor, new List<string> { "Nome", "Email", "Telefone", "Categoria" });
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1);
+            def.ShowDialog();
+        }
     }
 }
