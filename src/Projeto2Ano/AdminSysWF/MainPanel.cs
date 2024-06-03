@@ -42,6 +42,21 @@ namespace AdminSysWF
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
             refreshFornecedoresDataGridView();
+        }
+
+        private void refreshNotificacoesDataGridView()
+        {
+            DataTable dt = Database.GetLowEstoque(UserID);
+            dt.Columns.Add("NotificationText", typeof(string));
+            foreach (DataRow row in dt.Rows)
+            {
+                row["NotificationText"] = "Estoque a acabar: " + row["Produto"].ToString();
+            }
+            NotificacoesDataGridView.DataSource = dt;
+
+            NotificacoesDataGridView.Columns["NotificationText"].Width = 300;
+            SetDataGridViewReadOnly(NotificacoesDataGridView);
+            NotificacoesDataGridView.Columns["Produto"].Visible = false;
 
         }
 
@@ -81,6 +96,7 @@ namespace AdminSysWF
             EstoqueDataGridView.Columns[2].HeaderText = "Produto";
             EstoqueDataGridView.Columns[3].HeaderText = "Quantidade";
             EstoqueDataGridView.Columns[4].HeaderText = "Categoria";
+            refreshNotificacoesDataGridView();
             SetDataGridViewReadOnly(EstoqueDataGridView);
         }
 

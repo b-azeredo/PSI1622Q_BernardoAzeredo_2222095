@@ -574,7 +574,34 @@ namespace AdminSysWF
             return estoqueTable;
         }
 
+        public static DataTable GetLowEstoque(int userId)
+        {
+            DataTable estoqueTable = new DataTable();
 
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"SELECT PRODUTO FROM ESTOQUE WHERE QUANTIDADE <= 5 AND USER_ID = @userId";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(estoqueTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o estoque: " + ex.Message);
+            }
+
+            return estoqueTable;
+        }
 
         public static bool AddProduto(int userId, string produto, int quantidade, int idCategoria)
         {
