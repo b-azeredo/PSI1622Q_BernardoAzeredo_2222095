@@ -254,6 +254,7 @@ namespace AdminSysWF
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             refreshDespesasDataGridView();
             refreshLabels();
+            RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
         }
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
@@ -402,6 +403,7 @@ namespace AdminSysWF
                 refreshEstoqueDataGridView();
                 RefreshChart(gunaChart1, 7, Database.GetLucroDia);
                 RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
+                RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
             }
             else
             {
@@ -455,6 +457,7 @@ namespace AdminSysWF
                         break;
                     case Edit3Campos.Tabelas.Despesa:
                         refreshDespesasDataGridView();
+                        RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
                         break;
                     case Edit3Campos.Tabelas.Funcionario:
                         refreshFuncionariosDataGridView();
