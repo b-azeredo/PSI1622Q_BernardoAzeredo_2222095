@@ -18,7 +18,6 @@ namespace AdminSysWF
             InitializeComponent();
             this.chart = chart;
         }
-
         private void ExportChartToPdf()
         {
             try
@@ -33,14 +32,14 @@ namespace AdminSysWF
                 document.Info.Title = "Chart Export";
 
                 PdfPage page = document.AddPage();
-                page.Width = chart.Width;
-                page.Height = chart.Height;
+                page.Width = XUnit.FromPoint(chart.Width);
+                page.Height = XUnit.FromPoint(chart.Height);
 
                 XGraphics gfx = XGraphics.FromPdfPage(page);
 
                 XImage xImage = XImage.FromFile(tempFilePath);
 
-                gfx.DrawImage(xImage, 0, 0, chart.Width, chart.Height);
+                gfx.DrawImage(xImage, 0, 0, XUnit.FromPoint(chart.Width), XUnit.FromPoint(chart.Height));
 
                 string filename = "ChartExport.pdf";
                 document.Save(filename);
@@ -58,5 +57,6 @@ namespace AdminSysWF
         {
             ExportChartToPdf();
         }
+
     }
 }

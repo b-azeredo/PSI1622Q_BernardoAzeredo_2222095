@@ -34,6 +34,7 @@ namespace AdminSysWF
 
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
+            RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
             refreshLucrosDataGridView();
             refreshDespesasDataGridView();
             refreshTarefasDataGridView();
@@ -192,7 +193,7 @@ namespace AdminSysWF
             var series = new GunaLineDataset
             {
                 Label = "Lucro",
-                BorderWidth = 1,
+                BorderWidth = 2,
                 BorderColor = Color.White,
             };
 
@@ -290,29 +291,6 @@ namespace AdminSysWF
             addTarefa.ShowDialog();
             refreshTarefasDataGridView();
             refreshLabels();
-        }
-
-        private void tarefasDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
-            {
-                if (e.ColumnIndex == Concluir.Index)
-                {
-                    e.CellStyle.BackColor = Color.Green;
-
-                    e.PaintContent(e.CellBounds);
-
-                    using (Pen p = new Pen(Color.Red))
-                    {
-                        Rectangle rect = e.CellBounds;
-                        rect.Width -= 1;
-                        rect.Height -= 1;
-                        e.Graphics.DrawRectangle(p, rect);
-                    }
-
-                    e.Handled = true;
-                }
-            }
         }
 
         private void guna2Button10_Click(object sender, EventArgs e)
