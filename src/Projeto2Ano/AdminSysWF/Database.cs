@@ -237,6 +237,32 @@ namespace AdminSysWF
             return lucroDia;
         }
 
+        public static float GetLucroSemanal(int userId)
+        {
+            float lucroSemanal = 0;
+
+            try
+            {
+                // Encontra o último domingo antes ou igual à data atual
+                DateTime hoje = DateTime.Today;
+                DateTime ultimoDomingo = hoje.AddDays(-(int)hoje.DayOfWeek);
+
+                for (int i = 0; i < 7; i++)
+                {
+                    DateTime dia = ultimoDomingo.AddDays(i);
+                    float lucroDia = GetLucroDia(dia, userId);
+                    lucroSemanal += lucroDia;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o lucro semanal a partir do último domingo: " + ex.Message);
+            }
+
+            return lucroSemanal;
+        }
+
+
         public static float GetGanhosDia(DateTime dia, int userId)
         {
             float lucroDia = 0;
@@ -393,18 +419,13 @@ namespace AdminSysWF
                     DateTime domingoAnterior = ultimoDomingo.AddDays(-7);
 
                     string consulta = @"
-            SELECT COUNT(*)
-            FROM TAREFAS
-            WHERE USER_ID = @userId 
-              AND CONCLUIDO = 1
-              AND DATA_CONCLUSAO >= @domingoAnterior
-              AND DATA_CONCLUSAO < @ultimoDomingo";
+                        SELECT COUNT(*) FROM TAREFAS WHERE USER_ID = @userId AND CONCLUIDO = 1
+                          AND DATA_CONCLUSAO >= @domingoAnterior";
 
                     using (SqlCommand cmd = new SqlCommand(consulta, conexao))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         cmd.Parameters.AddWithValue("@domingoAnterior", domingoAnterior);
-                        cmd.Parameters.AddWithValue("@ultimoDomingo", ultimoDomingo);
                         numeroTarefasConcluidas = (int)cmd.ExecuteScalar();
                     }
                 }

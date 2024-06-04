@@ -62,17 +62,17 @@ namespace AdminSysWF
 
         private void refreshLabels()
         {
-            float lucroHoje = Database.GetLucroDia(DateTime.Now, UserID);
-            int tarefasConcluidasHoje = Database.GetNumeroTarefasConcluidasUltimaSemana(UserID);
-            lbl_TarefasConcluidas.Text = tarefasConcluidasHoje.ToString();
-            lbl_LucroHoje.Text = lucroHoje.ToString() + "€";
-            if (lucroHoje < 0)
+            float lucroSemanal = Database.GetLucroSemanal(UserID);
+            int tarefas = Database.GetNumeroTarefasConcluidasUltimaSemana(UserID);
+            lbl_TarefasConcluidas.Text = tarefas.ToString();
+            lbl_LucroSemanal.Text = lucroSemanal.ToString() + "€";
+            if (lucroSemanal < 0)
             {
-                lbl_LucroHoje.ForeColor = Color.Red;
+                lbl_LucroSemanal.ForeColor = Color.Red;
             }
             else
             {
-                lbl_LucroHoje.ForeColor = Color.LightGreen;
+                lbl_LucroSemanal.ForeColor = Color.LightGreen;
             }
         }
 
@@ -280,6 +280,7 @@ namespace AdminSysWF
                 int tarefaId = Convert.ToInt32(tarefasDataGridView.Rows[e.RowIndex].Cells["ID"].Value);
                 Database.ConcluirTarefa(tarefaId);
                 refreshTarefasDataGridView();
+                refreshLabels();
             }
         }
 
