@@ -643,6 +643,66 @@ namespace AdminSysWF
             return estoqueTable;
         }
 
+        public static DataTable GetInvestimentos(int userId)
+        {
+            DataTable investimentosTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"SELECT i.ID, i.DESCRICAO, i.TIPO_INVESTIMENTO, i.VALOR_INVESTIDO, i.VALOR_TOTAL 
+                             FROM INVESTIMENTOS i
+                             WHERE i.USER_ID = @userId 
+                             ORDER BY i.TIPO_INVESTIMENTO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(investimentosTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os investimentos: " + ex.Message);
+            }
+
+            return investimentosTable;
+        }
+
+        public static DataTable GetTiposInvestimentos()
+        {
+            DataTable tiposInvestimentosTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT ID, TIPO FROM TIPOS_INVESTIMENTOS ORDER BY TIPO";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(tiposInvestimentosTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os tipos de investimentos: " + ex.Message);
+            }
+
+            return tiposInvestimentosTable;
+        }
+
+
         public static DataTable GetLowEstoque(int userId)
         {
             DataTable estoqueTable = new DataTable();
@@ -702,6 +762,39 @@ namespace AdminSysWF
                 return false;
             }
         }
+
+        public static bool AddInvestimento(int userId, int idTipo, string descricao, decimal valorInvestido, decimal valorTotal)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "INSERT INTO INVESTIMENTOS (USER_ID, TIPO_INVESTIMENTO, DESCRICAO, VALOR_INVESTIDO, VALOR_TOTAL) VALUES (@userId, @idTipo, @descricao, @valorInvestido, @valorTotal)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        cmd.Parameters.AddWithValue("@idTipo", idTipo);
+                        cmd.Parameters.AddWithValue("@descricao", descricao);
+                        cmd.Parameters.AddWithValue("@valorInvestido", valorInvestido);
+                        cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar o investimento: " + ex.Message);
+                return false;
+            }
+        }
+
 
         public static DataTable GetFornecedores(int userId)
         {
@@ -935,6 +1028,32 @@ namespace AdminSysWF
             }
         }
 
+        public static bool RemoverInvestimento(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM INVESTIMENTOS WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o investimento: " + ex.Message);
+                return false;
+            }
+        }
 
         public static bool EditGanho(int id, string desc, float valor)
         {
@@ -961,6 +1080,36 @@ namespace AdminSysWF
                 return false;
             }
         }
+
+        public static bool EditInvestimento(int id, string tipoInvestimento, string descricao, decimal valorInvestido, decimal valorTotal)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null) return false;
+
+                    string query = "UPDATE INVESTIMENTOS SET TIPO_INVESTIMENTO = @tipoInvestimento, DESCRICAO = @descricao, VALOR_INVESTIDO = @valorInvestido, VALOR_TOTAL = @valorTotal WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@tipoInvestimento", tipoInvestimento);
+                        cmd.Parameters.AddWithValue("@descricao", descricao);
+                        cmd.Parameters.AddWithValue("@valorInvestido", valorInvestido);
+                        cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar o investimento: " + ex.Message);
+                return false;
+            }
+        }
+
+
 
         public static bool EditFuncionario(int id, string nome, float salario, string cargo)
         {

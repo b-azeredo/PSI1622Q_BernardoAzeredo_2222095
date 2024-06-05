@@ -43,6 +43,7 @@ namespace AdminSysWF
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
             refreshFornecedoresDataGridView();
+            refreshInvestimentosDataGridView();
         }
 
         private void refreshNotificacoesDataGridView()
@@ -101,6 +102,20 @@ namespace AdminSysWF
             EstoqueDataGridView.Columns[4].HeaderText = "Categoria";
             refreshNotificacoesDataGridView();
             SetDataGridViewReadOnly(EstoqueDataGridView);
+        }
+
+        private void refreshInvestimentosDataGridView()
+        {
+            DataTable dt = Database.GetInvestimentos(UserID);
+            InvestimentosDataGridView.DataSource = dt;
+
+            InvestimentosDataGridView.Columns[0].Visible = false;
+            InvestimentosDataGridView.Columns[1].Visible = false;
+            InvestimentosDataGridView.Columns[2].HeaderText = "Descrição";
+            InvestimentosDataGridView.Columns[3].HeaderText = "Tipo";
+            InvestimentosDataGridView.Columns[4].HeaderText = "Valor Inicial";
+            InvestimentosDataGridView.Columns[5].HeaderText = "Valor Atual";
+            SetDataGridViewReadOnly(InvestimentosDataGridView);
         }
 
         private void refreshCategoriasDataGridView()
@@ -404,6 +419,7 @@ namespace AdminSysWF
                 RefreshChart(gunaChart1, 7, Database.GetLucroDia);
                 RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
                 RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
+                refreshInvestimentosDataGridView();
             }
             else
             {
@@ -511,6 +527,23 @@ namespace AdminSysWF
         {
             DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1);
             def.ShowDialog();
+        }
+
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            AddInvestimento add = new AddInvestimento(UserID);
+            add.ShowDialog();
+            refreshInvestimentosDataGridView();
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Database.RemoverInvestimento);
+        }
+
+        private void InvestimentosDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
