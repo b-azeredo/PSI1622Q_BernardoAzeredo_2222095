@@ -113,6 +113,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.NotificacoesDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -176,16 +177,15 @@
             this.EstoqueDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CheckboxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.InvestimentosDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -214,9 +214,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).BeginInit();
             this.tabPage7.SuspendLayout();
-            this.tabPage8.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InvestimentosDataGridView)).BeginInit();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -232,9 +232,10 @@
             this.guna2TabControl1.Controls.Add(this.tabPage8);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1087, 573);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1449, 705);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -263,9 +264,10 @@
             this.tabPage1.Controls.Add(this.guna2Panel2);
             this.tabPage1.Controls.Add(this.guna2Panel1);
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(899, 565);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1261, 697);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menu Inicial";
             // 
@@ -274,9 +276,10 @@
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel4.Controls.Add(this.NotificacoesDataGridView);
             this.guna2Panel4.Controls.Add(this.label2);
-            this.guna2Panel4.Location = new System.Drawing.Point(0, 360);
+            this.guna2Panel4.Location = new System.Drawing.Point(0, 443);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(502, 199);
+            this.guna2Panel4.Size = new System.Drawing.Size(669, 245);
             this.guna2Panel4.TabIndex = 18;
             // 
             // NotificacoesDataGridView
@@ -314,7 +317,8 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.NotificacoesDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.NotificacoesDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.NotificacoesDataGridView.Location = new System.Drawing.Point(13, 46);
+            this.NotificacoesDataGridView.Location = new System.Drawing.Point(17, 57);
+            this.NotificacoesDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NotificacoesDataGridView.Name = "NotificacoesDataGridView";
             this.NotificacoesDataGridView.ReadOnly = true;
             this.NotificacoesDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -327,9 +331,10 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.NotificacoesDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.NotificacoesDataGridView.RowHeadersVisible = false;
+            this.NotificacoesDataGridView.RowHeadersWidth = 51;
             this.NotificacoesDataGridView.RowTemplate.DividerHeight = 15;
             this.NotificacoesDataGridView.RowTemplate.Height = 40;
-            this.NotificacoesDataGridView.Size = new System.Drawing.Size(475, 145);
+            this.NotificacoesDataGridView.Size = new System.Drawing.Size(633, 178);
             this.NotificacoesDataGridView.TabIndex = 22;
             this.NotificacoesDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.NotificacoesDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -354,15 +359,28 @@
             this.NotificacoesDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.NotificacoesDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // Imagem
+            // 
+            this.Imagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Imagem.FillWeight = 1F;
+            this.Imagem.HeaderText = "Imagem";
+            this.Imagem.Image = global::AdminSysWF.Properties.Resources.icons8_warning_50;
+            this.Imagem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Imagem.MinimumWidth = 6;
+            this.Imagem.Name = "Imagem";
+            this.Imagem.ReadOnly = true;
+            this.Imagem.Width = 6;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 9);
+            this.label2.Location = new System.Drawing.Point(9, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 32);
+            this.label2.Size = new System.Drawing.Size(225, 40);
             this.label2.TabIndex = 16;
             this.label2.Text = "Notificações";
             // 
@@ -372,9 +390,10 @@
             this.guna2Panel3.Controls.Add(this.guna2Button3);
             this.guna2Panel3.Controls.Add(this.tarefasDataGridView);
             this.guna2Panel3.Controls.Add(this.label4);
-            this.guna2Panel3.Location = new System.Drawing.Point(508, 184);
+            this.guna2Panel3.Location = new System.Drawing.Point(677, 226);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(388, 375);
+            this.guna2Panel3.Size = new System.Drawing.Size(517, 462);
             this.guna2Panel3.TabIndex = 17;
             // 
             // guna2Button3
@@ -383,7 +402,7 @@
             this.guna2Button3.AutoRoundedCorners = true;
             this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button3.BorderColor = System.Drawing.Color.White;
-            this.guna2Button3.BorderRadius = 18;
+            this.guna2Button3.BorderRadius = 23;
             this.guna2Button3.BorderThickness = 1;
             this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -392,9 +411,10 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(18, 328);
+            this.guna2Button3.Location = new System.Drawing.Point(24, 404);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(350, 39);
+            this.guna2Button3.Size = new System.Drawing.Size(467, 48);
             this.guna2Button3.TabIndex = 21;
             this.guna2Button3.Text = "Adicionar";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -434,7 +454,8 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tarefasDataGridView.DefaultCellStyle = dataGridViewCellStyle7;
             this.tarefasDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.tarefasDataGridView.Location = new System.Drawing.Point(18, 44);
+            this.tarefasDataGridView.Location = new System.Drawing.Point(24, 54);
+            this.tarefasDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tarefasDataGridView.Name = "tarefasDataGridView";
             this.tarefasDataGridView.ReadOnly = true;
             this.tarefasDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -447,9 +468,10 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.tarefasDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.tarefasDataGridView.RowHeadersVisible = false;
+            this.tarefasDataGridView.RowHeadersWidth = 51;
             this.tarefasDataGridView.RowTemplate.DividerHeight = 15;
             this.tarefasDataGridView.RowTemplate.Height = 40;
-            this.tarefasDataGridView.Size = new System.Drawing.Size(350, 279);
+            this.tarefasDataGridView.Size = new System.Drawing.Size(467, 343);
             this.tarefasDataGridView.TabIndex = 19;
             this.tarefasDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.tarefasDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -479,6 +501,7 @@
             // 
             this.Concluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Concluir.HeaderText = "Concluir";
+            this.Concluir.MinimumWidth = 6;
             this.Concluir.Name = "Concluir";
             this.Concluir.ReadOnly = true;
             this.Concluir.Text = "Concluir";
@@ -491,9 +514,10 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 9);
+            this.label4.Location = new System.Drawing.Point(16, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 32);
+            this.label4.Size = new System.Drawing.Size(133, 40);
             this.label4.TabIndex = 18;
             this.label4.Text = "Tarefas";
             // 
@@ -505,9 +529,10 @@
             this.guna2Panel2.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel2.Controls.Add(this.lbl_LucroSemanal);
             this.guna2Panel2.Controls.Add(this.label3);
-            this.guna2Panel2.Location = new System.Drawing.Point(508, 3);
+            this.guna2Panel2.Location = new System.Drawing.Point(677, 4);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(388, 175);
+            this.guna2Panel2.Size = new System.Drawing.Size(517, 215);
             this.guna2Panel2.TabIndex = 16;
             // 
             // lbl_TarefasConcluidas
@@ -516,9 +541,10 @@
             this.lbl_TarefasConcluidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.lbl_TarefasConcluidas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TarefasConcluidas.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbl_TarefasConcluidas.Location = new System.Drawing.Point(200, 91);
+            this.lbl_TarefasConcluidas.Location = new System.Drawing.Point(267, 112);
+            this.lbl_TarefasConcluidas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_TarefasConcluidas.Name = "lbl_TarefasConcluidas";
-            this.lbl_TarefasConcluidas.Size = new System.Drawing.Size(25, 28);
+            this.lbl_TarefasConcluidas.Size = new System.Drawing.Size(34, 37);
             this.lbl_TarefasConcluidas.TabIndex = 24;
             this.lbl_TarefasConcluidas.Text = "0";
             // 
@@ -527,9 +553,10 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 92);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(17, 113);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(189, 27);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(224, 32);
             this.guna2HtmlLabel3.TabIndex = 22;
             this.guna2HtmlLabel3.Text = "Tarefas Concluídas";
             // 
@@ -538,9 +565,10 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 63);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(17, 78);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(67, 32);
             this.guna2HtmlLabel1.TabIndex = 20;
             this.guna2HtmlLabel1.Text = "Lucro";
             // 
@@ -550,9 +578,10 @@
             this.lbl_LucroSemanal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.lbl_LucroSemanal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_LucroSemanal.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbl_LucroSemanal.Location = new System.Drawing.Point(68, 61);
+            this.lbl_LucroSemanal.Location = new System.Drawing.Point(91, 75);
+            this.lbl_LucroSemanal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_LucroSemanal.Name = "lbl_LucroSemanal";
-            this.lbl_LucroSemanal.Size = new System.Drawing.Size(25, 28);
+            this.lbl_LucroSemanal.Size = new System.Drawing.Size(34, 37);
             this.lbl_LucroSemanal.TabIndex = 16;
             this.lbl_LucroSemanal.Text = "0";
             // 
@@ -562,9 +591,10 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label3.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Location = new System.Drawing.Point(4, 10);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(239, 32);
+            this.label3.Size = new System.Drawing.Size(302, 40);
             this.label3.TabIndex = 17;
             this.label3.Text = "Resumo Semanal";
             // 
@@ -573,9 +603,10 @@
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel1.Controls.Add(this.gunaChart1);
             this.guna2Panel1.Controls.Add(this.label1);
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 3);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(502, 351);
+            this.guna2Panel1.Size = new System.Drawing.Size(669, 432);
             this.guna2Panel1.TabIndex = 13;
             // 
             // gunaChart1
@@ -584,9 +615,10 @@
             chartFont1.FontName = "Arial";
             this.gunaChart1.Legend.LabelFont = chartFont1;
             this.gunaChart1.Legend.LabelForeColor = System.Drawing.Color.White;
-            this.gunaChart1.Location = new System.Drawing.Point(3, 38);
+            this.gunaChart1.Location = new System.Drawing.Point(4, 47);
+            this.gunaChart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gunaChart1.Name = "gunaChart1";
-            this.gunaChart1.Size = new System.Drawing.Size(496, 310);
+            this.gunaChart1.Size = new System.Drawing.Size(661, 382);
             this.gunaChart1.TabIndex = 16;
             chartFont2.FontName = "Arial";
             chartFont2.Size = 12;
@@ -628,9 +660,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 8);
+            this.label1.Location = new System.Drawing.Point(9, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 32);
+            this.label1.Size = new System.Drawing.Size(258, 40);
             this.label1.TabIndex = 15;
             this.label1.Text = "Lucro semanal";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -644,9 +677,10 @@
             this.tabPage2.Controls.Add(this.AddLucro);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(899, 565);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1261, 697);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ganhos";
             // 
@@ -655,9 +689,10 @@
             this.guna2Panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel11.Controls.Add(this.gunaChart2);
             this.guna2Panel11.Controls.Add(this.label12);
-            this.guna2Panel11.Location = new System.Drawing.Point(445, 3);
+            this.guna2Panel11.Location = new System.Drawing.Point(593, 4);
+            this.guna2Panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(451, 307);
+            this.guna2Panel11.Size = new System.Drawing.Size(601, 378);
             this.guna2Panel11.TabIndex = 34;
             // 
             // gunaChart2
@@ -666,9 +701,10 @@
             chartFont9.FontName = "Arial";
             this.gunaChart2.Legend.LabelFont = chartFont9;
             this.gunaChart2.Legend.LabelForeColor = System.Drawing.Color.White;
-            this.gunaChart2.Location = new System.Drawing.Point(3, 38);
+            this.gunaChart2.Location = new System.Drawing.Point(4, 47);
+            this.gunaChart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gunaChart2.Name = "gunaChart2";
-            this.gunaChart2.Size = new System.Drawing.Size(445, 272);
+            this.gunaChart2.Size = new System.Drawing.Size(593, 335);
             this.gunaChart2.TabIndex = 16;
             chartFont10.FontName = "Arial";
             chartFont10.Size = 12;
@@ -710,9 +746,10 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(7, 8);
+            this.label12.Location = new System.Drawing.Point(9, 10);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(229, 32);
+            this.label12.Size = new System.Drawing.Size(288, 40);
             this.label12.TabIndex = 15;
             this.label12.Text = "Ganhos Mensais";
             // 
@@ -720,9 +757,10 @@
             // 
             this.guna2Panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel10.Controls.Add(this.label10);
-            this.guna2Panel10.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel10.Location = new System.Drawing.Point(8, 4);
+            this.guna2Panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel10.Size = new System.Drawing.Size(573, 65);
             this.guna2Panel10.TabIndex = 33;
             // 
             // label10
@@ -730,9 +768,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(3, 10);
+            this.label10.Location = new System.Drawing.Point(4, 12);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 32);
+            this.label10.Size = new System.Drawing.Size(145, 40);
             this.label10.TabIndex = 31;
             this.label10.Text = "Ganhos";
             // 
@@ -748,9 +787,10 @@
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(6, 515);
+            this.guna2Button2.Location = new System.Drawing.Point(8, 634);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button2.Size = new System.Drawing.Size(283, 48);
             this.guna2Button2.TabIndex = 21;
             this.guna2Button2.Text = "Remover";
             this.guna2Button2.UseTransparentBackground = true;
@@ -769,9 +809,10 @@
             this.AddLucro.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AddLucro.ForeColor = System.Drawing.Color.White;
             this.AddLucro.IndicateFocus = true;
-            this.AddLucro.Location = new System.Drawing.Point(224, 515);
+            this.AddLucro.Location = new System.Drawing.Point(299, 634);
+            this.AddLucro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AddLucro.Name = "AddLucro";
-            this.AddLucro.Size = new System.Drawing.Size(212, 39);
+            this.AddLucro.Size = new System.Drawing.Size(283, 48);
             this.AddLucro.TabIndex = 20;
             this.AddLucro.Text = "Adicionar";
             this.AddLucro.UseTransparentBackground = true;
@@ -811,7 +852,8 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView1.Location = new System.Drawing.Point(6, 57);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 70);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -823,8 +865,9 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(430, 452);
+            this.dataGridView1.Size = new System.Drawing.Size(573, 556);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -853,6 +896,7 @@
             // CheckboxColumn
             // 
             this.CheckboxColumn.HeaderText = "Remover";
+            this.CheckboxColumn.MinimumWidth = 6;
             this.CheckboxColumn.Name = "CheckboxColumn";
             this.CheckboxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -865,9 +909,10 @@
             this.tabPage3.Controls.Add(this.AdicionarDespesa);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(899, 565);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1261, 697);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Despesas";
             // 
@@ -876,9 +921,10 @@
             this.guna2Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel12.Controls.Add(this.gunaChart3);
             this.guna2Panel12.Controls.Add(this.label13);
-            this.guna2Panel12.Location = new System.Drawing.Point(445, 3);
+            this.guna2Panel12.Location = new System.Drawing.Point(593, 4);
+            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Size = new System.Drawing.Size(451, 307);
+            this.guna2Panel12.Size = new System.Drawing.Size(601, 378);
             this.guna2Panel12.TabIndex = 35;
             // 
             // gunaChart3
@@ -887,9 +933,10 @@
             chartFont17.FontName = "Arial";
             this.gunaChart3.Legend.LabelFont = chartFont17;
             this.gunaChart3.Legend.LabelForeColor = System.Drawing.Color.White;
-            this.gunaChart3.Location = new System.Drawing.Point(3, 38);
+            this.gunaChart3.Location = new System.Drawing.Point(4, 47);
+            this.gunaChart3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gunaChart3.Name = "gunaChart3";
-            this.gunaChart3.Size = new System.Drawing.Size(445, 272);
+            this.gunaChart3.Size = new System.Drawing.Size(593, 335);
             this.gunaChart3.TabIndex = 16;
             chartFont18.FontName = "Arial";
             chartFont18.Size = 12;
@@ -931,9 +978,10 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.label13.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(7, 8);
+            this.label13.Location = new System.Drawing.Point(9, 10);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(252, 32);
+            this.label13.Size = new System.Drawing.Size(317, 40);
             this.label13.TabIndex = 15;
             this.label13.Text = "Despesas Mensais";
             // 
@@ -941,9 +989,10 @@
             // 
             this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel9.Controls.Add(this.label9);
-            this.guna2Panel9.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel9.Location = new System.Drawing.Point(8, 4);
+            this.guna2Panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel9.Size = new System.Drawing.Size(573, 65);
             this.guna2Panel9.TabIndex = 33;
             // 
             // label9
@@ -951,9 +1000,10 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 10);
+            this.label9.Location = new System.Drawing.Point(4, 12);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 32);
+            this.label9.Size = new System.Drawing.Size(174, 40);
             this.label9.TabIndex = 31;
             this.label9.Text = "Despesas";
             // 
@@ -969,9 +1019,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(6, 515);
+            this.guna2Button1.Location = new System.Drawing.Point(8, 634);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button1.Size = new System.Drawing.Size(283, 48);
             this.guna2Button1.TabIndex = 21;
             this.guna2Button1.Text = "Remover";
             this.guna2Button1.UseTransparentBackground = true;
@@ -989,9 +1040,10 @@
             this.AdicionarDespesa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.AdicionarDespesa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.AdicionarDespesa.ForeColor = System.Drawing.Color.White;
-            this.AdicionarDespesa.Location = new System.Drawing.Point(224, 515);
+            this.AdicionarDespesa.Location = new System.Drawing.Point(299, 634);
+            this.AdicionarDespesa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AdicionarDespesa.Name = "AdicionarDespesa";
-            this.AdicionarDespesa.Size = new System.Drawing.Size(212, 39);
+            this.AdicionarDespesa.Size = new System.Drawing.Size(283, 48);
             this.AdicionarDespesa.TabIndex = 20;
             this.AdicionarDespesa.Text = "Adicionar";
             this.AdicionarDespesa.UseTransparentBackground = true;
@@ -1031,7 +1083,8 @@
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView2.Location = new System.Drawing.Point(6, 57);
+            this.dataGridView2.Location = new System.Drawing.Point(8, 70);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1043,8 +1096,9 @@
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 40;
-            this.dataGridView2.Size = new System.Drawing.Size(430, 452);
+            this.dataGridView2.Size = new System.Drawing.Size(573, 556);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1073,6 +1127,7 @@
             // CheckboxColumn2
             // 
             this.CheckboxColumn2.HeaderText = "Remover";
+            this.CheckboxColumn2.MinimumWidth = 6;
             this.CheckboxColumn2.Name = "CheckboxColumn2";
             this.CheckboxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CheckboxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -1085,9 +1140,10 @@
             this.tabPage4.Controls.Add(this.btnAddFuncionario);
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(899, 565);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1261, 697);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Funcionários";
             // 
@@ -1095,9 +1151,10 @@
             // 
             this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel8.Controls.Add(this.label8);
-            this.guna2Panel8.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel8.Location = new System.Drawing.Point(8, 4);
+            this.guna2Panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel8.Size = new System.Drawing.Size(573, 65);
             this.guna2Panel8.TabIndex = 32;
             // 
             // label8
@@ -1105,9 +1162,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 10);
+            this.label8.Location = new System.Drawing.Point(4, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 32);
+            this.label8.Size = new System.Drawing.Size(223, 40);
             this.label8.TabIndex = 31;
             this.label8.Text = "Funcionários";
             // 
@@ -1123,9 +1181,10 @@
             this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button4.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.Location = new System.Drawing.Point(6, 515);
+            this.guna2Button4.Location = new System.Drawing.Point(8, 634);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button4.Size = new System.Drawing.Size(283, 48);
             this.guna2Button4.TabIndex = 24;
             this.guna2Button4.Text = "Remover";
             this.guna2Button4.UseTransparentBackground = true;
@@ -1143,9 +1202,10 @@
             this.btnAddFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.btnAddFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAddFuncionario.ForeColor = System.Drawing.Color.White;
-            this.btnAddFuncionario.Location = new System.Drawing.Point(224, 515);
+            this.btnAddFuncionario.Location = new System.Drawing.Point(299, 634);
+            this.btnAddFuncionario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddFuncionario.Name = "btnAddFuncionario";
-            this.btnAddFuncionario.Size = new System.Drawing.Size(212, 39);
+            this.btnAddFuncionario.Size = new System.Drawing.Size(283, 48);
             this.btnAddFuncionario.TabIndex = 23;
             this.btnAddFuncionario.Text = "Adicionar";
             this.btnAddFuncionario.UseTransparentBackground = true;
@@ -1185,7 +1245,8 @@
             dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dataGridView3.Location = new System.Drawing.Point(6, 57);
+            this.dataGridView3.Location = new System.Drawing.Point(8, 70);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1197,8 +1258,9 @@
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 40;
-            this.dataGridView3.Size = new System.Drawing.Size(430, 452);
+            this.dataGridView3.Size = new System.Drawing.Size(573, 556);
             this.dataGridView3.TabIndex = 22;
             this.dataGridView3.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1227,6 +1289,7 @@
             // CheckboxColumn3
             // 
             this.CheckboxColumn3.HeaderText = "Remover";
+            this.CheckboxColumn3.MinimumWidth = 6;
             this.CheckboxColumn3.Name = "CheckboxColumn3";
             // 
             // tabPage5
@@ -1237,9 +1300,10 @@
             this.tabPage5.Controls.Add(this.btn_AddFornecedores);
             this.tabPage5.Controls.Add(this.FornecedoresDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(184, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(899, 565);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Size = new System.Drawing.Size(1261, 697);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Fornecedores";
             // 
@@ -1247,9 +1311,10 @@
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel7.Controls.Add(this.label6);
-            this.guna2Panel7.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel7.Location = new System.Drawing.Point(8, 4);
+            this.guna2Panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(493, 53);
+            this.guna2Panel7.Size = new System.Drawing.Size(657, 65);
             this.guna2Panel7.TabIndex = 31;
             // 
             // label6
@@ -1257,9 +1322,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Location = new System.Drawing.Point(4, 12);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 32);
+            this.label6.Size = new System.Drawing.Size(244, 40);
             this.label6.TabIndex = 31;
             this.label6.Text = "Fornecedores";
             // 
@@ -1275,9 +1341,10 @@
             this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(6, 515);
+            this.guna2Button6.Location = new System.Drawing.Point(8, 634);
+            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(247, 39);
+            this.guna2Button6.Size = new System.Drawing.Size(329, 48);
             this.guna2Button6.TabIndex = 24;
             this.guna2Button6.Text = "Remover";
             this.guna2Button6.UseTransparentBackground = true;
@@ -1295,9 +1362,10 @@
             this.btn_AddFornecedores.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.btn_AddFornecedores.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_AddFornecedores.ForeColor = System.Drawing.Color.White;
-            this.btn_AddFornecedores.Location = new System.Drawing.Point(259, 515);
+            this.btn_AddFornecedores.Location = new System.Drawing.Point(345, 634);
+            this.btn_AddFornecedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_AddFornecedores.Name = "btn_AddFornecedores";
-            this.btn_AddFornecedores.Size = new System.Drawing.Size(240, 39);
+            this.btn_AddFornecedores.Size = new System.Drawing.Size(320, 48);
             this.btn_AddFornecedores.TabIndex = 23;
             this.btn_AddFornecedores.Text = "Adicionar";
             this.btn_AddFornecedores.UseTransparentBackground = true;
@@ -1337,7 +1405,8 @@
             dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.FornecedoresDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
             this.FornecedoresDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.FornecedoresDataGridView.Location = new System.Drawing.Point(6, 57);
+            this.FornecedoresDataGridView.Location = new System.Drawing.Point(8, 70);
+            this.FornecedoresDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FornecedoresDataGridView.Name = "FornecedoresDataGridView";
             this.FornecedoresDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1349,8 +1418,9 @@
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.FornecedoresDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.FornecedoresDataGridView.RowHeadersVisible = false;
+            this.FornecedoresDataGridView.RowHeadersWidth = 51;
             this.FornecedoresDataGridView.RowTemplate.Height = 40;
-            this.FornecedoresDataGridView.Size = new System.Drawing.Size(493, 452);
+            this.FornecedoresDataGridView.Size = new System.Drawing.Size(657, 556);
             this.FornecedoresDataGridView.TabIndex = 22;
             this.FornecedoresDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.FornecedoresDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1379,6 +1449,7 @@
             // CheckboxColumn4
             // 
             this.CheckboxColumn4.HeaderText = "Remover";
+            this.CheckboxColumn4.MinimumWidth = 6;
             this.CheckboxColumn4.Name = "CheckboxColumn4";
             // 
             // tabPage6
@@ -1393,9 +1464,10 @@
             this.tabPage6.Controls.Add(this.guna2Button9);
             this.tabPage6.Controls.Add(this.EstoqueDataGridView);
             this.tabPage6.Location = new System.Drawing.Point(184, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(899, 565);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Size = new System.Drawing.Size(1261, 697);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Estoque";
             // 
@@ -1403,9 +1475,10 @@
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel6.Controls.Add(this.label5);
-            this.guna2Panel6.Location = new System.Drawing.Point(442, 3);
+            this.guna2Panel6.Location = new System.Drawing.Point(589, 4);
+            this.guna2Panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(415, 53);
+            this.guna2Panel6.Size = new System.Drawing.Size(553, 65);
             this.guna2Panel6.TabIndex = 32;
             // 
             // label5
@@ -1413,9 +1486,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1, 11);
+            this.label5.Location = new System.Drawing.Point(1, 14);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 32);
+            this.label5.Size = new System.Drawing.Size(198, 40);
             this.label5.TabIndex = 31;
             this.label5.Text = "Categorias";
             // 
@@ -1423,9 +1497,10 @@
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel5.Controls.Add(this.label7);
-            this.guna2Panel5.Location = new System.Drawing.Point(6, 3);
+            this.guna2Panel5.Location = new System.Drawing.Point(8, 4);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(430, 53);
+            this.guna2Panel5.Size = new System.Drawing.Size(573, 65);
             this.guna2Panel5.TabIndex = 30;
             // 
             // label7
@@ -1433,9 +1508,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 10);
+            this.label7.Location = new System.Drawing.Point(4, 12);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 32);
+            this.label7.Size = new System.Drawing.Size(158, 40);
             this.label7.TabIndex = 31;
             this.label7.Text = "Produtos";
             // 
@@ -1451,9 +1527,10 @@
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Location = new System.Drawing.Point(442, 234);
+            this.guna2Button5.Location = new System.Drawing.Point(589, 288);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(202, 39);
+            this.guna2Button5.Size = new System.Drawing.Size(269, 48);
             this.guna2Button5.TabIndex = 28;
             this.guna2Button5.Text = "Remover";
             this.guna2Button5.UseTransparentBackground = true;
@@ -1471,9 +1548,10 @@
             this.guna2Button10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button10.ForeColor = System.Drawing.Color.White;
-            this.guna2Button10.Location = new System.Drawing.Point(650, 234);
+            this.guna2Button10.Location = new System.Drawing.Point(867, 288);
+            this.guna2Button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button10.Name = "guna2Button10";
-            this.guna2Button10.Size = new System.Drawing.Size(207, 39);
+            this.guna2Button10.Size = new System.Drawing.Size(276, 48);
             this.guna2Button10.TabIndex = 27;
             this.guna2Button10.Text = "Adicionar";
             this.guna2Button10.UseTransparentBackground = true;
@@ -1514,7 +1592,8 @@
             dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CategoriasDataGridView.DefaultCellStyle = dataGridViewCellStyle27;
             this.CategoriasDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.CategoriasDataGridView.Location = new System.Drawing.Point(442, 57);
+            this.CategoriasDataGridView.Location = new System.Drawing.Point(589, 70);
+            this.CategoriasDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CategoriasDataGridView.Name = "CategoriasDataGridView";
             this.CategoriasDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1526,8 +1605,9 @@
             dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CategoriasDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.CategoriasDataGridView.RowHeadersVisible = false;
+            this.CategoriasDataGridView.RowHeadersWidth = 51;
             this.CategoriasDataGridView.RowTemplate.Height = 40;
-            this.CategoriasDataGridView.Size = new System.Drawing.Size(415, 171);
+            this.CategoriasDataGridView.Size = new System.Drawing.Size(553, 210);
             this.CategoriasDataGridView.TabIndex = 26;
             this.CategoriasDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.CategoriasDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1555,6 +1635,7 @@
             // CheckboxColumn6
             // 
             this.CheckboxColumn6.HeaderText = "Remover";
+            this.CheckboxColumn6.MinimumWidth = 6;
             this.CheckboxColumn6.Name = "CheckboxColumn6";
             // 
             // guna2Button8
@@ -1569,9 +1650,10 @@
             this.guna2Button8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button8.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button8.ForeColor = System.Drawing.Color.White;
-            this.guna2Button8.Location = new System.Drawing.Point(6, 515);
+            this.guna2Button8.Location = new System.Drawing.Point(8, 634);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button8.Size = new System.Drawing.Size(283, 48);
             this.guna2Button8.TabIndex = 24;
             this.guna2Button8.Text = "Remover";
             this.guna2Button8.UseTransparentBackground = true;
@@ -1589,9 +1671,10 @@
             this.guna2Button9.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button9.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button9.ForeColor = System.Drawing.Color.White;
-            this.guna2Button9.Location = new System.Drawing.Point(224, 515);
+            this.guna2Button9.Location = new System.Drawing.Point(299, 634);
+            this.guna2Button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button9.Size = new System.Drawing.Size(283, 48);
             this.guna2Button9.TabIndex = 23;
             this.guna2Button9.Text = "Adicionar";
             this.guna2Button9.UseTransparentBackground = true;
@@ -1631,7 +1714,8 @@
             dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.EstoqueDataGridView.DefaultCellStyle = dataGridViewCellStyle31;
             this.EstoqueDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.EstoqueDataGridView.Location = new System.Drawing.Point(6, 57);
+            this.EstoqueDataGridView.Location = new System.Drawing.Point(8, 70);
+            this.EstoqueDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.EstoqueDataGridView.Name = "EstoqueDataGridView";
             this.EstoqueDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1643,8 +1727,9 @@
             dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.EstoqueDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.EstoqueDataGridView.RowHeadersVisible = false;
+            this.EstoqueDataGridView.RowHeadersWidth = 51;
             this.EstoqueDataGridView.RowTemplate.Height = 40;
-            this.EstoqueDataGridView.Size = new System.Drawing.Size(430, 452);
+            this.EstoqueDataGridView.Size = new System.Drawing.Size(573, 556);
             this.EstoqueDataGridView.TabIndex = 22;
             this.EstoqueDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.EstoqueDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1673,6 +1758,7 @@
             // CheckboxColumn5
             // 
             this.CheckboxColumn5.HeaderText = "Remover";
+            this.CheckboxColumn5.MinimumWidth = 6;
             this.CheckboxColumn5.Name = "CheckboxColumn5";
             // 
             // tabPage7
@@ -1683,39 +1769,21 @@
             this.tabPage7.Controls.Add(this.guna2Button11);
             this.tabPage7.Controls.Add(this.InvestimentosDataGridView);
             this.tabPage7.Location = new System.Drawing.Point(184, 4);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(899, 565);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Size = new System.Drawing.Size(1261, 697);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Investimentos";
-            // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.label11);
-            this.tabPage8.Location = new System.Drawing.Point(184, 4);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(899, 565);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Definições";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(332, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Escolher quando será descontado o valor do salário dos funcionários";
             // 
             // guna2Panel13
             // 
             this.guna2Panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel13.Controls.Add(this.label14);
-            this.guna2Panel13.Location = new System.Drawing.Point(6, 5);
+            this.guna2Panel13.Location = new System.Drawing.Point(8, 6);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(471, 53);
+            this.guna2Panel13.Size = new System.Drawing.Size(966, 65);
             this.guna2Panel13.TabIndex = 34;
             // 
             // label14
@@ -1723,9 +1791,10 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(3, 10);
+            this.label14.Location = new System.Drawing.Point(4, 12);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(191, 32);
+            this.label14.Size = new System.Drawing.Size(242, 40);
             this.label14.TabIndex = 31;
             this.label14.Text = "Investimentos";
             // 
@@ -1741,9 +1810,10 @@
             this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.Location = new System.Drawing.Point(6, 517);
+            this.guna2Button7.Location = new System.Drawing.Point(982, 359);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button7.Size = new System.Drawing.Size(283, 48);
             this.guna2Button7.TabIndex = 33;
             this.guna2Button7.Text = "Remover";
             this.guna2Button7.UseTransparentBackground = true;
@@ -1761,9 +1831,10 @@
             this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.Location = new System.Drawing.Point(265, 517);
+            this.guna2Button11.Location = new System.Drawing.Point(982, 293);
+            this.guna2Button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.Size = new System.Drawing.Size(212, 39);
+            this.guna2Button11.Size = new System.Drawing.Size(283, 48);
             this.guna2Button11.TabIndex = 32;
             this.guna2Button11.Text = "Adicionar";
             this.guna2Button11.UseTransparentBackground = true;
@@ -1803,7 +1874,8 @@
             dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.InvestimentosDataGridView.DefaultCellStyle = dataGridViewCellStyle35;
             this.InvestimentosDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.InvestimentosDataGridView.Location = new System.Drawing.Point(6, 59);
+            this.InvestimentosDataGridView.Location = new System.Drawing.Point(8, 73);
+            this.InvestimentosDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.InvestimentosDataGridView.Name = "InvestimentosDataGridView";
             this.InvestimentosDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1815,8 +1887,9 @@
             dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.InvestimentosDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.InvestimentosDataGridView.RowHeadersVisible = false;
+            this.InvestimentosDataGridView.RowHeadersWidth = 51;
             this.InvestimentosDataGridView.RowTemplate.Height = 40;
-            this.InvestimentosDataGridView.Size = new System.Drawing.Size(471, 452);
+            this.InvestimentosDataGridView.Size = new System.Drawing.Size(966, 334);
             this.InvestimentosDataGridView.TabIndex = 31;
             this.InvestimentosDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.InvestimentosDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -1845,7 +1918,30 @@
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.HeaderText = "Remover";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.label11);
+            this.tabPage8.Location = new System.Drawing.Point(184, 4);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage8.Size = new System.Drawing.Size(1261, 697);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Definições";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 6);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(422, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Escolher quando será descontado o valor do salário dos funcionários";
             // 
             // dataGridViewImageColumn1
             // 
@@ -1854,29 +1950,20 @@
             this.dataGridViewImageColumn1.HeaderText = "Imagem";
             this.dataGridViewImageColumn1.Image = global::AdminSysWF.Properties.Resources.icons8_warning_100;
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 5;
-            // 
-            // Imagem
-            // 
-            this.Imagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Imagem.FillWeight = 1F;
-            this.Imagem.HeaderText = "Imagem";
-            this.Imagem.Image = global::AdminSysWF.Properties.Resources.icons8_warning_50;
-            this.Imagem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Imagem.Name = "Imagem";
-            this.Imagem.ReadOnly = true;
-            this.Imagem.Width = 5;
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // MainPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1086, 567);
+            this.ClientSize = new System.Drawing.Size(1448, 698);
             this.Controls.Add(this.guna2TabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainPanel";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -1922,11 +2009,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).EndInit();
             this.tabPage7.ResumeLayout(false);
-            this.tabPage8.ResumeLayout(false);
-            this.tabPage8.PerformLayout();
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InvestimentosDataGridView)).EndInit();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
 
         }

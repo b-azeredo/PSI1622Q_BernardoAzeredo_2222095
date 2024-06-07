@@ -107,7 +107,10 @@ namespace AdminSysWF
         private void refreshInvestimentosDataGridView()
         {
             DataTable dt = Database.GetInvestimentos(UserID);
+            dt.Columns.Add("PorcentagemGanhoPerda", typeof(string));
             InvestimentosDataGridView.DataSource = dt;
+            InvestimentosDataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
 
             InvestimentosDataGridView.Columns[0].Visible = false;
             InvestimentosDataGridView.Columns[1].Visible = false;
@@ -115,8 +118,25 @@ namespace AdminSysWF
             InvestimentosDataGridView.Columns[3].HeaderText = "Tipo";
             InvestimentosDataGridView.Columns[4].HeaderText = "Valor Inicial";
             InvestimentosDataGridView.Columns[5].HeaderText = "Valor Atual";
+            InvestimentosDataGridView.Columns[6].HeaderText = "Ganho/Perda";
+
+            foreach (DataRow row in dt.Rows)
+            {
+                double valorInicial = Convert.ToDouble(row[3]);
+                double valorAtual = Convert.ToDouble(row[4]);
+                double porcentagemGanhoPerda = 0;
+
+                if (valorInicial != 0)
+                {
+                    porcentagemGanhoPerda = ((valorAtual - valorInicial) / valorInicial) * 100;
+                }
+
+                row["PorcentagemGanhoPerda"] = porcentagemGanhoPerda + "%";
+            }
+
             SetDataGridViewReadOnly(InvestimentosDataGridView);
         }
+
 
         private void refreshCategoriasDataGridView()
         {

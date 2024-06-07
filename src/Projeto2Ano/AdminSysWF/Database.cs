@@ -651,9 +651,9 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = @"SELECT i.ID, i.DESCRICAO, i.TIPO_INVESTIMENTO, i.VALOR_INVESTIDO, i.VALOR_TOTAL 
-                             FROM INVESTIMENTOS i
-                             WHERE i.USER_ID = @userId 
+                    string query = @"SELECT i.ID, i.DESCRICAO, t.TIPO, i.VALOR_INVESTIDO, i.VALOR_TOTAL 
+                             FROM INVESTIMENTOS i INNER JOIN TIPOS_INVESTIMENTOS t ON i.TIPO_INVESTIMENTO = t.ID
+                             WHERE i.USER_ID = @userId
                              ORDER BY i.TIPO_INVESTIMENTO";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
