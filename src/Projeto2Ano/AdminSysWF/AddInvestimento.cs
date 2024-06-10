@@ -22,7 +22,7 @@ namespace AdminSysWF
                 tiposComboBox.DataSource = tiposInvestimentos;
                 tiposComboBox.DisplayMember = "TIPO";
                 tiposComboBox.ValueMember = "ID";
-                tiposComboBox.SelectedIndex = -1; // Nenhum item selecionado por padrão
+                tiposComboBox.SelectedIndex = -1; 
             }
             catch (Exception ex)
             {

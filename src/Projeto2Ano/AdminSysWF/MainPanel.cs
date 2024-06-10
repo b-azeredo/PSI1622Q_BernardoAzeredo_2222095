@@ -501,6 +501,9 @@ namespace AdminSysWF
                     case Edit3Campos.Tabelas.Produto:
                         refreshEstoqueDataGridView();
                         break;
+                    case Edit3Campos.Tabelas.Investimento:
+                        refreshInvestimentosDataGridView();
+                        break;
                 }
             }
             else if (tabela is Edit4Campos.Tabelas)
@@ -543,6 +546,12 @@ namespace AdminSysWF
             HandleCellClick(FornecedoresDataGridView, "CheckBoxColumn4", Edit4Campos.Tabelas.Fornecedor, new List<string> { "Nome", "Email", "Telefone", "Categoria" });
         }
 
+        private void InvestimentosDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            InvestimentosDataGridView.Tag = e;
+            HandleCellClick(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Edit3Campos.Tabelas.Investimento, new List<string> { "Descrição", "Tipo", "Valor Atual" });
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1);
@@ -561,9 +570,6 @@ namespace AdminSysWF
             HandleDeletion(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Database.RemoverInvestimento);
         }
 
-        private void InvestimentosDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+
     }
 }

@@ -21,6 +21,7 @@ namespace AdminSysWF
             Despesa,
             Funcionario,
             Produto,
+            Investimento
         }
 
         private int id;
@@ -29,10 +30,46 @@ namespace AdminSysWF
 
         public Edit3Campos(int userid, int id, Tabelas tabela, string label1, string label2, string label3, string placeholder1, string placeholder2, string placeholder3)
         {
+
             this.id = id;
             this.tabela = tabela;
             InitializeComponent();
-            if (tabela == Tabelas.Produto)
+            if (tabela == Tabelas.Investimento)
+            {
+                txb_edit3.Text = "";
+                txb_edit2.Visible = false;
+                cb.Location = new System.Drawing.Point(75, 119);
+                cb.Size = new System.Drawing.Size(193, 36);
+                cb.BorderRadius = 17;
+                cb.BorderThickness = 1;
+                cb.BorderColor = Color.FromArgb(213, 218, 223);
+                cb.ForeColor = Color.White;
+                cb.FillColor = Color.FromArgb(34, 34, 46);
+                cb.DropDownStyle = ComboBoxStyle.DropDownList;
+                DataTable categorias = Database.GetTiposInvestimentos();
+                this.Controls.Add(cb);
+
+                if (categorias != null)
+                {
+                    cb.DataSource = categorias;
+                    cb.DisplayMember = "TIPO";
+                    cb.ValueMember = "ID";
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao carregar as categorias.");
+                }
+
+                foreach (DataRow row in categorias.Rows)
+                {
+                    if (row["TIPO"].ToString() == placeholder2)
+                    {
+                        cb.SelectedValue = int.Parse(row["ID"].ToString());
+                        break;
+                    }
+                }
+            }
+            else if (tabela == Tabelas.Produto)
             {
                 txb_edit3.Visible = false;
                 cb.Location = new System.Drawing.Point(75, 184);
@@ -71,7 +108,10 @@ namespace AdminSysWF
             lbl_edit3.Text = label3;
             txb_edit1.Text = placeholder1;
             txb_edit2.Text = placeholder2;
-            txb_edit3.Text = placeholder3;
+            if (!(tabela == Tabelas.Investimento))
+            {
+                txb_edit3.Text = placeholder3;
+            }
         }
 
         private void ConfirmEdit_Click(object sender, EventArgs e)
@@ -89,6 +129,9 @@ namespace AdminSysWF
                     break;
                 case Tabelas.Produto:
                     Database.EditProduto(id, txb_edit1.Text, int.Parse(txb_edit2.Text), int.Parse(cb.SelectedValue.ToString()));
+                    break;
+                case Tabelas.Investimento:
+                    Database.EditInvestimento(id, int.Parse(cb.SelectedValue.ToString()), txb_edit1.Text, int.Parse(txb_edit3.Text));
                     break;
             }
             MessageBox.Show("Registo editado com sucesso.", "Editado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

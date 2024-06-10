@@ -651,10 +651,21 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = @"SELECT i.ID, i.DESCRICAO, t.TIPO, i.VALOR_INVESTIDO, i.VALOR_TOTAL 
-                             FROM INVESTIMENTOS i INNER JOIN TIPOS_INVESTIMENTOS t ON i.TIPO_INVESTIMENTO = t.ID
-                             WHERE i.USER_ID = @userId
-                             ORDER BY i.TIPO_INVESTIMENTO";
+                    string query = @"
+                SELECT i.ID, i.DESCRICAO, t.TIPO, i.VALOR_INVESTIDO, h.VALOR_TOTAL
+                FROM INVESTIMENTOS i
+                INNER JOIN TIPOS_INVESTIMENTOS t ON i.TIPO_INVESTIMENTO = t.ID
+                LEFT JOIN (
+                    SELECT hi1.INVESTIMENTO_ID, hi1.VALOR_TOTAL
+                    FROM HISTORICO_INVESTIMENTO hi1
+                    WHERE hi1.DATA = (
+                        SELECT MAX(hi2.DATA)
+                        FROM HISTORICO_INVESTIMENTO hi2
+                        WHERE hi2.INVESTIMENTO_ID = hi1.INVESTIMENTO_ID
+                    )
+                ) h ON i.ID = h.INVESTIMENTO_ID
+                WHERE i.USER_ID = @userId
+                ORDER BY i.TIPO_INVESTIMENTO";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
@@ -674,6 +685,8 @@ namespace AdminSysWF
 
             return investimentosTable;
         }
+
+
 
         public static DataTable GetTiposInvestimentos()
         {
@@ -774,16 +787,27 @@ namespace AdminSysWF
                         return false;
                     }
 
-                    string query = "INSERT INTO INVESTIMENTOS (USER_ID, TIPO_INVESTIMENTO, DESCRICAO, VALOR_INVESTIDO, VALOR_TOTAL) VALUES (@userId, @idTipo, @descricao, @valorInvestido, @valorTotal)";
+                    string query = "INSERT INTO INVESTIMENTOS (USER_ID, TIPO_INVESTIMENTO, DESCRICAO, VALOR_INVESTIDO, DATA) OUTPUT INSERTED.ID VALUES (@userId, @idTipo, @descricao, @valorInvestido, @dataAtual)";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         cmd.Parameters.AddWithValue("@idTipo", idTipo);
                         cmd.Parameters.AddWithValue("@descricao", descricao);
                         cmd.Parameters.AddWithValue("@valorInvestido", valorInvestido);
-                        cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+                        cmd.Parameters.AddWithValue("@dataAtual", DateTime.Now);
 
-                        cmd.ExecuteNonQuery();
+                        int newInvestmentId = (int)cmd.ExecuteScalar();
+
+                        string historicoQuery = "INSERT INTO HISTORICO_INVESTIMENTO (INVESTIMENTO_ID, VALOR_TOTAL, DATA) VALUES (@investimentoId, @valorTotal, @dataAtual)";
+                        using (SqlCommand historicoCmd = new SqlCommand(historicoQuery, connection))
+                        {
+                            historicoCmd.Parameters.AddWithValue("@investimentoId", newInvestmentId);
+                            historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+                            historicoCmd.Parameters.AddWithValue("@dataAtual", DateTime.Now);
+
+                            historicoCmd.ExecuteNonQuery();
+                        }
+
                         return true;
                     }
                 }
@@ -794,6 +818,7 @@ namespace AdminSysWF
                 return false;
             }
         }
+
 
 
         public static DataTable GetFornecedores(int userId)
@@ -1081,7 +1106,7 @@ namespace AdminSysWF
             }
         }
 
-        public static bool EditInvestimento(int id, string tipoInvestimento, string descricao, decimal valorInvestido, decimal valorTotal)
+        public static bool EditInvestimento(int id, int tipoInvestimento, string descricao, decimal valorTotal)
         {
             try
             {
@@ -1089,17 +1114,25 @@ namespace AdminSysWF
                 {
                     if (connection == null) return false;
 
-                    string query = "UPDATE INVESTIMENTOS SET TIPO_INVESTIMENTO = @tipoInvestimento, DESCRICAO = @descricao, VALOR_INVESTIDO = @valorInvestido, VALOR_TOTAL = @valorTotal WHERE ID = @id";
+                    string query = "UPDATE INVESTIMENTOS SET TIPO_INVESTIMENTO = @tipoInvestimento, DESCRICAO = @descricao WHERE ID = @id";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@tipoInvestimento", tipoInvestimento);
                         cmd.Parameters.AddWithValue("@descricao", descricao);
-                        cmd.Parameters.AddWithValue("@valorInvestido", valorInvestido);
-                        cmd.Parameters.AddWithValue("@valorTotal", valorTotal);
                         cmd.ExecuteNonQuery();
-                        return true;
                     }
+
+                    string historicoQuery = "INSERT INTO HISTORICO_INVESTIMENTO (INVESTIMENTO_ID, VALOR_TOTAL, DATA) VALUES (@investimentoId, @valorTotal, @data)";
+                    using (SqlCommand historicoCmd = new SqlCommand(historicoQuery, connection))
+                    {
+                        historicoCmd.Parameters.AddWithValue("@investimentoId", id);
+                        historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+                        historicoCmd.Parameters.AddWithValue("@data", DateTime.Now); 
+                        historicoCmd.ExecuteNonQuery();
+                    }
+
+                    return true;
                 }
             }
             catch (Exception ex)
@@ -1108,7 +1141,6 @@ namespace AdminSysWF
                 return false;
             }
         }
-
 
 
         public static bool EditFuncionario(int id, string nome, float salario, string cargo)
