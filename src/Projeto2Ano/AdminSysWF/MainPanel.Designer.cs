@@ -109,6 +109,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            Guna.Charts.WinForms.ChartFont chartFont25 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont26 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont27 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont28 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid10 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick10 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont29 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid11 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick11 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont30 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid12 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel4 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont31 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick12 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont32 = new Guna.Charts.WinForms.ChartFont();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
@@ -121,6 +136,7 @@
             this.Concluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_TarefasConcluidas = new System.Windows.Forms.Label();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_LucroSemanal = new System.Windows.Forms.Label();
@@ -185,7 +201,7 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label11 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.gunaChart4 = new Guna.Charts.WinForms.GunaChart();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -264,7 +280,7 @@
             this.tabPage1.Controls.Add(this.guna2Panel1);
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(899, 565);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menu Inicial";
@@ -525,6 +541,17 @@
             this.guna2Panel2.Size = new System.Drawing.Size(388, 175);
             this.guna2Panel2.TabIndex = 16;
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 92);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(189, 27);
+            this.guna2HtmlLabel2.TabIndex = 25;
+            this.guna2HtmlLabel2.Text = "Tarefas Concluídas";
+            // 
             // lbl_TarefasConcluidas
             // 
             this.lbl_TarefasConcluidas.AutoSize = true;
@@ -649,7 +676,7 @@
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(899, 565);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ganhos";
@@ -872,7 +899,7 @@
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(899, 565);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Despesas";
@@ -1094,7 +1121,7 @@
             this.tabPage4.Controls.Add(this.dataGridView3);
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(899, 565);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Funcionários";
@@ -1248,7 +1275,7 @@
             this.tabPage5.Controls.Add(this.FornecedoresDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(184, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(899, 565);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Fornecedores";
@@ -1406,7 +1433,7 @@
             this.tabPage6.Controls.Add(this.EstoqueDataGridView);
             this.tabPage6.Location = new System.Drawing.Point(184, 4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(899, 565);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Estoque";
@@ -1694,13 +1721,14 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage7.Controls.Add(this.gunaChart4);
             this.tabPage7.Controls.Add(this.guna2Panel13);
             this.tabPage7.Controls.Add(this.guna2Button7);
             this.tabPage7.Controls.Add(this.guna2Button11);
             this.tabPage7.Controls.Add(this.InvestimentosDataGridView);
             this.tabPage7.Location = new System.Drawing.Point(184, 4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(899, 565);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Investimentos";
@@ -1850,7 +1878,7 @@
             this.tabPage8.Controls.Add(this.label11);
             this.tabPage8.Location = new System.Drawing.Point(184, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(899, 565);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Definições";
@@ -1876,16 +1904,49 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // guna2HtmlLabel2
+            // gunaChart4
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 92);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(189, 27);
-            this.guna2HtmlLabel2.TabIndex = 25;
-            this.guna2HtmlLabel2.Text = "Tarefas Concluídas";
+            this.gunaChart4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            chartFont25.FontName = "Arial";
+            this.gunaChart4.Legend.LabelFont = chartFont25;
+            this.gunaChart4.Legend.LabelForeColor = System.Drawing.Color.White;
+            this.gunaChart4.Location = new System.Drawing.Point(6, 336);
+            this.gunaChart4.Name = "gunaChart4";
+            this.gunaChart4.Size = new System.Drawing.Size(671, 223);
+            this.gunaChart4.TabIndex = 35;
+            chartFont26.FontName = "Arial";
+            chartFont26.Size = 12;
+            chartFont26.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart4.Title.Font = chartFont26;
+            chartFont27.FontName = "Arial";
+            chartFont27.Size = 10;
+            chartFont27.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart4.Tooltips.BodyFont = chartFont27;
+            chartFont28.FontName = "Arial";
+            chartFont28.Size = 9;
+            chartFont28.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.gunaChart4.Tooltips.TitleFont = chartFont28;
+            grid10.Color = System.Drawing.Color.DarkGray;
+            this.gunaChart4.XAxes.GridLines = grid10;
+            chartFont29.FontName = "Arial";
+            chartFont29.Size = 10;
+            tick10.Font = chartFont29;
+            tick10.ForeColor = System.Drawing.Color.White;
+            this.gunaChart4.XAxes.Ticks = tick10;
+            grid11.Color = System.Drawing.Color.Gray;
+            this.gunaChart4.YAxes.GridLines = grid11;
+            chartFont30.FontName = "Arial";
+            chartFont30.Size = 10;
+            tick11.Font = chartFont30;
+            tick11.ForeColor = System.Drawing.Color.White;
+            this.gunaChart4.YAxes.Ticks = tick11;
+            this.gunaChart4.ZAxes.GridLines = grid12;
+            chartFont31.FontName = "Arial";
+            pointLabel4.Font = chartFont31;
+            this.gunaChart4.ZAxes.PointLabels = pointLabel4;
+            chartFont32.FontName = "Arial";
+            tick12.Font = chartFont32;
+            this.gunaChart4.ZAxes.Ticks = tick12;
             // 
             // MainPanel
             // 
@@ -2029,5 +2090,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView InvestimentosDataGridView;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.Charts.WinForms.GunaChart gunaChart4;
     }
 }

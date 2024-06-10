@@ -44,6 +44,39 @@ namespace AdminSysWF
             refreshCategoriasDataGridView();
             refreshFornecedoresDataGridView();
             refreshInvestimentosDataGridView();
+            refreshInvestimentosChart();
+        }
+
+        private void refreshInvestimentosChart()
+        {
+            DataTable dt = Database.GetHistoricoInvestimentos(UserID);
+
+            gunaChart4.Legend.Display = false;
+            gunaChart4.Datasets.Clear();
+
+            var investimentosData = dt.AsEnumerable()
+                .GroupBy(row => new { InvestimentoID = row.Field<int>("InvestimentoID"), Descricao = row.Field<string>("DESCRICAO") });
+
+            foreach (var investimentoGroup in investimentosData)
+            {
+                var series = new GunaLineDataset
+                {
+                    Label = investimentoGroup.Key.Descricao,
+                    BorderWidth = 2,
+                    BorderColor = Color.White,
+                };
+
+                foreach (var row in investimentoGroup)
+                {
+                    DateTime data = row.Field<DateTime>("DATA");
+                    double valorTotal = row.Field<double>("VALOR_TOTAL");
+                    series.DataPoints.Add(data.ToString("dd/MM/yyyy"), valorTotal);
+                }
+
+                gunaChart4.Datasets.Add(series);
+            }
+
+            gunaChart4.Update();
         }
 
         private void refreshNotificacoesDataGridView()
@@ -135,6 +168,7 @@ namespace AdminSysWF
             }
 
             SetDataGridViewReadOnly(InvestimentosDataGridView);
+            refreshInvestimentosChart();
         }
 
 
@@ -563,6 +597,7 @@ namespace AdminSysWF
             AddInvestimento add = new AddInvestimento(UserID);
             add.ShowDialog();
             refreshInvestimentosDataGridView();
+
         }
 
         private void guna2Button7_Click(object sender, EventArgs e)

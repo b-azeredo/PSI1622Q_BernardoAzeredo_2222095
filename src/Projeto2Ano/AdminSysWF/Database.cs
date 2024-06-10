@@ -819,6 +819,40 @@ namespace AdminSysWF
             }
         }
 
+        public static DataTable GetHistoricoInvestimentos(int userId)
+        {
+            DataTable historicoTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"
+            SELECT i.ID AS InvestimentoID, i.DESCRICAO, hi.DATA, hi.VALOR_TOTAL
+            FROM INVESTIMENTOS i
+            INNER JOIN HISTORICO_INVESTIMENTO hi ON i.ID = hi.INVESTIMENTO_ID
+            WHERE i.USER_ID = @userId
+            ORDER BY i.ID, hi.DATA";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(historicoTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o histórico dos investimentos: " + ex.Message);
+            }
+
+            return historicoTable;
+        }
+
 
 
         public static DataTable GetFornecedores(int userId)
