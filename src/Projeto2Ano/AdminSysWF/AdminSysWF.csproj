@@ -163,12 +163,6 @@
       <DependentUpon>AddTarefa.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="Definicoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Definicoes.Designer.cs">
-      <DependentUpon>Definicoes.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,9 +228,6 @@
     <EmbeddedResource Include="AddTarefa.resx">
       <DependentUpon>AddTarefa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Definicoes.resx">
-      <DependentUpon>Definicoes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddCategoria.resx">
       <DependentUpon>AddCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,7 +289,9 @@
     <None Include="Resources\Imagem1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\border.png" />
     <Content Include="Resources\calendar.png" />
+    <None Include="Resources\imagem-removebg-preview1.png" />
     <None Include="Resources\icons8-warning-50.png" />
     <None Include="Resources\icons8-warning-100.png" />
   </ItemGroup>

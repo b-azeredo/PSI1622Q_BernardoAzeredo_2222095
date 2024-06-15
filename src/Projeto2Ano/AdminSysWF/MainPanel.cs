@@ -333,12 +333,6 @@ namespace AdminSysWF
             refreshFuncionariosDataGridView();
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
-        {
-            Definicoes definicoes = new Definicoes();
-            definicoes.ShowDialog();
-        }
-
         private void guna2TabControl1_Click(object sender, EventArgs e)
         {
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
