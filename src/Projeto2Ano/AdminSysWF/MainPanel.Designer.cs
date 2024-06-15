@@ -165,6 +165,8 @@
             this.dataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.CheckboxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -200,8 +202,8 @@
             this.InvestimentosDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.diasComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -219,6 +221,7 @@
             this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.guna2Panel14.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -232,7 +235,6 @@
             this.tabPage7.SuspendLayout();
             this.guna2Panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InvestimentosDataGridView)).BeginInit();
-            this.guna2Panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -543,11 +545,11 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 92);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(9, 91);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(189, 27);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(197, 26);
             this.guna2HtmlLabel2.TabIndex = 25;
             this.guna2HtmlLabel2.Text = "Tarefas Concluídas";
             // 
@@ -557,7 +559,7 @@
             this.lbl_TarefasConcluidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.lbl_TarefasConcluidas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TarefasConcluidas.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbl_TarefasConcluidas.Location = new System.Drawing.Point(200, 91);
+            this.lbl_TarefasConcluidas.Location = new System.Drawing.Point(203, 90);
             this.lbl_TarefasConcluidas.Name = "lbl_TarefasConcluidas";
             this.lbl_TarefasConcluidas.Size = new System.Drawing.Size(25, 28);
             this.lbl_TarefasConcluidas.TabIndex = 24;
@@ -566,11 +568,11 @@
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 63);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(9, 63);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(57, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(60, 26);
             this.guna2HtmlLabel1.TabIndex = 20;
             this.guna2HtmlLabel1.Text = "Lucro";
             // 
@@ -1125,6 +1127,29 @@
             this.tabPage4.Size = new System.Drawing.Size(899, 565);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Funcionários";
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel14.Controls.Add(this.diasComboBox);
+            this.guna2Panel14.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel14.Controls.Add(this.label11);
+            this.guna2Panel14.Location = new System.Drawing.Point(442, 3);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(454, 256);
+            this.guna2Panel14.TabIndex = 33;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(12, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(149, 32);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Definições";
             // 
             // guna2Panel8
             // 
@@ -1928,26 +1953,34 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // guna2Panel14
+            // guna2HtmlLabel3
             // 
-            this.guna2Panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel14.Controls.Add(this.label11);
-            this.guna2Panel14.Location = new System.Drawing.Point(442, 3);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(454, 256);
-            this.guna2Panel14.TabIndex = 33;
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(18, 54);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(201, 26);
+            this.guna2HtmlLabel3.TabIndex = 21;
+            this.guna2HtmlLabel3.Text = "Dia de pagamento";
             // 
-            // label11
+            // diasComboBox
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(12, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 32);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Definições";
+            this.diasComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.diasComboBox.BorderRadius = 17;
+            this.diasComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.diasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.diasComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.diasComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.diasComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.diasComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.diasComboBox.ForeColor = System.Drawing.Color.White;
+            this.diasComboBox.ItemHeight = 30;
+            this.diasComboBox.Location = new System.Drawing.Point(225, 49);
+            this.diasComboBox.Name = "diasComboBox";
+            this.diasComboBox.Size = new System.Drawing.Size(82, 36);
+            this.diasComboBox.TabIndex = 28;
+            this.diasComboBox.SelectedIndexChanged += new System.EventHandler(this.diasComboBox_SelectedIndexChanged);
             // 
             // MainPanel
             // 
@@ -1987,6 +2020,8 @@
             this.guna2Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.guna2Panel14.ResumeLayout(false);
+            this.guna2Panel14.PerformLayout();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -2005,8 +2040,6 @@
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InvestimentosDataGridView)).EndInit();
-            this.guna2Panel14.ResumeLayout(false);
-            this.guna2Panel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2092,5 +2125,7 @@
         private Guna.Charts.WinForms.GunaChart gunaChart4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
         private System.Windows.Forms.Label label11;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2ComboBox diasComboBox;
     }
 }

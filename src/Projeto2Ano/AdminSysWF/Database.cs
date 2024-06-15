@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Windows.Forms;
+using static AdminSysWF.Database;
 
 namespace AdminSysWF
 {
@@ -317,6 +319,13 @@ namespace AdminSysWF
                 throw new Exception("Erro ao obter a despesa para o dia " + dia.ToShortDateString() + ": " + ex.Message);
             }
 
+            Definicoes def = GetDefinicoes(userId);
+            if (dia.Day == def.diaFuncionario)
+            {
+                float despesaFuncionarios = GetDespesasFuncionario(userId);
+                despesaDia += despesaFuncionarios;
+            }
+
             return despesaDia;
         }
 
@@ -347,7 +356,6 @@ namespace AdminSysWF
 
             return GANHOSTable;
         }
-
         public static DataTable GetDespesas(int userId)
         {
             DataTable despesasTable = new DataTable();
@@ -366,14 +374,56 @@ namespace AdminSysWF
                             adapter.Fill(despesasTable);
                         }
                     }
+
+                    var def = GetDefinicoes(userId);
+
+                    if (def.diaFuncionario <= DateTime.Now.Day)
+                    {
+                        float despesaFuncionarios = GetDespesasFuncionario(userId);
+                        DateTime DataDespesaFuncionario = new DateTime(DateTime.Now.Year, DateTime.Now.Month, def.diaFuncionario, 0, 0, 0);
+
+                        DataRow novaLinha = despesasTable.NewRow();
+                        novaLinha["ID"] = -1; 
+                        novaLinha["DESCRICAO"] = "Salário Funcionários";
+                        novaLinha["VALOR"] = despesaFuncionarios;
+                        novaLinha["DATA"] = DataDespesaFuncionario;
+                        despesasTable.Rows.Add(novaLinha);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao obter os lucros: " + ex.Message);
+                MessageBox.Show("Erro ao obter as despesas: " + ex.Message);
             }
 
             return despesasTable;
+        }
+
+
+        public static float GetDespesasFuncionario(int userId)
+        {
+            float num = 0;
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT SUM(SALARIO) FROM FUNCIONARIOS WHERE USER_ID = @userId";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        object result = cmd.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            num = Convert.ToSingle(result);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter as despesas dos funcionários: " + ex.Message);
+            }
+            return num;
         }
 
         public static DataTable GetTarefas(int userId)
@@ -816,6 +866,71 @@ namespace AdminSysWF
             {
                 MessageBox.Show("Erro ao adicionar o investimento: " + ex.Message);
                 return false;
+            }
+        }
+
+        public class Definicoes
+        {
+            public int diaFuncionario;
+        }
+
+        public static Definicoes GetDefinicoes(int userid)
+        {
+            DataTable definicoes = new DataTable();
+            Definicoes def = new Definicoes();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT * FROM UTILIZADORES WHERE ID = @userid";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userid", userid);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(definicoes);
+                        }
+                    }
+                }
+                foreach (DataRow row in definicoes.Rows)
+                {
+                    def.diaFuncionario = int.Parse(row["DIA_FUNCIONARIO"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o histórico dos investimentos: " + ex.Message);
+            }
+
+            return def;
+        }
+
+        public static void AlterarDiaFuncionario(int userId,  int diaFuncionario)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "UPDATE UTILIZADORES SET DIA_FUNCIONARIO = @dia WHERE ID = @userid";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userid", userId);
+                        cmd.Parameters.AddWithValue("@dia", diaFuncionario);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o histórico dos investimentos: " + ex.Message);
             }
         }
 
@@ -1309,5 +1424,7 @@ namespace AdminSysWF
                 return false;
             }
         }
+
+
     }
 }

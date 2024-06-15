@@ -45,6 +45,23 @@ namespace AdminSysWF
             refreshFornecedoresDataGridView();
             refreshInvestimentosDataGridView();
             refreshInvestimentosChart();
+            refreshDiasComboBox();
+        }
+
+        private void refreshDiasComboBox()
+        {
+            for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+            {
+                diasComboBox.Items.Add(i.ToString());
+            }
+            var definicoes = Database.GetDefinicoes(UserID);
+            diasComboBox.SelectedIndex = definicoes.diaFuncionario - 1;
+        }
+
+        private void diasComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Database.AlterarDiaFuncionario(UserID, diasComboBox.SelectedIndex + 1);
+            refreshDespesasDataGridView();
         }
 
         private void refreshInvestimentosChart()
@@ -207,6 +224,7 @@ namespace AdminSysWF
         {
             DataTable dt = Database.GetDespesas(UserID);
             dataGridView2.DataSource = dt;
+
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[1].Visible = false;
             dataGridView2.Columns[2].HeaderText = "Descrição";
@@ -215,7 +233,9 @@ namespace AdminSysWF
             dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             refreshLabels();
             SetDataGridViewReadOnly(dataGridView2);
+            RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
         }
+
 
         private void refreshFuncionariosDataGridView()
         {
@@ -252,16 +272,27 @@ namespace AdminSysWF
             }
 
             List<DateTime> dias = new List<DateTime>();
-            for (int i = 0; i <= days; i++)
+            DateTime dataFinal;
+
+            if (days == 30)
             {
-                dias.Add(dataInicial.AddDays(i));
+                dataFinal = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+            }
+            else
+            {
+                dataFinal = dataInicial.AddDays(days);
+            }
+
+            for (DateTime data = dataInicial; data <= dataFinal; data = data.AddDays(1))
+            {
+                dias.Add(data);
             }
 
             chart.Legend.Display = false;
 
             var series = new GunaLineDataset
             {
-                Label = "Lucro",
+                Label = "Valor",
                 BorderWidth = 2,
                 BorderColor = Color.White,
             };
@@ -280,7 +311,7 @@ namespace AdminSysWF
                         sum += metodo(day, UserID);
                     }
 
-                    string weekLabel = $"{startOfWeek.ToString("dd")} - {endOfWeek.ToString("dd")}";
+                    string weekLabel = $"{startOfWeek:dd} - {endOfWeek:dd}";
                     weeklyData[weekLabel] = sum;
                 }
 
@@ -303,8 +334,6 @@ namespace AdminSysWF
 
             chart.Update();
         }
-
-
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
@@ -331,6 +360,7 @@ namespace AdminSysWF
             AddFuncionario addFuncionario = new AddFuncionario(UserID);
             addFuncionario.ShowDialog();
             refreshFuncionariosDataGridView();
+            refreshDespesasDataGridView();
         }
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
