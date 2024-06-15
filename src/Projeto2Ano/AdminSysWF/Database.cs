@@ -320,7 +320,7 @@ namespace AdminSysWF
             }
 
             Definicoes def = GetDefinicoes(userId);
-            if (dia.Day == def.diaFuncionario)
+            if (dia.Day == def.diaFuncionario && dia.Day <= DateTime.Now.Day)
             {
                 float despesaFuncionarios = GetDespesasFuncionario(userId);
                 despesaDia += despesaFuncionarios;
