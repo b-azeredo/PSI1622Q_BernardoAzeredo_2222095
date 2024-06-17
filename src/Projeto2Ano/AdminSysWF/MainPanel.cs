@@ -498,6 +498,7 @@ namespace AdminSysWF
                 RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
                 RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
                 refreshInvestimentosDataGridView();
+                refreshInvestimentosChart();
             }
             else
             {
@@ -590,6 +591,7 @@ namespace AdminSysWF
         {
             dataGridView3.Tag = e;
             HandleCellClick(dataGridView3, "CheckBoxColumn3", Edit3Campos.Tabelas.Funcionario, new List<string> { "Nome", "Salário", "Cargo" });
+            refreshDespesasDataGridView();
         }
 
         private void EstoqueDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
