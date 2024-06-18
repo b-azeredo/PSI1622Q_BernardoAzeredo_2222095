@@ -46,6 +46,13 @@ namespace AdminSysWF
             refreshInvestimentosDataGridView();
             refreshInvestimentosChart();
             refreshDiasComboBox();
+            AtualizarInfoGanhos();
+        }
+
+        private void AtualizarInfoGanhos()
+        {
+            lbl_GanhosMensais.Text = Database.GetGanhosMensal(UserID).ToString();
+            lbl_DespesasMensais.Text = Database.GetDespesasMensal(UserID).ToString();
         }
 
         private void refreshDiasComboBox()
@@ -253,7 +260,7 @@ namespace AdminSysWF
         private void RefreshChart(GunaChart chart, int days, Func<DateTime, int, float> metodo)
         {
             DateTime dataInicial;
-
+            AtualizarInfoGanhos();
             if (days == 7)
             {
                 dataInicial = DateTime.Now;
@@ -496,6 +503,7 @@ namespace AdminSysWF
                 refreshEstoqueDataGridView();
                 RefreshChart(gunaChart1, 7, Database.GetLucroDia);
                 RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
+
                 RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
                 refreshInvestimentosDataGridView();
                 refreshInvestimentosChart();

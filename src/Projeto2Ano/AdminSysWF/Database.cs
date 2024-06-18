@@ -135,7 +135,7 @@ namespace AdminSysWF
                 }
             }
 
-            query = "INSERT INTO UTILIZADORES VALUES (@username, @password)";
+            query = "INSERT INTO UTILIZADORES VALUES (@username, @password, 28)";
             using (SqlConnection connection = Connect())
             {
                 using (SqlCommand cmd = new SqlCommand(query, connection))
@@ -245,7 +245,6 @@ namespace AdminSysWF
 
             try
             {
-                // Encontra o último domingo antes ou igual à data atual
                 DateTime hoje = DateTime.Today;
                 DateTime ultimoDomingo = hoje.AddDays(-(int)hoje.DayOfWeek);
 
@@ -262,6 +261,31 @@ namespace AdminSysWF
             }
 
             return lucroSemanal;
+        }
+
+        public static float GetGanhosMensal(int userId)
+        {
+            float ganhoMensal = 0;
+
+            try
+            {
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaDoMes = new DateTime(hoje.Year, hoje.Month, 1);
+                DateTime primeiroDiaDoProximoMes = primeiroDiaDoMes.AddMonths(1);
+                DateTime ultimoDiaDoMes = primeiroDiaDoProximoMes.AddDays(-1);
+
+                for (DateTime dia = primeiroDiaDoMes; dia <= ultimoDiaDoMes; dia = dia.AddDays(1))
+                {
+                    float lucroDia = GetGanhosDia(dia, userId);
+                    ganhoMensal += lucroDia;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o ganho mensal: " + ex.Message);
+            }
+
+            return ganhoMensal;
         }
 
 
@@ -292,7 +316,6 @@ namespace AdminSysWF
 
             return lucroDia;
         }
-
 
         public static float GetDespesaDia(DateTime dia, int userId)
         {
@@ -399,6 +422,39 @@ namespace AdminSysWF
             return despesasTable;
         }
 
+        public static float GetDespesasMensal(int userId)
+        {
+            float despesasMensal = 0;
+
+            try
+            {
+                DataTable despesasTable = GetDespesas(userId);
+
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaDoMes = new DateTime(hoje.Year, hoje.Month, 1);
+                DateTime primeiroDiaDoProximoMes = primeiroDiaDoMes.AddMonths(1);
+                DateTime ultimoDiaDoMes = primeiroDiaDoProximoMes.AddDays(-1);
+
+                foreach (DataRow row in despesasTable.Rows)
+                {
+                    DateTime dataDespesa = Convert.ToDateTime(row["DATA"]);
+
+                    if (dataDespesa >= primeiroDiaDoMes && dataDespesa <= ultimoDiaDoMes)
+                    {
+                        float valorDespesa = Convert.ToSingle(row["VALOR"]);
+                        despesasMensal += valorDespesa;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular as despesas mensais: " + ex.Message);
+            }
+
+            return despesasMensal;
+        }
+
+
 
         public static float GetDespesasFuncionario(int userId)
         {
@@ -412,6 +468,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         object result = cmd.ExecuteScalar();
+                        
                         if (result != DBNull.Value)
                         {
                             num = Convert.ToSingle(result);

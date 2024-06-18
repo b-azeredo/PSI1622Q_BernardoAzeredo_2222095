@@ -146,7 +146,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_GanhosMensais = new System.Windows.Forms.Label();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.gunaChart2 = new Guna.Charts.WinForms.GunaChart();
             this.label12 = new System.Windows.Forms.Label();
@@ -206,6 +206,8 @@
             this.InvestimentosDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lbl_DespesasMensais = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -687,7 +689,7 @@
             // guna2Panel11
             // 
             this.guna2Panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel11.Controls.Add(this.label15);
+            this.guna2Panel11.Controls.Add(this.lbl_GanhosMensais);
             this.guna2Panel11.Controls.Add(this.guna2HtmlLabel4);
             this.guna2Panel11.Controls.Add(this.gunaChart2);
             this.guna2Panel11.Controls.Add(this.label12);
@@ -696,17 +698,17 @@
             this.guna2Panel11.Size = new System.Drawing.Size(451, 548);
             this.guna2Panel11.TabIndex = 34;
             // 
-            // label15
+            // lbl_GanhosMensais
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.LightGreen;
-            this.label15.Location = new System.Drawing.Point(180, 310);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 28);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "0";
+            this.lbl_GanhosMensais.AutoSize = true;
+            this.lbl_GanhosMensais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_GanhosMensais.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GanhosMensais.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_GanhosMensais.Location = new System.Drawing.Point(180, 310);
+            this.lbl_GanhosMensais.Name = "lbl_GanhosMensais";
+            this.lbl_GanhosMensais.Size = new System.Drawing.Size(25, 28);
+            this.lbl_GanhosMensais.TabIndex = 22;
+            this.lbl_GanhosMensais.Text = "0";
             // 
             // guna2HtmlLabel4
             // 
@@ -935,6 +937,8 @@
             // guna2Panel12
             // 
             this.guna2Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel12.Controls.Add(this.lbl_DespesasMensais);
+            this.guna2Panel12.Controls.Add(this.guna2HtmlLabel5);
             this.guna2Panel12.Controls.Add(this.gunaChart3);
             this.guna2Panel12.Controls.Add(this.label13);
             this.guna2Panel12.Location = new System.Drawing.Point(445, 3);
@@ -2009,6 +2013,29 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
+            // lbl_DespesasMensais
+            // 
+            this.lbl_DespesasMensais.AutoSize = true;
+            this.lbl_DespesasMensais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_DespesasMensais.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DespesasMensais.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_DespesasMensais.Location = new System.Drawing.Point(203, 306);
+            this.lbl_DespesasMensais.Name = "lbl_DespesasMensais";
+            this.lbl_DespesasMensais.Size = new System.Drawing.Size(25, 28);
+            this.lbl_DespesasMensais.TabIndex = 24;
+            this.lbl_DespesasMensais.Text = "0";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(13, 299);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(187, 31);
+            this.guna2HtmlLabel5.TabIndex = 23;
+            this.guna2HtmlLabel5.Text = "Despesas mensais";
+            // 
             // MainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2155,6 +2182,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2ComboBox diasComboBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_GanhosMensais;
+        private System.Windows.Forms.Label lbl_DespesasMensais;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
     }
 }
