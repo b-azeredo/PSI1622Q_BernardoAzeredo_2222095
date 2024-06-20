@@ -53,6 +53,23 @@ namespace AdminSysWF
         {
             lbl_GanhosMensais.Text = Database.GetGanhosMensal(UserID).ToString();
             lbl_DespesasMensais.Text = Database.GetDespesasMensal(UserID).ToString();
+            if (Database.CalcularPorcentagemVariacaoMensal(UserID) == 0)
+            {
+                lbl_UltimoMesGanho.Text = "Sem dados";
+            }
+            else
+            {
+                lbl_UltimoMesGanho.Text = Database.CalcularPorcentagemVariacaoMensal(UserID).ToString() + "%";
+            }
+            if (Database.CalcularPorcentagemVariacaoDespesasMensal(UserID) == 0)
+            {
+                lbl_UltimoMesDespesa.Text = "Sem dados";
+            }
+            else
+            {
+                lbl_UltimoMesDespesa.Text = Database.CalcularPorcentagemVariacaoDespesasMensal(UserID).ToString() + "%";
+            }
+
         }
 
         private void refreshDiasComboBox()

@@ -317,6 +317,48 @@ namespace AdminSysWF
             return lucroDia;
         }
 
+        public static float CalcularPorcentagemVariacaoMensal(int userId)
+        {
+            float ganhoMensalAtual = GetGanhosMensal(userId);
+            float ganhoMensalAnterior = GetGanhosMensalMesAnterior(userId);
+
+            if (ganhoMensalAnterior == 0 || ganhoMensalAtual == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                float variacaoPercentual = ((ganhoMensalAtual - ganhoMensalAnterior) / ganhoMensalAnterior) * 100;
+                return variacaoPercentual;
+            }
+        }
+
+        public static float GetGanhosMensalMesAnterior(int userId)
+        {
+            float ganhoMensal = 0;
+
+            try
+            {
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaDoMesAtual = new DateTime(hoje.Year, hoje.Month, 1);
+                DateTime primeiroDiaDoMesAnterior = primeiroDiaDoMesAtual.AddMonths(-1);
+                DateTime ultimoDiaDoMesAnterior = primeiroDiaDoMesAtual.AddDays(-1);
+
+                for (DateTime dia = primeiroDiaDoMesAnterior; dia <= ultimoDiaDoMesAnterior; dia = dia.AddDays(1))
+                {
+                    float lucroDia = GetGanhosDia(dia, userId);
+                    ganhoMensal += lucroDia;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o ganho mensal do mês anterior: " + ex.Message);
+            }
+
+            return ganhoMensal;
+        }
+
+
         public static float GetDespesaDia(DateTime dia, int userId)
         {
             float despesaDia = 0;
@@ -454,6 +496,53 @@ namespace AdminSysWF
             return despesasMensal;
         }
 
+        public static float CalcularPorcentagemVariacaoDespesasMensal(int userId)
+        {
+            float despesasMensalAtual = GetDespesasMensal(userId);
+            float despesasMensalAnterior = GetDespesasMensalMesAnterior(userId);
+
+            if (despesasMensalAnterior == 0 || despesasMensalAtual == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                float variacaoPercentual = ((despesasMensalAtual - despesasMensalAnterior) / despesasMensalAnterior) * 100;
+                return variacaoPercentual;
+            }
+        }
+
+        public static float GetDespesasMensalMesAnterior(int userId)
+        {
+            float despesasMensal = 0;
+
+            try
+            {
+                DataTable despesasTable = GetDespesas(userId);
+
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaDoMesAtual = new DateTime(hoje.Year, hoje.Month, 1);
+                DateTime primeiroDiaDoMesAnterior = primeiroDiaDoMesAtual.AddMonths(-1);
+                DateTime ultimoDiaDoMesAnterior = primeiroDiaDoMesAtual.AddDays(-1);
+
+                foreach (DataRow row in despesasTable.Rows)
+                {
+                    DateTime dataDespesa = Convert.ToDateTime(row["DATA"]);
+
+                    if (dataDespesa >= primeiroDiaDoMesAnterior && dataDespesa <= ultimoDiaDoMesAnterior)
+                    {
+                        float valorDespesa = Convert.ToSingle(row["VALOR"]);
+                        despesasMensal += valorDespesa;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular as despesas mensais do mês anterior: " + ex.Message);
+            }
+
+            return despesasMensal;
+        }
 
 
         public static float GetDespesasFuncionario(int userId)
@@ -545,8 +634,6 @@ namespace AdminSysWF
             return numeroTarefasConcluidas;
         }
 
-
-
         public static DataTable GetFuncionarios(int userId)
         {
             DataTable funcionariosTable = new DataTable();
@@ -574,7 +661,6 @@ namespace AdminSysWF
 
             return funcionariosTable;
         }
-
 
         public static void ConcluirTarefa(int idTarefa)
         {
@@ -715,8 +801,6 @@ namespace AdminSysWF
             return categoriasTable;
         }
 
-
-
         public static DataTable GetEstoque(int userId)
         {
             DataTable estoqueTable = new DataTable();
@@ -793,8 +877,6 @@ namespace AdminSysWF
             return investimentosTable;
         }
 
-
-
         public static DataTable GetTiposInvestimentos()
         {
             DataTable tiposInvestimentosTable = new DataTable();
@@ -821,7 +903,6 @@ namespace AdminSysWF
 
             return tiposInvestimentosTable;
         }
-
 
         public static DataTable GetLowEstoque(int userId)
         {
@@ -1024,8 +1105,6 @@ namespace AdminSysWF
 
             return historicoTable;
         }
-
-
 
         public static DataTable GetFornecedores(int userId)
         {
