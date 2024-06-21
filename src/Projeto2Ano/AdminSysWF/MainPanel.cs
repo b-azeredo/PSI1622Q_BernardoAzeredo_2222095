@@ -69,6 +69,10 @@ namespace AdminSysWF
             {
                 lbl_UltimoMesDespesa.Text = Database.CalcularPorcentagemVariacaoDespesasMensal(UserID).ToString() + "%";
             }
+            int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            lbl_MediaGanhos.Text = (Database.GetGanhosMensal(UserID) / diasNoMesAtual).ToString("F2");
+            lbl_MediaDespesas.Text = (Database.GetDespesasMensal(UserID) / diasNoMesAtual).ToString("F2");
+
 
         }
 
@@ -656,6 +660,9 @@ namespace AdminSysWF
             HandleDeletion(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Database.RemoverInvestimento);
         }
 
+        private void guna2Panel11_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
