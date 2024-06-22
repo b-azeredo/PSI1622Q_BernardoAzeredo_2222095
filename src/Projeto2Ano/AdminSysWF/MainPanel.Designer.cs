@@ -158,6 +158,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_MediaGanhos = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_UltimoMesGanho = new System.Windows.Forms.Label();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_GanhosMensais = new System.Windows.Forms.Label();
@@ -172,6 +175,9 @@
             this.CheckboxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lbl_MediaDespesas = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_UltimoMesDespesa = new System.Windows.Forms.Label();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_DespesasMensais = new System.Windows.Forms.Label();
@@ -231,12 +237,13 @@
             this.InvestimentosDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lbl_MediaGanhos = new System.Windows.Forms.Label();
-            this.lbl_MediaDespesas = new System.Windows.Forms.Label();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label18 = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -736,6 +743,52 @@
             this.guna2Panel11.TabIndex = 34;
             this.guna2Panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel11_Paint);
             // 
+            // lbl_MediaGanhos
+            // 
+            this.lbl_MediaGanhos.AutoSize = true;
+            this.lbl_MediaGanhos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_MediaGanhos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MediaGanhos.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_MediaGanhos.Location = new System.Drawing.Point(142, 386);
+            this.lbl_MediaGanhos.Name = "lbl_MediaGanhos";
+            this.lbl_MediaGanhos.Size = new System.Drawing.Size(25, 28);
+            this.lbl_MediaGanhos.TabIndex = 37;
+            this.lbl_MediaGanhos.Text = "0";
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.AutoSize = false;
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(13, 378);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(123, 42);
+            this.guna2HtmlLabel8.TabIndex = 36;
+            this.guna2HtmlLabel8.Text = "Média diária";
+            // 
+            // guna2Button12
+            // 
+            this.guna2Button12.Animated = true;
+            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button12.BorderColor = System.Drawing.Color.White;
+            this.guna2Button12.BorderRadius = 15;
+            this.guna2Button12.BorderThickness = 1;
+            this.guna2Button12.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button12.ForeColor = System.Drawing.Color.White;
+            this.guna2Button12.IndicateFocus = true;
+            this.guna2Button12.Location = new System.Drawing.Point(3, 506);
+            this.guna2Button12.Name = "guna2Button12";
+            this.guna2Button12.Size = new System.Drawing.Size(448, 39);
+            this.guna2Button12.TabIndex = 35;
+            this.guna2Button12.Text = "Ver Histórico";
+            this.guna2Button12.UseTransparentBackground = true;
+            // 
             // lbl_UltimoMesGanho
             // 
             this.lbl_UltimoMesGanho.AutoSize = true;
@@ -1012,6 +1065,52 @@
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Size = new System.Drawing.Size(451, 548);
             this.guna2Panel12.TabIndex = 35;
+            // 
+            // lbl_MediaDespesas
+            // 
+            this.lbl_MediaDespesas.AutoSize = true;
+            this.lbl_MediaDespesas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_MediaDespesas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MediaDespesas.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_MediaDespesas.Location = new System.Drawing.Point(142, 383);
+            this.lbl_MediaDespesas.Name = "lbl_MediaDespesas";
+            this.lbl_MediaDespesas.Size = new System.Drawing.Size(25, 28);
+            this.lbl_MediaDespesas.TabIndex = 39;
+            this.lbl_MediaDespesas.Text = "0";
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.AutoSize = false;
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(13, 375);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(123, 42);
+            this.guna2HtmlLabel9.TabIndex = 38;
+            this.guna2HtmlLabel9.Text = "Média diária";
+            // 
+            // guna2Button13
+            // 
+            this.guna2Button13.Animated = true;
+            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button13.BorderColor = System.Drawing.Color.White;
+            this.guna2Button13.BorderRadius = 15;
+            this.guna2Button13.BorderThickness = 1;
+            this.guna2Button13.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button13.ForeColor = System.Drawing.Color.White;
+            this.guna2Button13.IndicateFocus = true;
+            this.guna2Button13.Location = new System.Drawing.Point(3, 506);
+            this.guna2Button13.Name = "guna2Button13";
+            this.guna2Button13.Size = new System.Drawing.Size(448, 39);
+            this.guna2Button13.TabIndex = 36;
+            this.guna2Button13.Text = "Ver Histórico";
+            this.guna2Button13.UseTransparentBackground = true;
             // 
             // lbl_UltimoMesDespesa
             // 
@@ -2092,6 +2191,13 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage7.Controls.Add(this.label18);
+            this.tabPage7.Controls.Add(this.label17);
+            this.tabPage7.Controls.Add(this.guna2HtmlLabel12);
+            this.tabPage7.Controls.Add(this.label16);
+            this.tabPage7.Controls.Add(this.guna2HtmlLabel11);
+            this.tabPage7.Controls.Add(this.label15);
+            this.tabPage7.Controls.Add(this.guna2HtmlLabel10);
             this.tabPage7.Controls.Add(this.guna2DataGridView3);
             this.tabPage7.Controls.Add(this.gunaChart4);
             this.tabPage7.Controls.Add(this.guna2Panel13);
@@ -2140,7 +2246,7 @@
             dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView3.DefaultCellStyle = dataGridViewCellStyle43;
             this.guna2DataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.guna2DataGridView3.Location = new System.Drawing.Point(684, 6);
+            this.guna2DataGridView3.Location = new System.Drawing.Point(650, 6);
             this.guna2DataGridView3.Name = "guna2DataGridView3";
             this.guna2DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -2154,7 +2260,7 @@
             this.guna2DataGridView3.RowHeadersVisible = false;
             this.guna2DataGridView3.RowHeadersWidth = 51;
             this.guna2DataGridView3.RowTemplate.Height = 40;
-            this.guna2DataGridView3.Size = new System.Drawing.Size(215, 234);
+            this.guna2DataGridView3.Size = new System.Drawing.Size(249, 234);
             this.guna2DataGridView3.TabIndex = 36;
             this.guna2DataGridView3.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.guna2DataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -2235,7 +2341,7 @@
             this.guna2Panel13.Controls.Add(this.label14);
             this.guna2Panel13.Location = new System.Drawing.Point(6, 5);
             this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(671, 53);
+            this.guna2Panel13.Size = new System.Drawing.Size(638, 53);
             this.guna2Panel13.TabIndex = 34;
             // 
             // label14
@@ -2260,9 +2366,9 @@
             this.guna2Button7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button7.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
-            this.guna2Button7.Location = new System.Drawing.Point(684, 291);
+            this.guna2Button7.Location = new System.Drawing.Point(650, 291);
             this.guna2Button7.Name = "guna2Button7";
-            this.guna2Button7.Size = new System.Drawing.Size(215, 39);
+            this.guna2Button7.Size = new System.Drawing.Size(249, 39);
             this.guna2Button7.TabIndex = 33;
             this.guna2Button7.Text = "Remover";
             this.guna2Button7.UseTransparentBackground = true;
@@ -2279,9 +2385,9 @@
             this.guna2Button11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Button11.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button11.ForeColor = System.Drawing.Color.White;
-            this.guna2Button11.Location = new System.Drawing.Point(684, 246);
+            this.guna2Button11.Location = new System.Drawing.Point(650, 246);
             this.guna2Button11.Name = "guna2Button11";
-            this.guna2Button11.Size = new System.Drawing.Size(215, 39);
+            this.guna2Button11.Size = new System.Drawing.Size(249, 39);
             this.guna2Button11.TabIndex = 32;
             this.guna2Button11.Text = "Adicionar";
             this.guna2Button11.UseTransparentBackground = true;
@@ -2335,7 +2441,7 @@
             this.InvestimentosDataGridView.RowHeadersVisible = false;
             this.InvestimentosDataGridView.RowHeadersWidth = 51;
             this.InvestimentosDataGridView.RowTemplate.Height = 40;
-            this.InvestimentosDataGridView.Size = new System.Drawing.Size(671, 271);
+            this.InvestimentosDataGridView.Size = new System.Drawing.Size(638, 271);
             this.InvestimentosDataGridView.TabIndex = 31;
             this.InvestimentosDataGridView.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.InvestimentosDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
@@ -2378,97 +2484,89 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             // 
-            // guna2Button12
+            // label15
             // 
-            this.guna2Button12.Animated = true;
-            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button12.BorderColor = System.Drawing.Color.White;
-            this.guna2Button12.BorderRadius = 15;
-            this.guna2Button12.BorderThickness = 1;
-            this.guna2Button12.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button12.ForeColor = System.Drawing.Color.White;
-            this.guna2Button12.IndicateFocus = true;
-            this.guna2Button12.Location = new System.Drawing.Point(3, 506);
-            this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(448, 39);
-            this.guna2Button12.TabIndex = 35;
-            this.guna2Button12.Text = "Ver Histórico";
-            this.guna2Button12.UseTransparentBackground = true;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.LightGreen;
+            this.label15.Location = new System.Drawing.Point(809, 68);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(25, 28);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "0";
             // 
-            // guna2Button13
+            // guna2HtmlLabel10
             // 
-            this.guna2Button13.Animated = true;
-            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button13.BorderColor = System.Drawing.Color.White;
-            this.guna2Button13.BorderRadius = 15;
-            this.guna2Button13.BorderThickness = 1;
-            this.guna2Button13.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button13.ForeColor = System.Drawing.Color.White;
-            this.guna2Button13.IndicateFocus = true;
-            this.guna2Button13.Location = new System.Drawing.Point(3, 506);
-            this.guna2Button13.Name = "guna2Button13";
-            this.guna2Button13.Size = new System.Drawing.Size(448, 39);
-            this.guna2Button13.TabIndex = 36;
-            this.guna2Button13.Text = "Ver Histórico";
-            this.guna2Button13.UseTransparentBackground = true;
+            this.guna2HtmlLabel10.AutoSize = false;
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(660, 61);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(154, 43);
+            this.guna2HtmlLabel10.TabIndex = 40;
+            this.guna2HtmlLabel10.Text = "Valor investido";
             // 
-            // guna2HtmlLabel8
+            // label16
             // 
-            this.guna2HtmlLabel8.AutoSize = false;
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(13, 378);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(123, 42);
-            this.guna2HtmlLabel8.TabIndex = 36;
-            this.guna2HtmlLabel8.Text = "Média diária";
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.LightGreen;
+            this.label16.Location = new System.Drawing.Point(790, 139);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(25, 28);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "0";
             // 
-            // lbl_MediaGanhos
+            // guna2HtmlLabel11
             // 
-            this.lbl_MediaGanhos.AutoSize = true;
-            this.lbl_MediaGanhos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.lbl_MediaGanhos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MediaGanhos.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbl_MediaGanhos.Location = new System.Drawing.Point(142, 386);
-            this.lbl_MediaGanhos.Name = "lbl_MediaGanhos";
-            this.lbl_MediaGanhos.Size = new System.Drawing.Size(25, 28);
-            this.lbl_MediaGanhos.TabIndex = 37;
-            this.lbl_MediaGanhos.Text = "0";
+            this.guna2HtmlLabel11.AutoSize = false;
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(661, 132);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(132, 43);
+            this.guna2HtmlLabel11.TabIndex = 42;
+            this.guna2HtmlLabel11.Text = "% de Ganho";
             // 
-            // lbl_MediaDespesas
+            // label17
             // 
-            this.lbl_MediaDespesas.AutoSize = true;
-            this.lbl_MediaDespesas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.lbl_MediaDespesas.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_MediaDespesas.ForeColor = System.Drawing.Color.LightGreen;
-            this.lbl_MediaDespesas.Location = new System.Drawing.Point(142, 383);
-            this.lbl_MediaDespesas.Name = "lbl_MediaDespesas";
-            this.lbl_MediaDespesas.Size = new System.Drawing.Size(25, 28);
-            this.lbl_MediaDespesas.TabIndex = 39;
-            this.lbl_MediaDespesas.Text = "0";
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.LightGreen;
+            this.label17.Location = new System.Drawing.Point(777, 102);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(25, 28);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "0";
             // 
-            // guna2HtmlLabel9
+            // guna2HtmlLabel12
             // 
-            this.guna2HtmlLabel9.AutoSize = false;
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(13, 375);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(123, 42);
-            this.guna2HtmlLabel9.TabIndex = 38;
-            this.guna2HtmlLabel9.Text = "Média diária";
+            this.guna2HtmlLabel12.AutoSize = false;
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(660, 95);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(121, 43);
+            this.guna2HtmlLabel12.TabIndex = 44;
+            this.guna2HtmlLabel12.Text = "Valor inicial";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(654, 15);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(153, 32);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "Estatísticas";
             // 
             // MainPanel
             // 
@@ -2527,6 +2625,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CategoriasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EstoqueDataGridView)).EndInit();
             this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView3)).EndInit();
             this.guna2Panel13.ResumeLayout(false);
             this.guna2Panel13.PerformLayout();
@@ -2639,5 +2738,12 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private System.Windows.Forms.Label lbl_MediaDespesas;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private System.Windows.Forms.Label label16;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private System.Windows.Forms.Label label17;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private System.Windows.Forms.Label label18;
     }
 }
