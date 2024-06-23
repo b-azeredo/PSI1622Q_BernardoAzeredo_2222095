@@ -131,7 +131,7 @@ namespace AdminSysWF
             {
                 float ganhoAbsoluto = valorTotal2 - valorInicial;
                 float taxaDeGanho = (ganhoAbsoluto / valorInicial) * 100;
-                lbl_PercentagemGanho.Text = taxaDeGanho.ToString("F2") + "%";
+                lbl_PercentagemGanho.Text = taxaDeGanho.ToString("F0") + "%";
             }
             else
             {
