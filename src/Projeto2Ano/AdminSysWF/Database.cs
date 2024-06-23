@@ -877,6 +877,38 @@ namespace AdminSysWF
             return investimentosTable;
         }
 
+        public static float GetInvestimentosValorTotal(int userId)
+        {
+            DataTable investimentos = GetInvestimentos(userId);
+            float totalValor = 0;
+
+            foreach (DataRow row in investimentos.Rows)
+            {
+                if (row["VALOR_TOTAL"] != DBNull.Value)
+                {
+                    totalValor += Convert.ToSingle(row["VALOR_TOTAL"]);
+                }
+            }
+
+            return totalValor;
+        }
+
+        public static float GetInvestimentosValorInicial(int userId)
+        {
+            DataTable investimentos = GetInvestimentos(userId);
+            float totalValorInvestido = 0;
+
+            foreach (DataRow row in investimentos.Rows)
+            {
+                if (row["VALOR_INVESTIDO"] != DBNull.Value)
+                {
+                    totalValorInvestido += Convert.ToSingle(row["VALOR_INVESTIDO"]);
+                }
+            }
+
+            return totalValorInvestido;
+        }
+
         public static DataTable GetTiposInvestimentos()
         {
             DataTable tiposInvestimentosTable = new DataTable();

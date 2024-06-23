@@ -72,8 +72,6 @@ namespace AdminSysWF
             int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
             lbl_MediaGanhos.Text = (Database.GetGanhosMensal(UserID) / diasNoMesAtual).ToString("F2");
             lbl_MediaDespesas.Text = (Database.GetDespesasMensal(UserID) / diasNoMesAtual).ToString("F2");
-
-
         }
 
         private void refreshDiasComboBox()
@@ -122,6 +120,9 @@ namespace AdminSysWF
             }
 
             gunaChart4.Update();
+
+            lbl_ValorInicial.Text = Database.GetInvestimentosValorInicial(UserID).ToString();
+            lbl_ValorTotal.Text = Database.GetInvestimentosValorTotal(UserID).ToString();
         }
 
         private void refreshNotificacoesDataGridView()

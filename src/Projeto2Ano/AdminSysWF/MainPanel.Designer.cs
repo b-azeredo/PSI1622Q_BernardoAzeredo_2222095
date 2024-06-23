@@ -228,11 +228,11 @@
             this.CheckboxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbl_ValorInicial = new System.Windows.Forms.Label();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.label16 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lbl_ValorTotal = new System.Windows.Forms.Label();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView3 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -2192,11 +2192,11 @@
             // 
             this.tabPage7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.tabPage7.Controls.Add(this.label18);
-            this.tabPage7.Controls.Add(this.label17);
+            this.tabPage7.Controls.Add(this.lbl_ValorInicial);
             this.tabPage7.Controls.Add(this.guna2HtmlLabel12);
             this.tabPage7.Controls.Add(this.label16);
             this.tabPage7.Controls.Add(this.guna2HtmlLabel11);
-            this.tabPage7.Controls.Add(this.label15);
+            this.tabPage7.Controls.Add(this.lbl_ValorTotal);
             this.tabPage7.Controls.Add(this.guna2HtmlLabel10);
             this.tabPage7.Controls.Add(this.guna2DataGridView3);
             this.tabPage7.Controls.Add(this.gunaChart4);
@@ -2223,17 +2223,17 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "Estatísticas";
             // 
-            // label17
+            // lbl_ValorInicial
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.LightGreen;
-            this.label17.Location = new System.Drawing.Point(777, 102);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(25, 28);
-            this.label17.TabIndex = 45;
-            this.label17.Text = "0";
+            this.lbl_ValorInicial.AutoSize = true;
+            this.lbl_ValorInicial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_ValorInicial.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ValorInicial.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_ValorInicial.Location = new System.Drawing.Point(777, 102);
+            this.lbl_ValorInicial.Name = "lbl_ValorInicial";
+            this.lbl_ValorInicial.Size = new System.Drawing.Size(25, 28);
+            this.lbl_ValorInicial.TabIndex = 45;
+            this.lbl_ValorInicial.Text = "0";
             // 
             // guna2HtmlLabel12
             // 
@@ -2271,17 +2271,17 @@
             this.guna2HtmlLabel11.TabIndex = 42;
             this.guna2HtmlLabel11.Text = "% de Ganho";
             // 
-            // label15
+            // lbl_ValorTotal
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.LightGreen;
-            this.label15.Location = new System.Drawing.Point(809, 68);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 28);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "0";
+            this.lbl_ValorTotal.AutoSize = true;
+            this.lbl_ValorTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.lbl_ValorTotal.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ValorTotal.ForeColor = System.Drawing.Color.LightGreen;
+            this.lbl_ValorTotal.Location = new System.Drawing.Point(766, 67);
+            this.lbl_ValorTotal.Name = "lbl_ValorTotal";
+            this.lbl_ValorTotal.Size = new System.Drawing.Size(25, 28);
+            this.lbl_ValorTotal.TabIndex = 41;
+            this.lbl_ValorTotal.Text = "0";
             // 
             // guna2HtmlLabel10
             // 
@@ -2291,9 +2291,9 @@
             this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(660, 61);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(154, 43);
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(111, 43);
             this.guna2HtmlLabel10.TabIndex = 40;
-            this.guna2HtmlLabel10.Text = "Valor investido";
+            this.guna2HtmlLabel10.Text = "Valor total";
             // 
             // guna2DataGridView3
             // 
@@ -2740,9 +2740,9 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lbl_ValorTotal;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbl_ValorInicial;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private System.Windows.Forms.Label label18;
     }
