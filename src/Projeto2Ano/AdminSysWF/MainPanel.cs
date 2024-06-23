@@ -121,8 +121,23 @@ namespace AdminSysWF
 
             gunaChart4.Update();
 
-            lbl_ValorInicial.Text = Database.GetInvestimentosValorInicial(UserID).ToString();
-            lbl_ValorTotal.Text = Database.GetInvestimentosValorTotal(UserID).ToString();
+            float valorInicial = Database.GetInvestimentosValorInicial(UserID);
+            float valorTotal2 = Database.GetInvestimentosValorTotal(UserID);
+
+            lbl_ValorInicial.Text = valorInicial.ToString("F2");
+            lbl_ValorTotal.Text = valorTotal2.ToString("F2");
+
+            if (valorInicial != 0)
+            {
+                float ganhoAbsoluto = valorTotal2 - valorInicial;
+                float taxaDeGanho = (ganhoAbsoluto / valorInicial) * 100;
+                lbl_PercentagemGanho.Text = taxaDeGanho.ToString("F2") + "%";
+            }
+            else
+            {
+                lbl_PercentagemGanho.Text = "N/A";
+            }
+
         }
 
         private void refreshNotificacoesDataGridView()
