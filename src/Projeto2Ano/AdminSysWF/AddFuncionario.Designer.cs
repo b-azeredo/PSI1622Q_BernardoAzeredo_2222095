@@ -31,7 +31,7 @@
             this.ComfirmAddLucro = new Guna.UI2.WinForms.Guna2Button();
             this.txb_SalarioFuncionario = new Guna.UI2.WinForms.Guna2TextBox();
             this.txb_NomeFuncionario = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txb_CargoFuncionario = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cargosComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // ComfirmAddLucro
@@ -104,29 +104,22 @@
             this.txb_NomeFuncionario.Size = new System.Drawing.Size(193, 36);
             this.txb_NomeFuncionario.TabIndex = 20;
             // 
-            // txb_CargoFuncionario
+            // cargosComboBox
             // 
-            this.txb_CargoFuncionario.Animated = true;
-            this.txb_CargoFuncionario.AutoRoundedCorners = true;
-            this.txb_CargoFuncionario.BorderRadius = 17;
-            this.txb_CargoFuncionario.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_CargoFuncionario.DefaultText = "";
-            this.txb_CargoFuncionario.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_CargoFuncionario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_CargoFuncionario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_CargoFuncionario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_CargoFuncionario.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.txb_CargoFuncionario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_CargoFuncionario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txb_CargoFuncionario.ForeColor = System.Drawing.Color.White;
-            this.txb_CargoFuncionario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_CargoFuncionario.Location = new System.Drawing.Point(78, 131);
-            this.txb_CargoFuncionario.Name = "txb_CargoFuncionario";
-            this.txb_CargoFuncionario.PasswordChar = '\0';
-            this.txb_CargoFuncionario.PlaceholderText = "Cargo do funcionário";
-            this.txb_CargoFuncionario.SelectedText = "";
-            this.txb_CargoFuncionario.Size = new System.Drawing.Size(193, 36);
-            this.txb_CargoFuncionario.TabIndex = 23;
+            this.cargosComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.cargosComboBox.BorderRadius = 17;
+            this.cargosComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cargosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cargosComboBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.cargosComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cargosComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cargosComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cargosComboBox.ForeColor = System.Drawing.Color.White;
+            this.cargosComboBox.ItemHeight = 30;
+            this.cargosComboBox.Location = new System.Drawing.Point(78, 131);
+            this.cargosComboBox.Name = "cargosComboBox";
+            this.cargosComboBox.Size = new System.Drawing.Size(193, 36);
+            this.cargosComboBox.TabIndex = 28;
             // 
             // AddFuncionario
             // 
@@ -135,7 +128,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(349, 257);
-            this.Controls.Add(this.txb_CargoFuncionario);
+            this.Controls.Add(this.cargosComboBox);
             this.Controls.Add(this.ComfirmAddLucro);
             this.Controls.Add(this.txb_SalarioFuncionario);
             this.Controls.Add(this.txb_NomeFuncionario);
@@ -152,6 +145,6 @@
         private Guna.UI2.WinForms.Guna2Button ComfirmAddLucro;
         private Guna.UI2.WinForms.Guna2TextBox txb_SalarioFuncionario;
         private Guna.UI2.WinForms.Guna2TextBox txb_NomeFuncionario;
-        private Guna.UI2.WinForms.Guna2TextBox txb_CargoFuncionario;
+        private Guna.UI2.WinForms.Guna2ComboBox cargosComboBox;
     }
 }

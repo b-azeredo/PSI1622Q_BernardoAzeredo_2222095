@@ -172,7 +172,7 @@ namespace AdminSysWF
             }
         }
 
-        public static bool addFuncionario(int userid, string nome, float salario, string cargo)
+        public static bool addFuncionario(int userid, string nome, float salario, int cargo)
         {
             try
             {
@@ -642,7 +642,7 @@ namespace AdminSysWF
             {
                 using (SqlConnection connection = Connect())
                 {
-                    string query = "SELECT ID, NOME, SALARIO, CARGO FROM FUNCIONARIOS WHERE USER_ID = @userId ORDER BY NOME";
+                    string query = "SELECT f.ID, f.NOME, f.SALARIO, C.NOME FROM FUNCIONARIOS f INNER JOIN CARGOS c ON f.ID_CARGO = c.ID WHERE f.USER_ID = @userId ORDER BY f.NOME";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
@@ -771,6 +771,63 @@ namespace AdminSysWF
                 MessageBox.Show("Erro ao adicionar a categoria: " + ex.Message);
                 return false;
             }
+        }
+
+        public static bool AddCargo(int userID, string nome)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "INSERT INTO CARGOS (USER_ID, NOME) VALUES (@userID, @nome)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userID", userID);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar o cargo: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static DataTable GetCargos(int userId)
+        {
+            DataTable categoriasTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT ID, NOME FROM CARGOS WHERE USER_ID = @userId ORDER BY NOME";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(categoriasTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter as categorias: " + ex.Message);
+            }
+
+            return categoriasTable;
         }
 
         public static DataTable GetCategorias(int userId)
@@ -1361,6 +1418,42 @@ namespace AdminSysWF
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao remover a categoria: " + ex.Message);
+                    return false;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool RemoverCargo(int id)
+        {
+            DialogResult result = MessageBox.Show("Remover este cargo também removerá todos os funcionários que pertencem à este cargo. Deseja continuar?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection connection = Connect())
+                    {
+                        if (connection == null)
+                        {
+                            return false;
+                        }
+
+                        string query = "DELETE FROM CARGOS WHERE ID = @id";
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.ExecuteNonQuery();
+                            return true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao remover o cargo: " + ex.Message);
                     return false;
                 }
             }

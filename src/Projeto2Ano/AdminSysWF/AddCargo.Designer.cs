@@ -1,6 +1,6 @@
 ﻿namespace AdminSysWF
 {
-    partial class AddCategoria
+    partial class AddCargo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ComfirmAddCategoria = new Guna.UI2.WinForms.Guna2Button();
-            this.txb_nomeCategoria = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txb_nomeCargo = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // ComfirmAddCategoria
@@ -43,51 +43,48 @@
             this.ComfirmAddCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.ComfirmAddCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ComfirmAddCategoria.ForeColor = System.Drawing.Color.White;
-            this.ComfirmAddCategoria.Location = new System.Drawing.Point(79, 110);
+            this.ComfirmAddCategoria.Location = new System.Drawing.Point(79, 106);
             this.ComfirmAddCategoria.Name = "ComfirmAddCategoria";
             this.ComfirmAddCategoria.Size = new System.Drawing.Size(193, 39);
-            this.ComfirmAddCategoria.TabIndex = 19;
+            this.ComfirmAddCategoria.TabIndex = 21;
             this.ComfirmAddCategoria.Text = "Adicionar";
             this.ComfirmAddCategoria.Click += new System.EventHandler(this.ComfirmAddCategoria_Click);
             // 
-            // txb_nomeCategoria
+            // txb_nomeCargo
             // 
-            this.txb_nomeCategoria.Animated = true;
-            this.txb_nomeCategoria.AutoRoundedCorners = true;
-            this.txb_nomeCategoria.BorderRadius = 17;
-            this.txb_nomeCategoria.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_nomeCategoria.DefaultText = "";
-            this.txb_nomeCategoria.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_nomeCategoria.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_nomeCategoria.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_nomeCategoria.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_nomeCategoria.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.txb_nomeCategoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_nomeCategoria.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txb_nomeCategoria.ForeColor = System.Drawing.Color.White;
-            this.txb_nomeCategoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_nomeCategoria.Location = new System.Drawing.Point(79, 68);
-            this.txb_nomeCategoria.Name = "txb_nomeCategoria";
-            this.txb_nomeCategoria.PasswordChar = '\0';
-            this.txb_nomeCategoria.PlaceholderText = "Nome da Categoria";
-            this.txb_nomeCategoria.SelectedText = "";
-            this.txb_nomeCategoria.Size = new System.Drawing.Size(193, 36);
-            this.txb_nomeCategoria.TabIndex = 17;
-            this.txb_nomeCategoria.TextChanged += new System.EventHandler(this.txb_nomeCategoria_TextChanged);
+            this.txb_nomeCargo.Animated = true;
+            this.txb_nomeCargo.AutoRoundedCorners = true;
+            this.txb_nomeCargo.BorderRadius = 17;
+            this.txb_nomeCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_nomeCargo.DefaultText = "";
+            this.txb_nomeCargo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txb_nomeCargo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txb_nomeCargo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_nomeCargo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_nomeCargo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.txb_nomeCargo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_nomeCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_nomeCargo.ForeColor = System.Drawing.Color.White;
+            this.txb_nomeCargo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_nomeCargo.Location = new System.Drawing.Point(79, 64);
+            this.txb_nomeCargo.Name = "txb_nomeCargo";
+            this.txb_nomeCargo.PasswordChar = '\0';
+            this.txb_nomeCargo.PlaceholderText = "Nome do Cargo";
+            this.txb_nomeCargo.SelectedText = "";
+            this.txb_nomeCargo.Size = new System.Drawing.Size(193, 36);
+            this.txb_nomeCargo.TabIndex = 20;
             // 
-            // AddCategoria
+            // AddCargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
             this.ClientSize = new System.Drawing.Size(351, 209);
             this.Controls.Add(this.ComfirmAddCategoria);
-            this.Controls.Add(this.txb_nomeCategoria);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "AddCategoria";
+            this.Controls.Add(this.txb_nomeCargo);
+            this.Name = "AddCargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adicionar Categoria";
+            this.Text = "Adicionar Cargo";
             this.ResumeLayout(false);
 
         }
@@ -95,6 +92,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button ComfirmAddCategoria;
-        private Guna.UI2.WinForms.Guna2TextBox txb_nomeCategoria;
+        private Guna.UI2.WinForms.Guna2TextBox txb_nomeCargo;
     }
 }

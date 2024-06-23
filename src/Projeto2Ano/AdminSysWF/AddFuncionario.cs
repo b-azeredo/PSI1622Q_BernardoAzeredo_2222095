@@ -17,6 +17,23 @@ namespace AdminSysWF
         {
             InitializeComponent();
             this.userID = userID;
+            FillCargosComboBox();
+        }
+
+        public void FillCargosComboBox()
+        {
+            DataTable cargos = Database.GetCargos(userID);
+
+            if (cargos != null)
+            {
+                cargosComboBox.DataSource = cargos;
+                cargosComboBox.DisplayMember = "NOME";
+                cargosComboBox.ValueMember = "ID";
+            }
+            else
+            {
+                MessageBox.Show("Erro ao carregar os cargos.");
+            }
         }
 
         private void ComfirmAddLucro_Click(object sender, EventArgs e)
@@ -24,7 +41,7 @@ namespace AdminSysWF
             float salario = 0;
             if (float.TryParse(txb_SalarioFuncionario.Text, out salario))
             {
-                Database.addFuncionario(userID, txb_NomeFuncionario.Text, salario, txb_CargoFuncionario.Text);
+                Database.addFuncionario(userID, txb_NomeFuncionario.Text, salario, int.Parse(cargosComboBox.SelectedValue.ToString()));
                 MessageBox.Show("Funcionário adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

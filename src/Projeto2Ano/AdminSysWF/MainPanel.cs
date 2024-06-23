@@ -42,6 +42,7 @@ namespace AdminSysWF
             refreshLabels();
             refreshEstoqueDataGridView();
             refreshCategoriasDataGridView();
+            refreshCargosDataGridView();
             refreshFornecedoresDataGridView();
             refreshInvestimentosDataGridView();
             refreshInvestimentosChart();
@@ -170,6 +171,15 @@ namespace AdminSysWF
             {
                 lbl_LucroSemanal.ForeColor = Color.LightGreen;
             }
+        }
+
+        private void refreshCargosDataGridView()
+        {
+            DataTable dt = Database.GetCargos(UserID);
+            CargosDataGridView.DataSource = dt;
+            CargosDataGridView.Columns[0].Visible = false;
+            CargosDataGridView.Columns[1].Visible = false;
+            SetDataGridViewReadOnly(CargosDataGridView);
         }
 
         private void refreshFornecedoresDataGridView()
@@ -497,6 +507,11 @@ namespace AdminSysWF
             HandleDeletion(CategoriasDataGridView, "CheckboxColumn6", Database.RemoverCategoria);
         }
 
+        private void guna2Button14_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(CargosDataGridView, "dataGridViewCheckBoxColumn5", Database.RemoverCargo);
+        }
+
         private void HandleDeletion(DataGridView dataGridView, string checkBoxColumnName, Func<int, bool> removeMethod)
         {
             dataGridView.Columns[checkBoxColumnName].DisplayIndex = dataGridView.Columns.Count - 1;
@@ -536,6 +551,7 @@ namespace AdminSysWF
                 refreshDespesasDataGridView();
                 refreshFuncionariosDataGridView();
                 refreshFornecedoresDataGridView();
+                refreshCargosDataGridView();
                 refreshCategoriasDataGridView();
                 refreshEstoqueDataGridView();
                 RefreshChart(gunaChart1, 7, Database.GetLucroDia);
@@ -680,5 +696,14 @@ namespace AdminSysWF
         {
 
         }
+
+        private void guna2Button15_Click(object sender, EventArgs e)
+        {
+            AddCargo addCargo = new AddCargo(UserID);
+            addCargo.ShowDialog();
+            refreshCargosDataGridView();
+        }
+
+
     }
 }

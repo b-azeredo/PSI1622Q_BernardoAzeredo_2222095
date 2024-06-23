@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace AdminSysWF
 {
-    public partial class AddCategoria : Form
+    public partial class AddCargo : Form
     {
         public int userID;
-        public AddCategoria(int userID)
+
+        public AddCargo(int userID)
         {
             InitializeComponent();
             this.userID = userID;
@@ -21,20 +22,15 @@ namespace AdminSysWF
 
         private void ComfirmAddCategoria_Click(object sender, EventArgs e)
         {
-            if (Database.AddCategoria(userID, txb_nomeCategoria.Text))
+            if (Database.AddCargo(userID, txb_nomeCargo.Text))
             {
-                MessageBox.Show("Categoria adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cargo adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Erro ao adicionar a categoria.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void txb_nomeCategoria_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
