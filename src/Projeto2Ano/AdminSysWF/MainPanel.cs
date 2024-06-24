@@ -27,11 +27,10 @@ namespace AdminSysWF
             }
         }
 
-        public MainPanel(int userID, string username)
+        public MainPanel(int userID)
         {
             InitializeComponent();
             UserID = userID;
-
             RefreshChart(gunaChart1, 7, Database.GetLucroDia);
             RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
             RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
@@ -48,6 +47,58 @@ namespace AdminSysWF
             refreshInvestimentosChart();
             refreshDiasComboBox();
             AtualizarInfoGanhos();
+
+
+            if (Database.isAdmin(userID))
+            {
+                tabPage8.Visible = true;
+                refreshUtilizadoresDataGridView();
+                utilizadoresDataGridView.CellValueChanged += UtilizadoresDataGridView_CellValueChanged;
+                utilizadoresDataGridView.CurrentCellDirtyStateChanged += UtilizadoresDataGridView_CurrentCellDirtyStateChanged;
+            }
+            else
+            {
+                tabPage8.Visible = false;
+                guna2TabControl1.TabPages.Remove(tabPage8);
+            }
+
+        }
+
+        private void UtilizadoresDataGridView_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (utilizadoresDataGridView.IsCurrentCellDirty)
+            {
+                utilizadoresDataGridView.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void UtilizadoresDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == utilizadoresDataGridView.Columns["ADMIN"].Index)
+            {
+                int userId = Convert.ToInt32(utilizadoresDataGridView.Rows[e.RowIndex].Cells["ID"].Value);
+                bool isAdmin = Convert.ToBoolean(utilizadoresDataGridView.Rows[e.RowIndex].Cells["ADMIN"].Value);
+
+                if (Database.AlterarAdmin(userId, isAdmin))
+                {
+                    MessageBox.Show("Estado do utilizador atualizado com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao atualizar o estado do utilizador.");
+                }
+            }
+        }
+
+        private void refreshUtilizadoresDataGridView()
+        {
+            DataTable dt = Database.GetUtilizadores(UserID);
+            utilizadoresDataGridView.DataSource = dt;
+            utilizadoresDataGridView.Columns[0].Visible = false;
+            utilizadoresDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            utilizadoresDataGridView.Columns[1].ReadOnly = true;
+            utilizadoresDataGridView.Columns[2].ReadOnly = true;
+            utilizadoresDataGridView.Columns[3].ReadOnly = false;
         }
 
         private void AtualizarInfoGanhos()
@@ -564,7 +615,7 @@ namespace AdminSysWF
                 refreshEstoqueDataGridView();
                 RefreshChart(gunaChart1, 7, Database.GetLucroDia);
                 RefreshChart(gunaChart2, 30, Database.GetGanhosDia);
-
+                refreshUtilizadoresDataGridView();
                 RefreshChart(gunaChart3, 30, Database.GetDespesaDia);
                 refreshInvestimentosDataGridView();
                 refreshInvestimentosChart();
@@ -712,6 +763,16 @@ namespace AdminSysWF
             refreshCargosDataGridView();
         }
 
+        private void guna2Button17_Click(object sender, EventArgs e)
+        {
+            AddUtilizador addUser = new AddUtilizador();
+            addUser.ShowDialog();
+            refreshUtilizadoresDataGridView();
+        }
 
+        private void guna2Button16_Click(object sender, EventArgs e)
+        {
+            HandleDeletion(utilizadoresDataGridView, "dataGridViewCheckBoxColumn2", Database.RemoverUtilizador);
+        }
     }
 }

@@ -168,6 +168,12 @@
     <Compile Include="AddTarefa.Designer.cs">
       <DependentUpon>AddTarefa.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUtilizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUtilizador.Designer.cs">
+      <DependentUpon>AddUtilizador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="AddCategoria.cs">
       <SubType>Form</SubType>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddCategoria.resx">
       <DependentUpon>AddCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUtilizador.resx">
+      <DependentUpon>AddUtilizador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DefinicoesGrafico.resx">
       <DependentUpon>DefinicoesGrafico.cs</DependentUpon>

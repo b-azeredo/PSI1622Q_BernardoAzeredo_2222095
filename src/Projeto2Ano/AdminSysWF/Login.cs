@@ -23,7 +23,7 @@ namespace AdminSysWF
             {
                 int userID = Database.GetIdByUsername(txb_Username.Text);
                 this.Hide();
-                var mainPanel = new MainPanel(userID, txb_Username.Text);
+                var mainPanel = new MainPanel(userID);
                 mainPanel.Closed += (s, args) => this.Close();
                 mainPanel.Show();
             }

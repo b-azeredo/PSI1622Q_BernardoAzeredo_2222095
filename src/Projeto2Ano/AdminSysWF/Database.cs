@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
 using System.Windows.Forms;
-using static AdminSysWF.Database;
 
 namespace AdminSysWF
 {
@@ -24,6 +22,36 @@ namespace AdminSysWF
                 MessageBox.Show("Erro ao conectar a base de dados: " + ex.Message);
                 return null;
             }
+        }
+
+        public static bool isAdmin(int userid)
+        {
+            bool isAdmin = false;
+            string query = "SELECT ADMIN FROM UTILIZADORES WHERE ID = @userid";
+
+            using (SqlConnection connection = Connect())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userid", userid);
+
+                    try
+                    {
+                        object result = command.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
+                        {
+                            isAdmin = Convert.ToBoolean(result);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao executar a consulta: " + ex.Message);
+                    }
+                }
+            }
+
+            return isAdmin;
         }
 
         public static int GetIdByUsername(string username)
@@ -123,7 +151,7 @@ namespace AdminSysWF
                         {
                             if (reader.Read())
                             {
-                               return false;
+                                return false;
                             }
                         }
                     }
@@ -148,7 +176,7 @@ namespace AdminSysWF
             }
         }
 
-        public static bool addDespesa(int userid ,string desc, float valor)
+        public static bool addDespesa(int userid, string desc, float valor)
         {
             try
             {
@@ -195,6 +223,7 @@ namespace AdminSysWF
                 return false;
             }
         }
+
 
         public static bool addLucro(int userid, string desc, float valor)
         {
@@ -394,6 +423,35 @@ namespace AdminSysWF
             return despesaDia;
         }
 
+        public static DataTable GetUtilizadores(int userId)
+        {
+            DataTable UTILIZADORESTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = "SELECT ID, USERNAME, ADMIN FROM UTILIZADORES WHERE ID != @userId";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(UTILIZADORESTable);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter os utilizadores: " + ex.Message);
+            }
+
+            return UTILIZADORESTable;
+        }
+
+
         public static DataTable GetGanhos(int userId)
         {
             DataTable GANHOSTable = new DataTable();
@@ -448,7 +506,7 @@ namespace AdminSysWF
                         DateTime DataDespesaFuncionario = new DateTime(DateTime.Now.Year, DateTime.Now.Month, def.diaFuncionario, 0, 0, 0);
 
                         DataRow novaLinha = despesasTable.NewRow();
-                        novaLinha["ID"] = -1; 
+                        novaLinha["ID"] = -1;
                         novaLinha["DESCRICAO"] = "Salário Funcionários";
                         novaLinha["VALOR"] = despesaFuncionarios;
                         novaLinha["DATA"] = DataDespesaFuncionario;
@@ -557,7 +615,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         object result = cmd.ExecuteScalar();
-                        
+
                         if (result != DBNull.Value)
                         {
                             num = Convert.ToSingle(result);
@@ -711,6 +769,44 @@ namespace AdminSysWF
                 return false;
             }
         }
+
+        public static bool AdicionarUtilizador(string username, string password, bool isAdmin)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    if (GetIdByUsername(username) != -1)
+                    {
+                        MessageBox.Show("O nome de utilizador já existe. Por favor, escolha outro nome de utilizador.");
+                        return false;
+                    }
+
+                    string query = "INSERT INTO UTILIZADORES VALUES (@username, @password, 28, @isAdmin)";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao adicionar o utilizador: " + ex.Message);
+                return false;
+            }
+        }
+
+
 
         public static bool AddFornecedor(int userID, string nome, string email, string telefone, int categoria)
         {
@@ -1135,7 +1231,38 @@ namespace AdminSysWF
             return def;
         }
 
-        public static void AlterarDiaFuncionario(int userId,  int diaFuncionario)
+        public static bool AlterarAdmin(int userId, bool isAdmin)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    // Atualizar o estado do utilizador
+                    string queryUpdate = "UPDATE UTILIZADORES SET ADMIN = @isAdmin WHERE ID = @userId";
+                    using (SqlCommand cmdUpdate = new SqlCommand(queryUpdate, connection))
+                    {
+                        cmdUpdate.Parameters.AddWithValue("@isAdmin", isAdmin);
+                        cmdUpdate.Parameters.AddWithValue("@userId", userId);
+
+                        cmdUpdate.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao alterar o estado do utilizador: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        public static void AlterarDiaFuncionario(int userId, int diaFuncionario)
         {
             try
             {
@@ -1392,6 +1519,34 @@ namespace AdminSysWF
             }
         }
 
+        public static bool RemoverUtilizador(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return false;
+                    }
+
+                    string query = "DELETE FROM UTILIZADORES WHERE ID = @id";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao remover o utilizador: " + ex.Message);
+                return false;
+            }
+        }
+
+
         public static bool RemoverProduto(int id)
         {
             try
@@ -1566,7 +1721,7 @@ namespace AdminSysWF
                     {
                         historicoCmd.Parameters.AddWithValue("@investimentoId", id);
                         historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotal);
-                        historicoCmd.Parameters.AddWithValue("@data", DateTime.Now); 
+                        historicoCmd.Parameters.AddWithValue("@data", DateTime.Now);
                         historicoCmd.ExecuteNonQuery();
                     }
 

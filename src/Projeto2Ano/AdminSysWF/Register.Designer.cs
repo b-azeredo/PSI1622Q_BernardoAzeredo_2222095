@@ -74,6 +74,7 @@
             this.txb_Password.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_Password.ForeColor = System.Drawing.Color.White;
             this.txb_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Password.Location = new System.Drawing.Point(302, 239);
             this.txb_Password.Name = "txb_Password";
@@ -97,6 +98,7 @@
             this.txb_Username.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.txb_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_Username.ForeColor = System.Drawing.Color.White;
             this.txb_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txb_Username.Location = new System.Drawing.Point(302, 197);
             this.txb_Username.Name = "txb_Username";
