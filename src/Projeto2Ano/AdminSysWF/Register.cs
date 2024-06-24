@@ -35,6 +35,10 @@ namespace AdminSysWF
             if (Database.Register(txb_Username.Text, txb_Password.Text))
             {
                 MessageBox.Show("Registado com sucesso!");
+                this.Hide();
+                var Login = new Login();
+                Login.Closed += (s, args) => this.Close();
+                Login.Show();
             }
             else
             {

@@ -135,7 +135,7 @@ namespace AdminSysWF
                 }
             }
 
-            query = "INSERT INTO UTILIZADORES VALUES (@username, @password, 28)";
+            query = "INSERT INTO UTILIZADORES VALUES (@username, @password, 28, 0)";
             using (SqlConnection connection = Connect())
             {
                 using (SqlCommand cmd = new SqlCommand(query, connection))
