@@ -1256,6 +1256,34 @@ namespace AdminSysWF
             }
         }
 
+        public static int GetNumeroCargos(int userId)
+        {
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    if (connection == null)
+                    {
+                        return -1;
+                    }
+
+                    string query = "SELECT COUNT(*) FROM CARGOS WHERE USER_ID = @userId";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        int count = (int)cmd.ExecuteScalar();
+                        return count;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o número de categorias: " + ex.Message);
+                return -1;
+            }
+        }
+
         public static bool RemoverGanho(int id)
         {
             try

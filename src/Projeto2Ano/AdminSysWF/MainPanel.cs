@@ -411,10 +411,18 @@ namespace AdminSysWF
 
         private void btnAddFuncionario_Click(object sender, EventArgs e)
         {
-            AddFuncionario addFuncionario = new AddFuncionario(UserID);
-            addFuncionario.ShowDialog();
-            refreshFuncionariosDataGridView();
-            refreshDespesasDataGridView();
+            if (Database.GetNumeroCargos(UserID) > 0)
+            {
+                AddFuncionario addFuncionario = new AddFuncionario(UserID);
+                addFuncionario.ShowDialog();
+                refreshFuncionariosDataGridView();
+                refreshDespesasDataGridView();
+            }
+            else
+            {
+                MessageBox.Show("Adicione ao menos um cargo antes de adicionar um funcionário.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void guna2TabControl1_Click(object sender, EventArgs e)
