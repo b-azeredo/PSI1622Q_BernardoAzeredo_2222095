@@ -773,26 +773,78 @@ namespace AdminSysWF
 
         private void label1_Click(object sender, EventArgs e)
         {
-            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1, UserID);
+            int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            Relatorio.Lucros relatorioLucros = new Relatorio.Lucros
+            {
+                LucroSemanal = Database.GetLucroSemanal(UserID),
+                LucroMensal = Database.GetLucroMensal(UserID),
+                LucroUltimoMes = Database.GetLucroMensalMesAnterior(UserID),
+                mediaDiaria = (Database.GetLucroMensal(UserID) / diasNoMesAtual).ToString("F2")
+            };
+
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1, UserID, relatorioLucros);
             def.ShowDialog();
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
-            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart2, UserID);
+            int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            Relatorio.Ganhos relatorioGanhos = new Relatorio.Ganhos
+            {
+                GanhosMensal = Database.GetGanhosMensal(UserID),
+                GanhosUltimoMes = Database.GetGanhosMensalMesAnterior(UserID), 
+                TaxaEmRelacaoAoUltimoMes = Database.CalcularPorcentagemVariacaoMensal(UserID).ToString() + "%",
+                mediaDiaria = (Database.GetGanhosMensal(UserID) / diasNoMesAtual).ToString("F2")
+            };
+
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart2, UserID, relatorioGanhos);
             def.ShowDialog();
         }
 
         private void label13_Click(object sender, EventArgs e)
         {
-            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart3, UserID);
+            int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            Relatorio.Despesas relatorioDespesas = new Relatorio.Despesas
+            {
+                DespesasMensal = Database.GetDespesasMensal(UserID),
+                DespesasUltimoMes = Database.GetDespesasMensalMesAnterior(UserID),
+                TaxaEmRelacaoAoUltimoMes = Database.CalcularPorcentagemVariacaoDespesasMensal(UserID),
+                mediaDiaria = (Database.GetDespesasMensal(UserID) / diasNoMesAtual).ToString("F2")
+            };
+
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart3, UserID, relatorioDespesas);
             def.ShowDialog();
         }
 
         private void label14_Click(object sender, EventArgs e)
         {
-            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart4, UserID);
+            float valorInicial = Database.GetInvestimentosValorInicial(UserID);
+            float valorTotal2 = Database.GetInvestimentosValorTotal(UserID);
+            string variacao;
+
+            if (valorInicial != 0)
+            {
+                float ganhoAbsoluto = valorTotal2 - valorInicial;
+                float taxaDeGanho = (ganhoAbsoluto / valorInicial) * 100;
+                variacao = taxaDeGanho.ToString("F0") + "%";
+            }
+            else
+            {
+                variacao = "N/A";
+            }
+
+            Relatorio.Investimentos relatorioInvestimentos = new Relatorio.Investimentos
+            {
+                ValorInicial = Database.GetInvestimentosValorInicial(UserID),
+                ValorTotal = Database.GetInvestimentosValorTotal(UserID),
+                TaxaVariacao = variacao,
+                MelhorAtivo = Database.GetMelhorInvestimento(UserID),
+                PiorAtivo = Database.GetPiorInvestimento(UserID)
+            };
+
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart4, UserID, relatorioInvestimentos);
             def.ShowDialog();
         }
+
     }
 }

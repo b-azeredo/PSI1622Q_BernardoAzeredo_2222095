@@ -176,6 +176,55 @@ namespace AdminSysWF
             }
         }
 
+        public static float GetLucroMensal(int userId)
+        {
+            float lucroMensal = 0;
+
+            try
+            {
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaMes = new DateTime(hoje.Year, hoje.Month, 1);
+                DateTime primeiroDiaProximoMes = primeiroDiaMes.AddMonths(1);
+
+                for (DateTime dia = primeiroDiaMes; dia < primeiroDiaProximoMes; dia = dia.AddDays(1))
+                {
+                    float lucroDia = GetLucroDia(dia, userId);
+                    lucroMensal += lucroDia;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o lucro mensal: " + ex.Message);
+            }
+
+            return lucroMensal;
+        }
+
+        public static float GetLucroMensalMesAnterior(int userId)
+        {
+            float lucroMensalAnterior = 0;
+
+            try
+            {
+                DateTime hoje = DateTime.Today;
+                DateTime primeiroDiaMesAnterior = new DateTime(hoje.Year, hoje.Month, 1).AddMonths(-1);
+                DateTime primeiroDiaMes = new DateTime(hoje.Year, hoje.Month, 1);
+
+                for (DateTime dia = primeiroDiaMesAnterior; dia < primeiroDiaMes; dia = dia.AddDays(1))
+                {
+                    float lucroDia = GetLucroDia(dia, userId);
+                    lucroMensalAnterior += lucroDia;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao calcular o lucro do mês anterior: " + ex.Message);
+            }
+
+            return lucroMensalAnterior;
+        }
+
+
         public static bool addDespesa(int userid, string desc, float valor)
         {
             try
@@ -1029,6 +1078,99 @@ namespace AdminSysWF
 
             return investimentosTable;
         }
+
+        public static string GetMelhorInvestimento(int userId)
+        {
+            string melhorInvestimento = string.Empty;
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"
+                SELECT TOP 1 i.DESCRICAO, (h.VALOR_TOTAL - i.VALOR_INVESTIDO) / i.VALOR_INVESTIDO AS MargemRetorno
+                FROM INVESTIMENTOS i
+                INNER JOIN TIPOS_INVESTIMENTOS t ON i.TIPO_INVESTIMENTO = t.ID
+                LEFT JOIN (
+                    SELECT hi1.INVESTIMENTO_ID, hi1.VALOR_TOTAL
+                    FROM HISTORICO_INVESTIMENTO hi1
+                    WHERE hi1.DATA = (
+                        SELECT MAX(hi2.DATA)
+                        FROM HISTORICO_INVESTIMENTO hi2
+                        WHERE hi2.INVESTIMENTO_ID = hi1.INVESTIMENTO_ID
+                    )
+                ) h ON i.ID = h.INVESTIMENTO_ID
+                WHERE i.USER_ID = @userId
+                ORDER BY MargemRetorno DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                melhorInvestimento = reader["DESCRICAO"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o melhor investimento: " + ex.Message);
+            }
+
+            return melhorInvestimento;
+        }
+
+        public static string GetPiorInvestimento(int userId)
+        {
+            string piorInvestimento = string.Empty;
+
+            try
+            {
+                using (SqlConnection connection = Connect())
+                {
+                    string query = @"
+                SELECT TOP 1 i.DESCRICAO, (h.VALOR_TOTAL - i.VALOR_INVESTIDO) / i.VALOR_INVESTIDO AS MargemRetorno
+                FROM INVESTIMENTOS i
+                INNER JOIN TIPOS_INVESTIMENTOS t ON i.TIPO_INVESTIMENTO = t.ID
+                LEFT JOIN (
+                    SELECT hi1.INVESTIMENTO_ID, hi1.VALOR_TOTAL
+                    FROM HISTORICO_INVESTIMENTO hi1
+                    WHERE hi1.DATA = (
+                        SELECT MAX(hi2.DATA)
+                        FROM HISTORICO_INVESTIMENTO hi2
+                        WHERE hi2.INVESTIMENTO_ID = hi1.INVESTIMENTO_ID
+                    )
+                ) h ON i.ID = h.INVESTIMENTO_ID
+                WHERE i.USER_ID = @userId
+                ORDER BY MargemRetorno ASC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                piorInvestimento = reader["DESCRICAO"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter o pior investimento: " + ex.Message);
+            }
+
+            return piorInvestimento;
+        }
+
 
         public static float GetInvestimentosValorTotal(int userId)
         {

@@ -13,15 +13,15 @@ namespace AdminSysWF
             public float LucroSemanal;
             public float LucroMensal;
             public float LucroUltimoMes;
-            public float mediaDiaria;
+            public string mediaDiaria;
         }
 
         public class Ganhos
         {
             public float GanhosMensal;
             public float GanhosUltimoMes;
-            public float TaxaEmRelacaoAoUltimoMes;
-            public float mediaDiaria;
+            public string TaxaEmRelacaoAoUltimoMes;
+            public string mediaDiaria;
         }
 
         public class Despesas
@@ -29,16 +29,17 @@ namespace AdminSysWF
             public float DespesasMensal;
             public float DespesasUltimoMes;
             public float TaxaEmRelacaoAoUltimoMes;
-            public float mediaDiaria;
+            public string mediaDiaria;
         }
 
         public class Investimentos
         {
             public float ValorInicial;
             public float ValorTotal;
-            public float TaxaVariacao;
+            public string TaxaVariacao;
             public string MelhorAtivo;
             public string PiorAtivo;
         }
+        
     }
 }
