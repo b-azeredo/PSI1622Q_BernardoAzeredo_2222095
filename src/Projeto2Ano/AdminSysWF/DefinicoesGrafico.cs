@@ -13,7 +13,7 @@ namespace AdminSysWF
     {
         private Guna.Charts.WinForms.GunaChart chart;
 
-        public DefinicoesGrafico(Guna.Charts.WinForms.GunaChart chart)
+        public DefinicoesGrafico(Guna.Charts.WinForms.GunaChart chart, int userID)
         {
             InitializeComponent();
             this.chart = chart;
@@ -31,25 +31,51 @@ namespace AdminSysWF
                 PdfDocument document = new PdfDocument();
                 document.Info.Title = "Chart Export";
 
-                PdfPage page = document.AddPage();
-                page.Width = XUnit.FromPoint(chart.Width);
-                page.Height = XUnit.FromPoint(chart.Height);
+                // Adicionar página para o gráfico
+                PdfPage chartPage = document.AddPage();
+                chartPage.Width = XUnit.FromPoint(chart.Width);
+                chartPage.Height = XUnit.FromPoint(chart.Height);
+                XGraphics chartGfx = XGraphics.FromPdfPage(chartPage);
+                XImage chartImage = XImage.FromFile(tempFilePath);
+                chartGfx.DrawImage(chartImage, 0, 0, XUnit.FromPoint(chart.Width), XUnit.FromPoint(chart.Height));
 
-                XGraphics gfx = XGraphics.FromPdfPage(page);
+                // Obter as dimensões da primeira página
+                double firstPageWidth = chartPage.Width.Point;
+                double firstPageHeight = chartPage.Height.Point;
 
-                XImage xImage = XImage.FromFile(tempFilePath);
+                // Adicionar nova página com o mesmo tamanho da primeira página
+                PdfPage textPage = document.AddPage();
+                textPage.Width = XUnit.FromPoint(firstPageWidth);
+                textPage.Height = XUnit.FromPoint(firstPageHeight);
+                XGraphics textGfx = XGraphics.FromPdfPage(textPage);
 
-                gfx.DrawImage(xImage, 0, 0, XUnit.FromPoint(chart.Width), XUnit.FromPoint(chart.Height));
+                // Configurar fonte e tamanho do título
+                XFont titleFont = new XFont("Arial", 20);
+                XBrush titleBrush = XBrushes.Black;
 
+                // Escrever título centralizado
+                string titleText = "Título do Documento PDF";
+                XSize titleSize = textGfx.MeasureString(titleText, titleFont);
+                XRect titleRect = new XRect((textPage.Width - titleSize.Width) / 2, 40, titleSize.Width, titleSize.Height);
+                textGfx.DrawString(titleText, titleFont, titleBrush, titleRect, XStringFormats.TopLeft);
+
+                // Configurar fonte e tamanho do texto
+                XFont font = new XFont("Arial", 12);
+                XRect rect = new XRect(40, 80, textPage.Width - 80, textPage.Height - 120);
+                string bodyText = "Texto personalizado na nova página do PDF.";
+                textGfx.DrawString(bodyText, font, XBrushes.Black, rect, XStringFormats.TopLeft);
+
+                // Salvar e abrir o PDF
                 string filename = "ChartExport.pdf";
                 document.Save(filename);
                 Process.Start(new ProcessStartInfo(filename) { UseShellExecute = true });
 
+                // Limpar arquivos temporários
                 File.Delete(tempFilePath);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocorreu um erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

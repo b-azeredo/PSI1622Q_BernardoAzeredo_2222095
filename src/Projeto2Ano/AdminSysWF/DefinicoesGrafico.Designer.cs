@@ -46,7 +46,7 @@
             this.btn_baixarPDF.Name = "btn_baixarPDF";
             this.btn_baixarPDF.Size = new System.Drawing.Size(193, 39);
             this.btn_baixarPDF.TabIndex = 20;
-            this.btn_baixarPDF.Text = "Baixar PDF";
+            this.btn_baixarPDF.Text = "Gerar Relatório";
             this.btn_baixarPDF.Click += new System.EventHandler(this.btn_baixarPDF_Click);
             // 
             // DefinicoesGrafico
@@ -54,7 +54,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
-            this.ClientSize = new System.Drawing.Size(361, 261);
+            this.ClientSize = new System.Drawing.Size(361, 155);
             this.Controls.Add(this.btn_baixarPDF);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "DefinicoesGrafico";

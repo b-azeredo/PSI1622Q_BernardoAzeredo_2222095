@@ -215,7 +215,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Edit4Campos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit4Campos";
+            this.Text = "Editar";
             this.ResumeLayout(false);
             this.PerformLayout();
 

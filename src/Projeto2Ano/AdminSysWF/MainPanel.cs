@@ -732,11 +732,7 @@ namespace AdminSysWF
             HandleCellClick(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Edit3Campos.Tabelas.Investimento, new List<string> { "Descrição", "Tipo", "Valor Atual" });
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1);
-            def.ShowDialog();
-        }
+
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
@@ -773,6 +769,30 @@ namespace AdminSysWF
         private void guna2Button16_Click(object sender, EventArgs e)
         {
             HandleDeletion(utilizadoresDataGridView, "dataGridViewCheckBoxColumn2", Database.RemoverUtilizador);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart1, UserID);
+            def.ShowDialog();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart2, UserID);
+            def.ShowDialog();
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart3, UserID);
+            def.ShowDialog();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            DefinicoesGrafico def = new DefinicoesGrafico(gunaChart4, UserID);
+            def.ShowDialog();
         }
     }
 }

@@ -219,6 +219,7 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio.cs" />
     <EmbeddedResource Include="AddCargo.resx">
       <DependentUpon>AddCargo.cs</DependentUpon>
     </EmbeddedResource>
