@@ -141,6 +141,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.NotificacoesDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -245,16 +246,16 @@
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.InvestimentosDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.utilizadoresDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label16 = new System.Windows.Forms.Label();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.guna2Button16 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -305,6 +306,7 @@
             this.guna2TabControl1.Controls.Add(this.tabPage6);
             this.guna2TabControl1.Controls.Add(this.tabPage7);
             this.guna2TabControl1.Controls.Add(this.tabPage8);
+            this.guna2TabControl1.Controls.Add(this.tabPage9);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(-1, 0);
             this.guna2TabControl1.Name = "guna2TabControl1";
@@ -429,6 +431,18 @@
             this.NotificacoesDataGridView.ThemeStyle.RowsStyle.Height = 40;
             this.NotificacoesDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.NotificacoesDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // Imagem
+            // 
+            this.Imagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Imagem.FillWeight = 1F;
+            this.Imagem.HeaderText = "Imagem";
+            this.Imagem.Image = global::AdminSysWF.Properties.Resources.icons8_warning_50;
+            this.Imagem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Imagem.MinimumWidth = 6;
+            this.Imagem.Name = "Imagem";
+            this.Imagem.ReadOnly = true;
+            this.Imagem.Width = 6;
             // 
             // label2
             // 
@@ -2629,6 +2643,22 @@
             this.utilizadoresDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.utilizadoresDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Remover";
+            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // guna2Panel17
+            // 
+            this.guna2Panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
+            this.guna2Panel17.Controls.Add(this.label16);
+            this.guna2Panel17.Location = new System.Drawing.Point(6, 7);
+            this.guna2Panel17.Name = "guna2Panel17";
+            this.guna2Panel17.Size = new System.Drawing.Size(597, 53);
+            this.guna2Panel17.TabIndex = 37;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -2639,15 +2669,6 @@
             this.label16.Size = new System.Drawing.Size(161, 32);
             this.label16.TabIndex = 31;
             this.label16.Text = "Utilizadores";
-            // 
-            // guna2Panel17
-            // 
-            this.guna2Panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Panel17.Controls.Add(this.label16);
-            this.guna2Panel17.Location = new System.Drawing.Point(6, 7);
-            this.guna2Panel17.Name = "guna2Panel17";
-            this.guna2Panel17.Size = new System.Drawing.Size(597, 53);
-            this.guna2Panel17.TabIndex = 37;
             // 
             // guna2Button16
             // 
@@ -2690,13 +2711,6 @@
             this.guna2Button17.UseTransparentBackground = true;
             this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
             // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Remover";
-            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -2707,19 +2721,16 @@
             this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 6;
             // 
-            // Imagem
+            // tabPage9
             // 
-            this.Imagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Imagem.FillWeight = 1F;
-            this.Imagem.HeaderText = "Imagem";
-            this.Imagem.Image = global::AdminSysWF.Properties.Resources.icons8_warning_50;
-            this.Imagem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Imagem.MinimumWidth = 6;
-            this.Imagem.Name = "Imagem";
-            this.Imagem.ReadOnly = true;
-            this.Imagem.Width = 6;
+            this.tabPage9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(34)))));
+            this.tabPage9.Location = new System.Drawing.Point(184, 4);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(899, 565);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Relatórios";
             // 
             // MainPanel
             // 
@@ -2913,5 +2924,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button16;
         private Guna.UI2.WinForms.Guna2Button guna2Button17;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.TabPage tabPage9;
     }
 }
