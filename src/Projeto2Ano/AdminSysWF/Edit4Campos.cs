@@ -73,13 +73,17 @@ namespace AdminSysWF
 
         private void ConfirmEdit_Click(object sender, EventArgs e)
         {
+            bool result = false;
             switch (tabela)
             {
                 case Tabelas.Fornecedor:
                     Database.EditFornecedor(id, txb_edit1.Text, txb_edit2.Text, txb_edit3.Text, int.Parse(cb.SelectedValue.ToString()));
                     break;
             }
-            MessageBox.Show("Registo editado com sucesso.", "Editado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (result)
+            {
+                MessageBox.Show("Registo editado com sucesso.", "Editado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             this.Close();
         }
     }

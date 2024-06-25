@@ -116,25 +116,29 @@ namespace AdminSysWF
 
         private void ConfirmEdit_Click(object sender, EventArgs e)
         {
+            bool result = false;
             switch (tabela)
             {
                 case Tabelas.Ganho:
-                    Database.EditGanho(id, txb_edit1.Text, float.Parse(txb_edit2.Text));
+                    result = Database.EditGanho(id, txb_edit1.Text, txb_edit2.Text);
                     break;
                 case Tabelas.Despesa:
-                    Database.EditDespesa(id, txb_edit1.Text, float.Parse(txb_edit2.Text));
+                    result = Database.EditDespesa(id, txb_edit1.Text, txb_edit2.Text);
                     break;
                 case Tabelas.Funcionario:
-                    Database.EditFuncionario(id, txb_edit1.Text, float.Parse(txb_edit2.Text), txb_edit3.Text);
+                    result = Database.EditFuncionario(id, txb_edit1.Text, txb_edit2.Text, txb_edit3.Text);
                     break;
                 case Tabelas.Produto:
-                    Database.EditProduto(id, txb_edit1.Text, int.Parse(txb_edit2.Text), int.Parse(cb.SelectedValue.ToString()));
+                    result = Database.EditProduto(id, txb_edit1.Text, txb_edit2.Text, int.Parse(cb.SelectedValue.ToString()));
                     break;
                 case Tabelas.Investimento:
-                    Database.EditInvestimento(id, int.Parse(cb.SelectedValue.ToString()), txb_edit1.Text, int.Parse(txb_edit3.Text));
+                    result = Database.EditInvestimento(id, int.Parse(cb.SelectedValue.ToString()), txb_edit1.Text, txb_edit3.Text);
                     break;
             }
-            MessageBox.Show("Registo editado com sucesso.", "Editado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (result)
+            {
+                MessageBox.Show("Registo editado com sucesso.", "Editado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             this.Close();
         }
     }

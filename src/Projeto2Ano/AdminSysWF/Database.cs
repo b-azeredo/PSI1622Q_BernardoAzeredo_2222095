@@ -1815,8 +1815,30 @@ namespace AdminSysWF
             }
         }
 
-        public static bool EditGanho(int id, string desc, float valor)
+        public static bool EditGanho(int id, string desc, string valor)
         {
+            if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
+            float valorFloat;
+            try
+            {
+                valorFloat = float.Parse(valor);
+                if (valorFloat < 0)
+                {
+                    MessageBox.Show("Valor deve ser maior ou igual a zero.");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Valor inválido. Deve ser um número.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1828,7 +1850,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@desc", desc);
-                        cmd.Parameters.AddWithValue("@valor", valor);
+                        cmd.Parameters.AddWithValue("@valor", valorFloat); // Ensure parameter type matches database schema
                         cmd.ExecuteNonQuery();
                         return true;
                     }
@@ -1841,8 +1863,32 @@ namespace AdminSysWF
             }
         }
 
-        public static bool EditInvestimento(int id, int tipoInvestimento, string descricao, decimal valorTotal)
+
+
+        public static bool EditInvestimento(int id, int tipoInvestimento, string descricao, string valorTotal)
         {
+            if (id <= 0 || tipoInvestimento <= 0 || string.IsNullOrWhiteSpace(descricao) || descricao.Length > 100)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
+            float valorTotalFloat;
+            try
+            {
+                valorTotalFloat = float.Parse(valorTotal);
+                if (valorTotalFloat < 0)
+                {
+                    MessageBox.Show("Valor total deve ser maior ou igual a zero.");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Valor total inválido. Deve ser um número.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1862,7 +1908,7 @@ namespace AdminSysWF
                     using (SqlCommand historicoCmd = new SqlCommand(historicoQuery, connection))
                     {
                         historicoCmd.Parameters.AddWithValue("@investimentoId", id);
-                        historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotal);
+                        historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotalFloat); // Ensure parameter type matches database schema
                         historicoCmd.Parameters.AddWithValue("@data", DateTime.Now);
                         historicoCmd.ExecuteNonQuery();
                     }
@@ -1878,8 +1924,30 @@ namespace AdminSysWF
         }
 
 
-        public static bool EditFuncionario(int id, string nome, float salario, string cargo)
+        public static bool EditFuncionario(int id, string nome, string salario, string cargo)
         {
+            if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100 || string.IsNullOrWhiteSpace(cargo) || cargo.Length > 50)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
+            float salarioFloat;
+            try
+            {
+                salarioFloat = float.Parse(salario);
+                if (salarioFloat < 0)
+                {
+                    MessageBox.Show("Salário deve ser maior ou igual a zero.");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Salário inválido. Deve ser um número.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1891,7 +1959,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@nome", nome);
-                        cmd.Parameters.AddWithValue("@salario", salario);
+                        cmd.Parameters.AddWithValue("@salario", salarioFloat); // Ensure parameter type matches database schema
                         cmd.Parameters.AddWithValue("@cargo", cargo);
                         cmd.ExecuteNonQuery();
                         return true;
@@ -1907,6 +1975,14 @@ namespace AdminSysWF
 
         public static bool EditFornecedor(int id, string nome, string email, string telefone, int categoria)
         {
+            if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100 ||
+                string.IsNullOrWhiteSpace(email) || !IsValidEmail(email) ||
+                string.IsNullOrWhiteSpace(telefone) || telefone.Length > 9 || !IsAllDigits(telefone) || categoria <= 0)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1933,8 +2009,56 @@ namespace AdminSysWF
             }
         }
 
-        public static bool EditProduto(int id, string produto, int quantidade, int idCategoria)
+        private static bool IsValidEmail(string email)
         {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static bool IsAllDigits(string str)
+        {
+            foreach (char c in str)
+            {
+                if (!char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static bool EditProduto(int id, string produto, string quantidade, int idCategoria)
+        {
+            if (id <= 0 || string.IsNullOrWhiteSpace(produto) || produto.Length > 100 || idCategoria <= 0)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
+            int quantidadeInt;
+            try
+            {
+                quantidadeInt = int.Parse(quantidade);
+                if (quantidadeInt < 0)
+                {
+                    MessageBox.Show("Quantidade deve ser maior ou igual a zero.");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Quantidade inválida. Deve ser um número inteiro.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1946,7 +2070,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@produto", produto);
-                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
+                        cmd.Parameters.AddWithValue("@quantidade", quantidadeInt); // Ensure parameter type matches database schema
                         cmd.Parameters.AddWithValue("@idCategoria", idCategoria);
                         cmd.ExecuteNonQuery();
                         return true;
@@ -1960,8 +2084,31 @@ namespace AdminSysWF
             }
         }
 
-        public static bool EditDespesa(int id, string desc, float valor)
+
+        public static bool EditDespesa(int id, string desc, string valor)
         {
+            if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
+            float valorFloat;
+            try
+            {
+                valorFloat = float.Parse(valor);
+                if (valorFloat < 0)
+                {
+                    MessageBox.Show("Valor deve ser maior ou igual a zero.");
+                    return false;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Valor inválido. Deve ser um número.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -1973,7 +2120,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@desc", desc);
-                        cmd.Parameters.AddWithValue("@valor", valor);
+                        cmd.Parameters.AddWithValue("@valor", valorFloat); // Ensure parameter type matches database schema
                         cmd.ExecuteNonQuery();
                         return true;
                     }
@@ -1986,8 +2133,16 @@ namespace AdminSysWF
             }
         }
 
+
+
         public static bool EditCategoria(int id, string nome)
         {
+            if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100)
+            {
+                MessageBox.Show("Dados de entrada inválidos.");
+                return false;
+            }
+
             try
             {
                 using (SqlConnection connection = Connect())
@@ -2010,6 +2165,7 @@ namespace AdminSysWF
                 return false;
             }
         }
+
 
 
     }
