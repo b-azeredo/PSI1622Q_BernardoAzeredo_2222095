@@ -286,7 +286,7 @@ namespace AdminSysWF
                     porcentagemGanhoPerda = ((valorAtual - valorInicial) / valorInicial) * 100;
                 }
 
-                row["PorcentagemGanhoPerda"] = porcentagemGanhoPerda + "%";
+                row["PorcentagemGanhoPerda"] = porcentagemGanhoPerda.ToString("F1") + "%";
             }
 
             SetDataGridViewReadOnly(InvestimentosDataGridView);
