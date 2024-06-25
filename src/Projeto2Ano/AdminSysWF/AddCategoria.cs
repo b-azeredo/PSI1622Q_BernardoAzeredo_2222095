@@ -21,7 +21,15 @@ namespace AdminSysWF
 
         private void ComfirmAddCategoria_Click(object sender, EventArgs e)
         {
-            if (Database.AddCategoria(userID, txb_nomeCategoria.Text))
+            string nomeCategoria = txb_nomeCategoria.Text;
+
+            if (nomeCategoria.Length > 25)
+            {
+                MessageBox.Show("O nome da categoria deve ter no máximo 25 letras.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Database.AddCategoria(userID, nomeCategoria))
             {
                 MessageBox.Show("Categoria adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
@@ -31,6 +39,7 @@ namespace AdminSysWF
                 MessageBox.Show("Erro ao adicionar a categoria.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void txb_nomeCategoria_TextChanged(object sender, EventArgs e)
         {

@@ -22,15 +22,24 @@ namespace AdminSysWF
 
         private void ComfirmAddCategoria_Click(object sender, EventArgs e)
         {
-            if (Database.AddCargo(userID, txb_nomeCargo.Text))
+            string nomeCargo = txb_nomeCargo.Text;
+
+            if (nomeCargo.Length > 25)
             {
-                MessageBox.Show("Cargo adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("O nome do cargo deve ter no máximo 25 letras.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Database.AddCargo(userID, nomeCargo))
+            {
+                MessageBox.Show("Cargo adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Erro ao adicionar a categoria.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar o cargo.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

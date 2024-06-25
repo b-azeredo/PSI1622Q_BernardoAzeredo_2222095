@@ -28,20 +28,35 @@ namespace AdminSysWF
         {
             string desc = txb_DescDespesa.Text;
             string valor = txb_ValorDespesa.Text;
-            float valorInt;
-            if (float.TryParse(valor, out valorInt) && desc.Length > 0 && valorInt > 0)
-            {
-                if (Database.addLucro(userID, desc, valorInt))
-                {
-                    MessageBox.Show("Ganho adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                }
+            if (string.IsNullOrWhiteSpace(desc))
+            {
+                MessageBox.Show("A descrição do ganho não pode estar vazia.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (desc.Length > 100)
+            {
+                MessageBox.Show("A descrição do ganho deve ter no máximo 100 caracteres.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!float.TryParse(valor, out float valorFloat) || valorFloat <= 0)
+            {
+                MessageBox.Show("O valor fornecido não é válido ou é menor ou igual a zero.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Database.addLucro(userID, desc, valorFloat))
+            {
+                MessageBox.Show("Ganho adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Erro ao adicionar ganho", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar ganho.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

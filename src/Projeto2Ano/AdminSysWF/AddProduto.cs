@@ -38,9 +38,26 @@ namespace AdminSysWF
 
         private void ComfirmAddProduto_Click(object sender, EventArgs e)
         {
-            int quantidade;
-            if (int.TryParse(txb_QuantidadeProduto.Text, out quantidade))
+            try
             {
+                if (string.IsNullOrWhiteSpace(txb_NomeProduto.Text))
+                {
+                    MessageBox.Show("Por favor, insira um nome para o produto.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (!int.TryParse(txb_QuantidadeProduto.Text, out int quantidade) || quantidade <= 0)
+                {
+                    MessageBox.Show("Por favor, insira uma quantidade válida para o produto.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (categoriasComboBox.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, selecione uma categoria para o produto.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 if (Database.AddProduto(UserID, txb_NomeProduto.Text, quantidade, int.Parse(categoriasComboBox.SelectedValue.ToString())))
                 {
                     MessageBox.Show("Produto adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -48,14 +65,14 @@ namespace AdminSysWF
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao adicionar produto", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro ao adicionar produto.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao adicionar produto, digite uma quantidade válida.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Erro ao adicionar produto: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

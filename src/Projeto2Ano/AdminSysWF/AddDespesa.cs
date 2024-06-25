@@ -23,20 +23,32 @@ namespace AdminSysWF
         {
             string desc = txb_DescDespesa.Text;
             string valor = txb_ValorDespesa.Text;
-            float valorInt;
-            if (float.TryParse(valor, out valorInt) && desc.Length > 0 && valorInt > 0)
+            float valorFloat;
+
+            if (desc.Length > 25)
             {
-                if (Database.addDespesa(userID, desc, valorInt))
+                MessageBox.Show("A descrição da despesa deve ter no máximo 25 letras.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (float.TryParse(valor, out valorFloat) && valorFloat > 0 && valorFloat <= 10000)
+            {
+                if (Database.addDespesa(userID, desc, valorFloat))
                 {
                     MessageBox.Show("Despesa adicionada com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
-                this.Close();
+                else
+                {
+                    MessageBox.Show("Erro ao adicionar a despesa.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Erro ao adicionar a despesa.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("O valor da despesa deve ser um número válido, positivo e não exceder 10000.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

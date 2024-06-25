@@ -34,9 +34,26 @@ namespace AdminSysWF
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txb_DescricaoInvestimento.Text))
+                {
+                    MessageBox.Show("Por favor, preencha a descrição do investimento.");
+                    return;
+                }
+
+                if (tiposComboBox.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor, selecione um tipo de investimento.");
+                    return;
+                }
+
+                if (!decimal.TryParse(ValorInvestido.Text, out decimal valorInvestido) || valorInvestido <= 0)
+                {
+                    MessageBox.Show("Por favor, insira um valor investido válido e positivo.");
+                    return;
+                }
+
                 int tipoInvestimento = int.Parse(tiposComboBox.SelectedValue.ToString());
                 string descricao = txb_DescricaoInvestimento.Text;
-                decimal valorInvestido = decimal.Parse(ValorInvestido.Text);
                 decimal valorTotal = valorInvestido;
 
                 if (Database.AddInvestimento(UserID, tipoInvestimento, descricao, valorInvestido, valorTotal))

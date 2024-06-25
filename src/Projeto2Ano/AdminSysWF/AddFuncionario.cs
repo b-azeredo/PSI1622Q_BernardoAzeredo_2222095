@@ -38,17 +38,44 @@ namespace AdminSysWF
 
         private void ComfirmAddLucro_Click(object sender, EventArgs e)
         {
-            float salario = 0;
-            if (float.TryParse(txb_SalarioFuncionario.Text, out salario))
+            string nomeFuncionario = txb_NomeFuncionario.Text;
+            string salarioText = txb_SalarioFuncionario.Text;
+            int cargoID = int.Parse(cargosComboBox.SelectedValue.ToString());
+
+            if (string.IsNullOrWhiteSpace(nomeFuncionario))
             {
-                Database.addFuncionario(userID, txb_NomeFuncionario.Text, salario, int.Parse(cargosComboBox.SelectedValue.ToString()));
+                MessageBox.Show("O nome do funcionário não pode estar vazio.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (nomeFuncionario.Length > 50)
+            {
+                MessageBox.Show("O nome do funcionário deve ter no máximo 50 caracteres.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!float.TryParse(salarioText, out float salario) || salario <= 0)
+            {
+                MessageBox.Show("O salário fornecido não é válido ou é menor ou igual a zero.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (cargoID <= 0)
+            {
+                MessageBox.Show("Por favor, selecione um cargo válido.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Database.addFuncionario(userID, nomeFuncionario, salario, cargoID))
+            {
                 MessageBox.Show("Funcionário adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Erro ao adicionar a funcionário.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao adicionar o funcionário.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
