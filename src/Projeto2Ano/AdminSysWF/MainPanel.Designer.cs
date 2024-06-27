@@ -161,7 +161,6 @@
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_MediaGanhos = new System.Windows.Forms.Label();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_UltimoMesGanho = new System.Windows.Forms.Label();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_GanhosMensais = new System.Windows.Forms.Label();
@@ -178,7 +177,6 @@
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbl_MediaDespesas = new System.Windows.Forms.Label();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.lbl_UltimoMesDespesa = new System.Windows.Forms.Label();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lbl_DespesasMensais = new System.Windows.Forms.Label();
@@ -745,7 +743,6 @@
             this.guna2Panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel11.Controls.Add(this.lbl_MediaGanhos);
             this.guna2Panel11.Controls.Add(this.guna2HtmlLabel8);
-            this.guna2Panel11.Controls.Add(this.guna2Button12);
             this.guna2Panel11.Controls.Add(this.lbl_UltimoMesGanho);
             this.guna2Panel11.Controls.Add(this.guna2HtmlLabel6);
             this.guna2Panel11.Controls.Add(this.lbl_GanhosMensais);
@@ -781,28 +778,6 @@
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(123, 42);
             this.guna2HtmlLabel8.TabIndex = 36;
             this.guna2HtmlLabel8.Text = "Média diária";
-            // 
-            // guna2Button12
-            // 
-            this.guna2Button12.Animated = true;
-            this.guna2Button12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button12.BorderColor = System.Drawing.Color.White;
-            this.guna2Button12.BorderRadius = 15;
-            this.guna2Button12.BorderThickness = 1;
-            this.guna2Button12.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button12.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button12.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Button12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button12.ForeColor = System.Drawing.Color.White;
-            this.guna2Button12.IndicateFocus = true;
-            this.guna2Button12.Location = new System.Drawing.Point(3, 506);
-            this.guna2Button12.Name = "guna2Button12";
-            this.guna2Button12.Size = new System.Drawing.Size(448, 39);
-            this.guna2Button12.TabIndex = 35;
-            this.guna2Button12.Text = "Ver Histórico";
-            this.guna2Button12.UseTransparentBackground = true;
             // 
             // lbl_UltimoMesGanho
             // 
@@ -1070,7 +1045,6 @@
             this.guna2Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
             this.guna2Panel12.Controls.Add(this.lbl_MediaDespesas);
             this.guna2Panel12.Controls.Add(this.guna2HtmlLabel9);
-            this.guna2Panel12.Controls.Add(this.guna2Button13);
             this.guna2Panel12.Controls.Add(this.lbl_UltimoMesDespesa);
             this.guna2Panel12.Controls.Add(this.guna2HtmlLabel7);
             this.guna2Panel12.Controls.Add(this.lbl_DespesasMensais);
@@ -1105,28 +1079,6 @@
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(123, 42);
             this.guna2HtmlLabel9.TabIndex = 38;
             this.guna2HtmlLabel9.Text = "Média diária";
-            // 
-            // guna2Button13
-            // 
-            this.guna2Button13.Animated = true;
-            this.guna2Button13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button13.BorderColor = System.Drawing.Color.White;
-            this.guna2Button13.BorderRadius = 15;
-            this.guna2Button13.BorderThickness = 1;
-            this.guna2Button13.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button13.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(46)))));
-            this.guna2Button13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button13.ForeColor = System.Drawing.Color.White;
-            this.guna2Button13.IndicateFocus = true;
-            this.guna2Button13.Location = new System.Drawing.Point(3, 506);
-            this.guna2Button13.Name = "guna2Button13";
-            this.guna2Button13.Size = new System.Drawing.Size(448, 39);
-            this.guna2Button13.TabIndex = 36;
-            this.guna2Button13.Text = "Ver Histórico";
-            this.guna2Button13.UseTransparentBackground = true;
             // 
             // lbl_UltimoMesDespesa
             // 
@@ -2888,10 +2840,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button12;
         private System.Windows.Forms.Label lbl_MediaGanhos;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button13;
         private System.Windows.Forms.Label lbl_MediaDespesas;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private System.Windows.Forms.Label lbl_PercentagemGanho;

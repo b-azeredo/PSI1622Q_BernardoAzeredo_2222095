@@ -34,6 +34,11 @@ namespace AdminSysWF
             this.id = id;
             this.tabela = tabela;
             InitializeComponent();
+            if (tabela == Tabelas.Ganho || tabela == Tabelas.Despesa)
+            {
+                txb_edit3.Visible = false;
+                lbl_edit3.Visible = false;
+            }
             if (tabela == Tabelas.Investimento)
             {
                 txb_edit3.Text = "";
