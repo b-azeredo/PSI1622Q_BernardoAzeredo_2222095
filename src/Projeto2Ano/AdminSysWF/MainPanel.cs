@@ -47,7 +47,7 @@ namespace AdminSysWF
             refreshInvestimentosChart();
             refreshDiasComboBox();
             AtualizarInfoGanhos();
-
+            refreshNotificacoesDataGridView();
 
             if (Database.isAdmin(userID))
             {

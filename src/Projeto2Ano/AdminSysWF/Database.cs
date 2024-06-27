@@ -2034,7 +2034,6 @@ namespace AdminSysWF
             return true;
         }
 
-
         public static bool EditProduto(int id, string produto, string quantidade, int idCategoria)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(produto) || produto.Length > 100 || idCategoria <= 0)
@@ -2070,7 +2069,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@produto", produto);
-                        cmd.Parameters.AddWithValue("@quantidade", quantidadeInt); // Ensure parameter type matches database schema
+                        cmd.Parameters.AddWithValue("@quantidade", quantidadeInt); 
                         cmd.Parameters.AddWithValue("@idCategoria", idCategoria);
                         cmd.ExecuteNonQuery();
                         return true;
@@ -2083,7 +2082,6 @@ namespace AdminSysWF
                 return false;
             }
         }
-
 
         public static bool EditDespesa(int id, string desc, string valor)
         {
