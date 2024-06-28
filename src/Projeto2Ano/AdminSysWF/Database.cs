@@ -9,6 +9,8 @@ namespace AdminSysWF
     {
         public static string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=AdminSys;Integrated Security=True";
 
+
+        // Método que retorna a conexão com a database
         public static SqlConnection Connect()
         {
             try
@@ -24,6 +26,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna True se o utilizador for um Admin
         public static bool isAdmin(int userid)
         {
             bool isAdmin = false;
@@ -54,6 +58,8 @@ namespace AdminSysWF
             return isAdmin;
         }
 
+
+        // Retorna o ID de um utilizador pelo o nome
         public static int GetIdByUsername(string username)
         {
             try
@@ -231,6 +237,7 @@ namespace AdminSysWF
         }
 
 
+        //Método para adicionar uma despesa
         public static bool addDespesa(int userid, string desc, float valor)
         {
             try
@@ -255,6 +262,8 @@ namespace AdminSysWF
             }
         }
 
+
+        //Método para adicionar um novo funcionário
         public static bool addFuncionario(int userid, string nome, float salario, int cargo)
         {
             try
@@ -279,7 +288,7 @@ namespace AdminSysWF
             }
         }
 
-
+        // Método para adicionar um lucro
         public static bool addLucro(int userid, string desc, float valor)
         {
             try
@@ -304,6 +313,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna a soma do lucro (ganhos - despesas) em um dia específico
         public static float GetLucroDia(DateTime dia, int userId)
         {
             float lucroDia = 0;
@@ -323,6 +334,7 @@ namespace AdminSysWF
             return lucroDia;
         }
 
+        // Retorna a soma do lucro total na semana atual
         public static float GetLucroSemanal(int userId)
         {
             float lucroSemanal = 0;
@@ -347,6 +359,7 @@ namespace AdminSysWF
             return lucroSemanal;
         }
 
+        // Retorrna a soma total de ganhos no mês atual
         public static float GetGanhosMensal(int userId)
         {
             float ganhoMensal = 0;
@@ -372,7 +385,7 @@ namespace AdminSysWF
             return ganhoMensal;
         }
 
-
+        // Retorna todos os ganhos de um dia específico
         public static float GetGanhosDia(DateTime dia, int userId)
         {
             float lucroDia = 0;
@@ -401,6 +414,7 @@ namespace AdminSysWF
             return lucroDia;
         }
 
+        // Calcula a porcentagem de variação de ganhos em relação ao mês mensal
         public static float CalcularPorcentagemVariacaoMensal(int userId)
         {
             float ganhoMensalAtual = GetGanhosMensal(userId);
@@ -417,6 +431,7 @@ namespace AdminSysWF
             }
         }
 
+        // Retorna os ganhos totais do mês anterior
         public static float GetGanhosMensalMesAnterior(int userId)
         {
             float ganhoMensal = 0;
@@ -1382,6 +1397,8 @@ namespace AdminSysWF
             public int diaFuncionario;
         }
 
+
+        // Retorna as definições definidas pelo utilizador
         public static Definicoes GetDefinicoes(int userid)
         {
             DataTable definicoes = new DataTable();
@@ -1416,6 +1433,8 @@ namespace AdminSysWF
             return def;
         }
 
+
+        // Altera o cargo de um utilizador para Admin ou não
         public static bool AlterarAdmin(int userId, bool isAdmin)
         {
             try
@@ -1446,7 +1465,7 @@ namespace AdminSysWF
             }
         }
 
-
+        // Altera o dia de pagamento dos funcionários
         public static void AlterarDiaFuncionario(int userId, int diaFuncionario)
         {
             try
@@ -1473,6 +1492,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna uma datatable com o histórico dos investimentos
         public static DataTable GetHistoricoInvestimentos(int userId)
         {
             DataTable historicoTable = new DataTable();
@@ -1507,6 +1528,8 @@ namespace AdminSysWF
             return historicoTable;
         }
 
+
+        // Retorna uma datatable com todos os fornecedores
         public static DataTable GetFornecedores(int userId)
         {
             DataTable fornecedoresTable = new DataTable();
@@ -1540,6 +1563,8 @@ namespace AdminSysWF
             return fornecedoresTable;
         }
 
+
+        // Retorna o numéro de categorias
         public static int GetNumeroDeCategorias(int userId)
         {
             try
@@ -1568,6 +1593,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna o número de cargos presentes na database
         public static int GetNumeroCargos(int userId)
         {
             try
@@ -1596,6 +1623,8 @@ namespace AdminSysWF
             }
         }
 
+
+        //Remove um ganho
         public static bool RemoverGanho(int id)
         {
             try
@@ -1623,6 +1652,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Remove uma despesa
         public static bool RemoverDespesa(int id)
         {
             try
@@ -1650,6 +1681,7 @@ namespace AdminSysWF
             }
         }
 
+        // Remove um funcionário da database
         public static bool RemoverFuncionario(int id)
         {
             try
@@ -1677,6 +1709,7 @@ namespace AdminSysWF
             }
         }
 
+        // Remove um fornecedor da database
         public static bool RemoverFornecedor(int id)
         {
             try
@@ -1704,6 +1737,7 @@ namespace AdminSysWF
             }
         }
 
+        //Remove um utilizador da database
         public static bool RemoverUtilizador(int id)
         {
             try
@@ -1731,7 +1765,7 @@ namespace AdminSysWF
             }
         }
 
-
+        //Remove um produto da database
         public static bool RemoverProduto(int id)
         {
             try
@@ -1759,6 +1793,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Remove uma categoria da database
         public static bool RemoverCategoria(int id)
         {
             DialogResult result = MessageBox.Show("Remover esta categoria também removerá todos os produtos e fornecedores que pertencem à esta categoria. Deseja continuar?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -1795,6 +1831,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Remove um cargo da database
         public static bool RemoverCargo(int id)
         {
             DialogResult result = MessageBox.Show("Remover este cargo também removerá todos os funcionários que pertencem à este cargo. Deseja continuar?", "Confirmação de Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -1831,6 +1869,7 @@ namespace AdminSysWF
             }
         }
 
+        // Remove um investimento da database
         public static bool RemoverInvestimento(int id)
         {
             try
@@ -1858,6 +1897,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Edita um ganho da database
         public static bool EditGanho(int id, string desc, string valor)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
@@ -1907,7 +1948,7 @@ namespace AdminSysWF
         }
 
 
-
+        // Edita os investimentos da database
         public static bool EditInvestimento(int id, int tipoInvestimento, string descricao, string valorTotal)
         {
             if (id <= 0 || tipoInvestimento <= 0 || string.IsNullOrWhiteSpace(descricao) || descricao.Length > 100)
@@ -1966,7 +2007,7 @@ namespace AdminSysWF
             }
         }
 
-
+        // Edita um funcionário
         public static bool EditFuncionario(int id, string nome, string salario, string cargo)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100 || string.IsNullOrWhiteSpace(cargo) || cargo.Length > 50)
@@ -2016,6 +2057,7 @@ namespace AdminSysWF
             }
         }
 
+        //Edita um fornecedor
         public static bool EditFornecedor(int id, string nome, string email, string telefone, int categoria)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100 ||
@@ -2052,6 +2094,7 @@ namespace AdminSysWF
             }
         }
 
+        //Verifica se um email é válido
         private static bool IsValidEmail(string email)
         {
             try
@@ -2077,6 +2120,8 @@ namespace AdminSysWF
             return true;
         }
 
+
+        //Edita um produto na database
         public static bool EditProduto(int id, string produto, string quantidade, int idCategoria)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(produto) || produto.Length > 100 || idCategoria <= 0)
@@ -2126,6 +2171,8 @@ namespace AdminSysWF
             }
         }
 
+
+        //Edita uma despesa na database
         public static bool EditDespesa(int id, string desc, string valor)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
@@ -2174,6 +2221,8 @@ namespace AdminSysWF
             }
         }
 
+
+        //Edita uma categoria na database
         public static bool EditCategoria(int id, string nome)
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100)
@@ -2204,8 +2253,5 @@ namespace AdminSysWF
                 return false;
             }
         }
-
-
-
     }
 }
