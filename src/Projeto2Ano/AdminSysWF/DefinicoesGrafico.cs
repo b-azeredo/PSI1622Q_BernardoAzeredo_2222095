@@ -102,6 +102,7 @@ namespace AdminSysWF
 
         private string GerarTextoRelatorio(object relatorio)
         {
+            // Define o que mostrar em cada caso
             if (relatorio is Relatorio.Lucros lucros)
             {
                 return $"Lucro Semanal: {lucros.LucroSemanal}\nLucro Mensal: {lucros.LucroMensal}\nLucro Último Mês: {lucros.LucroUltimoMes}\nMédia Diária: {lucros.mediaDiaria}";

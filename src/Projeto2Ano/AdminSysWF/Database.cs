@@ -93,6 +93,8 @@ namespace AdminSysWF
 
         }
 
+
+        // Retorna True caso o login for bem sucedido, caso contrário retorna false
         public static bool Login(string username, string password)
         {
             string query = "SELECT PASSWORD FROM UTILIZADORES WHERE USERNAME = @username";
@@ -131,6 +133,8 @@ namespace AdminSysWF
             return false;
         }
 
+
+        // Regista novos utilizadores
         public static bool Register(string username, string password)
         {
             string query = "SELECT PASSWORD FROM UTILIZADORES WHERE USERNAME = @username";
@@ -176,6 +180,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna o lucro total do mês
         public static float GetLucroMensal(int userId)
         {
             float lucroMensal = 0;
@@ -436,7 +442,7 @@ namespace AdminSysWF
             return ganhoMensal;
         }
 
-
+        // Calcula a soma total das despesas em um dia específico
         public static float GetDespesaDia(DateTime dia, int userId)
         {
             float despesaDia = 0;
@@ -472,6 +478,7 @@ namespace AdminSysWF
             return despesaDia;
         }
 
+        // Retorna uma datatable com todos os utilizadores presentes na database
         public static DataTable GetUtilizadores(int userId)
         {
             DataTable UTILIZADORESTable = new DataTable();
@@ -500,6 +507,7 @@ namespace AdminSysWF
             return UTILIZADORESTable;
         }
 
+        // Retorna uma datatable com todos os ganhos presentes na database
 
         public static DataTable GetGanhos(int userId)
         {
@@ -528,6 +536,8 @@ namespace AdminSysWF
 
             return GANHOSTable;
         }
+
+        // Retorna uma datatable com todos as despesas presentes na database
         public static DataTable GetDespesas(int userId)
         {
             DataTable despesasTable = new DataTable();
@@ -571,6 +581,9 @@ namespace AdminSysWF
             return despesasTable;
         }
 
+
+        // Retorna a soma de todas despesas do mês atual presentes na database
+
         public static float GetDespesasMensal(int userId)
         {
             float despesasMensal = 0;
@@ -603,6 +616,7 @@ namespace AdminSysWF
             return despesasMensal;
         }
 
+        //Retorna a porcentagem de variação entre o mês atual e o mês anterior (despesas)
         public static float CalcularPorcentagemVariacaoDespesasMensal(int userId)
         {
             float despesasMensalAtual = GetDespesasMensal(userId);
@@ -619,6 +633,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna a soma de todas as despesas no mês anterior
         public static float GetDespesasMensalMesAnterior(int userId)
         {
             float despesasMensal = 0;
@@ -651,7 +667,7 @@ namespace AdminSysWF
             return despesasMensal;
         }
 
-
+        //Retorna a soma de todos os salários dos funcionários
         public static float GetDespesasFuncionario(int userId)
         {
             float num = 0;
@@ -679,6 +695,7 @@ namespace AdminSysWF
             return num;
         }
 
+        //Retorna uma datatable com todas as tarefas presentes na database.
         public static DataTable GetTarefas(int userId)
         {
             DataTable tarefasTable = new DataTable();
@@ -707,6 +724,8 @@ namespace AdminSysWF
             return tarefasTable;
         }
 
+
+        // Retorna o número de tarefas concluídas na semana atual
         public static int GetNumeroTarefasConcluidasUltimaSemana(int userId)
         {
             int numeroTarefasConcluidas = 0;
@@ -741,6 +760,8 @@ namespace AdminSysWF
             return numeroTarefasConcluidas;
         }
 
+
+        // Retorna uma datatable com todos os funcionários presentes na database
         public static DataTable GetFuncionarios(int userId)
         {
             DataTable funcionariosTable = new DataTable();
@@ -769,6 +790,8 @@ namespace AdminSysWF
             return funcionariosTable;
         }
 
+
+        // Altera o estado de conclusão de uma tarefa para "CONCLUIDA"
         public static void ConcluirTarefa(int idTarefa)
         {
             try
@@ -796,6 +819,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Adiciona uma tarefa na database
         public static bool AddTarefa(int userID, string descricao)
         {
             try
@@ -819,6 +844,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Adiciona um novo utilizador na database
         public static bool AdicionarUtilizador(string username, string password, bool isAdmin)
         {
             try
@@ -856,7 +883,7 @@ namespace AdminSysWF
         }
 
 
-
+        // Adiciona um novo fornecedor na database
         public static bool AddFornecedor(int userID, string nome, string email, string telefone, int categoria)
         {
             try
@@ -889,6 +916,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Adiciona uma nova categoria de produtos na database
         public static bool AddCategoria(int userID, string nome)
         {
             try
@@ -918,6 +947,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Adiciona um novo cargo
         public static bool AddCargo(int userID, string nome)
         {
             try
@@ -947,6 +978,8 @@ namespace AdminSysWF
             }
         }
 
+
+        // Retorna uma datatable com todos os cargos presentes na database
         public static DataTable GetCargos(int userId)
         {
             DataTable categoriasTable = new DataTable();
@@ -975,6 +1008,8 @@ namespace AdminSysWF
             return categoriasTable;
         }
 
+
+        // Retona uma datatable com todas as categorias presentes na database
         public static DataTable GetCategorias(int userId)
         {
             DataTable categoriasTable = new DataTable();
@@ -1003,6 +1038,8 @@ namespace AdminSysWF
             return categoriasTable;
         }
 
+
+        // Retorna uma datatable com todos os produtos e quantidades presentes na database
         public static DataTable GetEstoque(int userId)
         {
             DataTable estoqueTable = new DataTable();
@@ -1036,6 +1073,8 @@ namespace AdminSysWF
             return estoqueTable;
         }
 
+
+        // Retorna todos os investimentos e estatísticas presentes na datatable
         public static DataTable GetInvestimentos(int userId)
         {
             DataTable investimentosTable = new DataTable();
@@ -1079,6 +1118,8 @@ namespace AdminSysWF
             return investimentosTable;
         }
 
+
+        // Rrtorna o investimento com maior taxa de variação positiva
         public static string GetMelhorInvestimento(int userId)
         {
             string melhorInvestimento = string.Empty;
@@ -1125,6 +1166,8 @@ namespace AdminSysWF
             return melhorInvestimento;
         }
 
+
+        // Retorna o investimento com maior taxa de variação negativa
         public static string GetPiorInvestimento(int userId)
         {
             string piorInvestimento = string.Empty;
@@ -1171,7 +1214,7 @@ namespace AdminSysWF
             return piorInvestimento;
         }
 
-
+        // Retorna o valor total dos investimentos de um utilizador
         public static float GetInvestimentosValorTotal(int userId)
         {
             DataTable investimentos = GetInvestimentos(userId);
@@ -2130,8 +2173,6 @@ namespace AdminSysWF
                 return false;
             }
         }
-
-
 
         public static bool EditCategoria(int id, string nome)
         {

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docs",
-    "\\docs\\originais"
+    "\\src",
+    "\\src\\Projeto2Ano"
   ],
+  "SelectedNode": "\\src\\Projeto2Ano\\AdminSysWF.sln",
   "PreviewInSolutionExplorer": false
 }

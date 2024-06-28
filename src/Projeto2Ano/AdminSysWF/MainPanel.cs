@@ -359,6 +359,8 @@ namespace AdminSysWF
         {
             DateTime dataInicial;
             AtualizarInfoGanhos();
+
+            // Ajusta a data para o último domingo se 'days' for 7
             if (days == 7)
             {
                 dataInicial = DateTime.Now;
@@ -367,6 +369,7 @@ namespace AdminSysWF
                     dataInicial = dataInicial.AddDays(-1);
                 }
             }
+            // Ajusta a data para o primeiro dia do mês atual se 'days' for 30
             else if (days == 30)
             {
                 dataInicial = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
@@ -379,6 +382,7 @@ namespace AdminSysWF
             List<DateTime> dias = new List<DateTime>();
             DateTime dataFinal;
 
+            // Define a data final como o último dia do mês atual se 'days' for 30
             if (days == 30)
             {
                 dataFinal = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
@@ -388,6 +392,7 @@ namespace AdminSysWF
                 dataFinal = dataInicial.AddDays(days);
             }
 
+            // Adiciona datas ao intervalo de dias
             for (DateTime data = dataInicial; data <= dataFinal; data = data.AddDays(1))
             {
                 dias.Add(data);
@@ -395,6 +400,7 @@ namespace AdminSysWF
 
             chart.Legend.Display = false;
 
+            // Cria uma série para o gráfico
             var series = new GunaLineDataset
             {
                 Label = "Valor",
@@ -402,6 +408,7 @@ namespace AdminSysWF
                 BorderColor = Color.White,
             };
 
+            // Se 'days' for maior que 7, agrupa os dados por semana
             if (days > 7)
             {
                 var weeklyData = new Dictionary<string, float>();
@@ -434,11 +441,12 @@ namespace AdminSysWF
                 }
             }
 
+            // Atualiza o gráfico com a nova série de dados
             chart.Datasets.Clear();
             chart.Datasets.Add(series);
-
             chart.Update();
         }
+
 
         private void btn_AddLucro_Click_1(object sender, EventArgs e)
         {
@@ -574,38 +582,44 @@ namespace AdminSysWF
         private void HandleDeletion(DataGridView dataGridView, string checkBoxColumnName, Func<int, bool> removeMethod)
         {
             dataGridView.Columns[checkBoxColumnName].DisplayIndex = dataGridView.Columns.Count - 1;
-
             if (dataGridView.Columns[checkBoxColumnName].Visible == true)
             {
                 bool anySelected = false;
-                bool allDeleted = true;
+                bool allDeleted = true; 
 
+                // Itera por todas as linhas do DataGridView
                 for (int i = 0; i < dataGridView.Rows.Count; i++)
                 {
+                    // Obtém a célula do CheckBox na linha atual
                     DataGridViewCheckBoxCell checkBoxCell = dataGridView.Rows[i].Cells[checkBoxColumnName] as DataGridViewCheckBoxCell;
 
+                    // Verifica se a célula do CheckBox está marcada
                     if (checkBoxCell != null && checkBoxCell.Value != null && (bool)checkBoxCell.Value)
                     {
-                        anySelected = true;
-                        int id = Convert.ToInt32(dataGridView.Rows[i].Cells[1].Value);
-                        bool removed = removeMethod(id);
+                        anySelected = true; // Indica que pelo menos um item foi selecionado
+                        int id = Convert.ToInt32(dataGridView.Rows[i].Cells[1].Value); // Obtém o ID da linha atual 
+                        bool removed = removeMethod(id); // Tenta remover o item usando o método fornecido
                         if (!removed)
                         {
-                            allDeleted = false;
+                            allDeleted = false; // Se a remoção falhar, indica que nem todos os itens foram removidos
                         }
                     }
                 }
 
+                // Se nenhum item foi selecionado, exibe uma mensagem de aviso
                 if (!anySelected)
                 {
                     MessageBox.Show("Nenhum registo selecionado para exclusão.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                // Se alguns itens não puderam ser removidos, exibe uma mensagem de erro
                 else if (!allDeleted)
                 {
                     MessageBox.Show("Alguns registos não puderam ser removidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                // Esconde a coluna do CheckBox após o processamento
                 dataGridView.Columns[checkBoxColumnName].Visible = false;
+                // Atualiza várias partes da interface do utilizador
                 refreshLucrosDataGridView();
                 refreshDespesasDataGridView();
                 refreshFuncionariosDataGridView();
@@ -622,9 +636,11 @@ namespace AdminSysWF
             }
             else
             {
+                // Se a coluna do CheckBox não estava visível, torna-a visível
                 dataGridView.Columns[checkBoxColumnName].Visible = true;
             }
         }
+
         private void HandleCellClick(DataGridView dataGridView, string checkBoxColumnName, Enum tabela, List<string> fields)
         {
             if (dataGridView.Columns[checkBoxColumnName].Visible)
@@ -632,31 +648,41 @@ namespace AdminSysWF
                 return;
             }
 
+            // Recupera o evento de clique da célula a partir da tag do DataGridView
             var e = (DataGridViewCellEventArgs)dataGridView.Tag;
 
+            // Verifica se o clique ocorreu em uma célula válida
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 List<string> cellValues = new List<string>();
+
+                // Coleta os valores das células correspondentes aos campos fornecidos
                 for (int i = 0; i < fields.Count; i++)
                 {
                     cellValues.Add(dataGridView.Rows[e.RowIndex].Cells[2 + i].Value.ToString());
                 }
+
+                // Obtém o ID da linha atual 
                 int id = int.Parse(dataGridView.Rows[e.RowIndex].Cells[1].Value.ToString());
 
+                // Abre o diálogo de edição apropriado com base no número de campos
                 if (fields.Count == 3)
                 {
+                    // Diálogo para editar 3 campos
                     Edit3Campos editDialog = new Edit3Campos(UserID, id, (Edit3Campos.Tabelas)tabela, fields[0], fields[1], fields[2], cellValues[0], cellValues[1], cellValues[2]);
                     editDialog.ShowDialog();
                     RefreshDataGridView(tabela);
                 }
                 else if (fields.Count == 4)
                 {
+                    // Diálogo para editar 4 campos
                     Edit4Campos editDialog = new Edit4Campos(UserID, id, (Edit4Campos.Tabelas)tabela, fields[0], fields[1], fields[2], fields[3], cellValues[0], cellValues[1], cellValues[2], cellValues[3]);
                     editDialog.ShowDialog();
                     RefreshDataGridView(tabela);
                 }
             }
         }
+
 
         private void RefreshDataGridView(Enum tabela)
         {
@@ -731,8 +757,6 @@ namespace AdminSysWF
             InvestimentosDataGridView.Tag = e;
             HandleCellClick(InvestimentosDataGridView, "dataGridViewCheckBoxColumn1", Edit3Campos.Tabelas.Investimento, new List<string> { "Descrição", "Tipo", "Valor Atual" });
         }
-
-
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
