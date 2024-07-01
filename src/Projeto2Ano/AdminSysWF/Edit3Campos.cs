@@ -108,6 +108,40 @@ namespace AdminSysWF
                     }
                 }
             }
+            else if (tabela == Tabelas.Funcionario)
+            {
+                txb_edit3.Visible = false;
+                cb.Location = new System.Drawing.Point(75, 184);
+                cb.Size = new System.Drawing.Size(193, 36);
+                cb.BorderRadius = 17;
+                cb.BorderThickness = 1;
+                cb.BorderColor = Color.FromArgb(213, 218, 223);
+                cb.ForeColor = Color.White;
+                cb.FillColor = Color.FromArgb(34, 34, 46);
+                cb.DropDownStyle = ComboBoxStyle.DropDownList;
+                DataTable categorias = Database.GetCargos(userid);
+                this.Controls.Add(cb);
+
+                if (categorias != null)
+                {
+                    cb.DataSource = categorias;
+                    cb.DisplayMember = "NOME";
+                    cb.ValueMember = "ID";
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao carregar os cargos.");
+                }
+
+                foreach (DataRow row in categorias.Rows)
+                {
+                    if (row["NOME"].ToString() == placeholder3)
+                    {
+                        cb.SelectedValue = int.Parse(row["ID"].ToString());
+                        break;
+                    }
+                }
+            }
             lbl_edit1.Text = label1;
             lbl_edit2.Text = label2;
             lbl_edit3.Text = label3;
@@ -131,7 +165,7 @@ namespace AdminSysWF
                     result = Database.EditDespesa(id, txb_edit1.Text, txb_edit2.Text);
                     break;
                 case Tabelas.Funcionario:
-                    result = Database.EditFuncionario(id, txb_edit1.Text, txb_edit2.Text, txb_edit3.Text);
+                    result = Database.EditFuncionario(id, txb_edit1.Text, txb_edit2.Text, int.Parse(cb.SelectedValue.ToString()));
                     break;
                 case Tabelas.Produto:
                     result = Database.EditProduto(id, txb_edit1.Text, txb_edit2.Text, int.Parse(cb.SelectedValue.ToString()));

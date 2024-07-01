@@ -2008,9 +2008,9 @@ namespace AdminSysWF
         }
 
         // Edita um funcionário
-        public static bool EditFuncionario(int id, string nome, string salario, string cargo)
+        public static bool EditFuncionario(int id, string nome, string salario, int cargo)
         {
-            if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100 || string.IsNullOrWhiteSpace(cargo) || cargo.Length > 50)
+            if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100)
             {
                 MessageBox.Show("Dados de entrada inválidos.");
                 return false;
@@ -2038,12 +2038,12 @@ namespace AdminSysWF
                 {
                     if (connection == null) return false;
 
-                    string query = "UPDATE FUNCIONARIOS SET NOME = @nome, SALARIO = @salario, CARGO = @cargo WHERE ID = @id";
+                    string query = "UPDATE FUNCIONARIOS SET NOME = @nome, SALARIO = @salario, ID_CARGO = @cargo WHERE ID = @id";
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@nome", nome);
-                        cmd.Parameters.AddWithValue("@salario", salarioFloat); // Ensure parameter type matches database schema
+                        cmd.Parameters.AddWithValue("@salario", salarioFloat);
                         cmd.Parameters.AddWithValue("@cargo", cargo);
                         cmd.ExecuteNonQuery();
                         return true;
