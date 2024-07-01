@@ -81,11 +81,11 @@ namespace AdminSysWF
 
                 if (Database.AlterarAdmin(userId, isAdmin))
                 {
-                    MessageBox.Show("Estado do utilizador atualizado com sucesso.");
+                    MessageBox.Show("Estado do utilizador atualizado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao atualizar o estado do utilizador.");
+                    MessageBox.Show("Erro ao atualizar o estado do utilizador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
