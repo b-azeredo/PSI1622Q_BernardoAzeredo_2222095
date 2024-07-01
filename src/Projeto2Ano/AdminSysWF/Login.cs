@@ -40,5 +40,13 @@ namespace AdminSysWF
             Register.Closed += (s, args) => this.Close();
             Register.Show();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            var Register = new Register();
+            Register.Closed += (s, args) => this.Close();
+            Register.Show();
+        }
     }
 }
