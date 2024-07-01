@@ -797,12 +797,17 @@ namespace AdminSysWF
 
         private void label1_Click(object sender, EventArgs e)
         {
+            float lucroUltimoMes = Database.GetLucroMensalMesAnterior(UserID);
+            if (lucroUltimoMes == -1)
+            {
+                lucroUltimoMes = 0;
+            }
             int diasNoMesAtual = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
             Relatorio.Lucros relatorioLucros = new Relatorio.Lucros
             {
                 LucroSemanal = Database.GetLucroSemanal(UserID),
                 LucroMensal = Database.GetLucroMensal(UserID),
-                LucroUltimoMes = Database.GetLucroMensalMesAnterior(UserID),
+                LucroUltimoMes = lucroUltimoMes,
                 mediaDiaria = (Database.GetLucroMensal(UserID) / diasNoMesAtual).ToString("F2")
             };
 
