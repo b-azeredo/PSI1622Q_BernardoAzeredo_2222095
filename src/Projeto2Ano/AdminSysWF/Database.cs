@@ -1934,7 +1934,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@desc", desc);
-                        cmd.Parameters.AddWithValue("@valor", valorFloat); // Ensure parameter type matches database schema
+                        cmd.Parameters.AddWithValue("@valor", valorFloat); 
                         cmd.ExecuteNonQuery();
                         return true;
                     }
@@ -1992,7 +1992,7 @@ namespace AdminSysWF
                     using (SqlCommand historicoCmd = new SqlCommand(historicoQuery, connection))
                     {
                         historicoCmd.Parameters.AddWithValue("@investimentoId", id);
-                        historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotalFloat); // Ensure parameter type matches database schema
+                        historicoCmd.Parameters.AddWithValue("@valorTotal", valorTotalFloat);
                         historicoCmd.Parameters.AddWithValue("@data", DateTime.Now);
                         historicoCmd.ExecuteNonQuery();
                     }
@@ -2208,7 +2208,7 @@ namespace AdminSysWF
                     {
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@desc", desc);
-                        cmd.Parameters.AddWithValue("@valor", valorFloat); // Ensure parameter type matches database schema
+                        cmd.Parameters.AddWithValue("@valor", valorFloat);
                         cmd.ExecuteNonQuery();
                         return true;
                     }
