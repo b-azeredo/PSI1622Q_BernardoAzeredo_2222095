@@ -42,7 +42,7 @@ namespace AdminSysWF
             }
             else
             {
-                MessageBox.Show("Este utilizador já existe.");
+                MessageBox.Show("Este utilizador já existe.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

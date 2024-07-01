@@ -29,7 +29,7 @@ namespace AdminSysWF
             }
             else
             {
-                MessageBox.Show("Utilizador e/ou a palavra-passe estão incorretos.");
+                MessageBox.Show("Utilizador e/ou a palavra-passe estão incorretos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
