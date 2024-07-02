@@ -62,7 +62,7 @@ namespace AdminSysWF
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao carregar as categorias.");
+                    MessageBox.Show("Erro ao carregar as categorias.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 foreach (DataRow row in categorias.Rows)
@@ -96,7 +96,7 @@ namespace AdminSysWF
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao carregar as categorias.");
+                    MessageBox.Show("Erro ao carregar as categorias.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 foreach (DataRow row in categorias.Rows)
@@ -130,7 +130,7 @@ namespace AdminSysWF
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao carregar os cargos.");
+                    MessageBox.Show("Erro ao carregar os cargos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 foreach (DataRow row in categorias.Rows)

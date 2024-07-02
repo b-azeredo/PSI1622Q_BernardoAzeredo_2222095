@@ -49,7 +49,7 @@ namespace AdminSysWF
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao carregar as categorias.");
+                    MessageBox.Show("Erro ao carregar as categorias.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 foreach (DataRow row in categorias.Rows)

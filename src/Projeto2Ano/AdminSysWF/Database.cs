@@ -93,7 +93,7 @@ namespace AdminSysWF
             }
             catch
             {
-                MessageBox.Show("Erro ao conectar com a base de dados.");
+                MessageBox.Show("Erro ao conectar com a base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return -1;
             }
 
@@ -257,7 +257,7 @@ namespace AdminSysWF
             }
             catch
             {
-                MessageBox.Show("Erro ao conectar à base de dados.");
+                MessageBox.Show("Erro ao conectar à base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -283,7 +283,7 @@ namespace AdminSysWF
             }
             catch
             {
-                MessageBox.Show("Erro ao conectar à base de dados.");
+                MessageBox.Show("Erro ao conectar à base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -308,7 +308,7 @@ namespace AdminSysWF
             }
             catch
             {
-                MessageBox.Show("Erro ao conectar à base de dados.");
+                MessageBox.Show("Erro ao conectar à base de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -874,7 +874,7 @@ namespace AdminSysWF
 
                     if (GetIdByUsername(username) != -1)
                     {
-                        MessageBox.Show("O nome de utilizador já existe. Por favor, escolha outro nome de utilizador.");
+                        MessageBox.Show("O nome de utilizador já existe. Por favor, escolha outro nome de utilizador.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
@@ -1903,7 +1903,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -1913,13 +1913,13 @@ namespace AdminSysWF
                 valorFloat = float.Parse(valor);
                 if (valorFloat < 0)
                 {
-                    MessageBox.Show("Valor deve ser maior ou igual a zero.");
+                    MessageBox.Show("Valor deve ser maior ou igual a zero.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Valor inválido. Deve ser um número.");
+                MessageBox.Show("Valor inválido. Deve ser um número.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -1953,7 +1953,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || tipoInvestimento <= 0 || string.IsNullOrWhiteSpace(descricao) || descricao.Length > 100)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -1963,13 +1963,13 @@ namespace AdminSysWF
                 valorTotalFloat = float.Parse(valorTotal);
                 if (valorTotalFloat < 0)
                 {
-                    MessageBox.Show("Valor total deve ser maior ou igual a zero.");
+                    MessageBox.Show("Valor total deve ser maior ou igual a zero.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Valor total inválido. Deve ser um número.");
+                MessageBox.Show("Valor total inválido. Deve ser um número.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2012,7 +2012,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2022,13 +2022,13 @@ namespace AdminSysWF
                 salarioFloat = float.Parse(salario);
                 if (salarioFloat < 0)
                 {
-                    MessageBox.Show("Salário deve ser maior ou igual a zero.");
+                    MessageBox.Show("Salário deve ser maior ou igual a zero.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Salário inválido. Deve ser um número.");
+                MessageBox.Show("Salário inválido. Deve ser um número.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2064,7 +2064,7 @@ namespace AdminSysWF
                 string.IsNullOrWhiteSpace(email) || !IsValidEmail(email) ||
                 string.IsNullOrWhiteSpace(telefone) || telefone.Length > 9 || !IsAllDigits(telefone) || categoria <= 0)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2126,7 +2126,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(produto) || produto.Length > 100 || idCategoria <= 0)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2136,13 +2136,13 @@ namespace AdminSysWF
                 quantidadeInt = int.Parse(quantidade);
                 if (quantidadeInt < 0)
                 {
-                    MessageBox.Show("Quantidade deve ser maior ou igual a zero.");
+                    MessageBox.Show("Quantidade deve ser maior ou igual a zero.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Quantidade inválida. Deve ser um número inteiro.");
+                MessageBox.Show("Quantidade inválida. Deve ser um número inteiro.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2177,7 +2177,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(desc) || desc.Length > 100)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2187,13 +2187,13 @@ namespace AdminSysWF
                 valorFloat = float.Parse(valor);
                 if (valorFloat < 0)
                 {
-                    MessageBox.Show("Valor deve ser maior ou igual a zero.");
+                    MessageBox.Show("Valor deve ser maior ou igual a zero.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
             catch (FormatException)
             {
-                MessageBox.Show("Valor inválido. Deve ser um número.");
+                MessageBox.Show("Valor inválido. Deve ser um número.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -2227,7 +2227,7 @@ namespace AdminSysWF
         {
             if (id <= 0 || string.IsNullOrWhiteSpace(nome) || nome.Length > 100)
             {
-                MessageBox.Show("Dados de entrada inválidos.");
+                MessageBox.Show("Dados de entrada inválidos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

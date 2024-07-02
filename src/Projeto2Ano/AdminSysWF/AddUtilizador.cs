@@ -38,10 +38,6 @@ namespace AdminSysWF
                     MessageBox.Show("Utilizador adicionado com sucesso.", "Adicionado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao adicionar utilizador.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {
